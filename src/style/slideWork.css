@@ -1,0 +1,76 @@
+.work-wrapper {
+  position: relative;
+  top: 10vh;
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  grid-template: repeat(8, 1fr)/repeat(4, 1fr);
+  grid-template-areas: "video video video thumbnail" "video video video thumbnail" "video video video thumbnail" "video video video thumbnail" "video video video thumbnail" "video video video thumbnail" "infos infos infos thumbnail" "infos infos infos thumbnail";
+}
+
+.video-player-container {
+  position: relative;
+  grid-area: video;
+  width: calc(100% - 4rem);
+  height: calc(100% - 2rem);
+  margin: 2rem 0 0 4rem;
+}
+.video-player-container .my-video {
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  background: black;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.video-player-container .video-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.25rem;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+.video-player-container .video-controls button {
+  border: none;
+  background: none;
+  color: var(--fontcol1);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.video-thumb-container {
+  grid-area: thumbnail;
+  width: calc(100% - 6rem);
+  height: calc(100% - 4rem);
+  background-color: olive;
+  margin: 2rem 4rem 2rem 2rem;
+}
+.video-thumb-container .video-thumb {
+  display: flex;
+  align-items: center;
+  height: 7.5%;
+}
+.video-thumb-container .video-thumb .video-thumb-rank {
+  width: 10%;
+  padding-left: 1%;
+}
+.video-thumb-container .video-thumb .video-thumb-img {
+  width: 50%;
+  height: 50%;
+  border: 2px solid green;
+}
+
+.video-infos-container {
+  grid-area: infos;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  margin: 2rem 0 2rem 4rem;
+  background-color: olive;
+}/*# sourceMappingURL=slideWork.css.map */
