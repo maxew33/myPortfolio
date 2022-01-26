@@ -15,6 +15,7 @@
 
     --fontfam1: "arial black", Arial, Helvetica, sans-serif;
     --fontfam2: "Ubuntu", sans-serif;
+    --fontfam3: 'Ephesis', cursive;
 
     --fontcol1: hsl(0deg, 0%, 85%);
     --fontcol2: hsl(194deg, 85%, 62%);
@@ -23,8 +24,8 @@
 }
 
 /* hsl(258, 86%, 34%) 
-font-family: 'Anton', sans-serif;
-font-family: 'Ubuntu', sans-serif;*/
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Ephesis', cursive;*/
 
 .App {
     min-height: 100vh;
@@ -110,9 +111,18 @@ font-family: 'Ubuntu', sans-serif;*/
 }
 
 .slide-container {
+    position: relative;
     width: 400vw;
     display: flex;
     transition: transform 0.5s ease-in-out;
+
+    .overlay{
+        position: absolute;
+        width: 400vw;
+        height: 90vh;
+        bottom: 0;
+        background: hsl(0, 0, 0, .25);
+    }
 }
 
 .slide-wrapper {

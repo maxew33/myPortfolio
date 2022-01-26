@@ -132,7 +132,7 @@ function App() {
 
       </div>
 
-      <div className="slide-container" onWheel={handleWheel}>
+      <div className="slide-container">
         {mySlideContent.map((item) => {
           return (
             <Fragment key={item.id}>
@@ -140,6 +140,7 @@ function App() {
             </Fragment>
           )
         })}
+        <div className="overlay" onWheel={handleWheel}></div>
       </div>
 
     </div>

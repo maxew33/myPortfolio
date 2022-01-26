@@ -24,10 +24,13 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
-.video-player-container .video-controls {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+
+.video-controls {
+  position: relative;
+  height: 3rem;
+  justify-self: center;
+  align-self: flex-end;
+  grid-area: video;
   bottom: 0.25rem;
   width: 25%;
   display: flex;
@@ -36,8 +39,9 @@
   background: rgba(0, 0, 0, 0.25);
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 5px;
+  z-index: 10;
 }
-.video-player-container .video-controls button {
+.video-controls button {
   border: none;
   background: none;
   color: var(--fontcol1);
@@ -51,11 +55,13 @@
   height: calc(100% - 4rem);
   background-color: olive;
   margin: 2rem 4rem 2rem 2rem;
+  z-index: 10;
+  overflow-y: scroll;
 }
 .video-thumb-container .video-thumb {
   display: flex;
   align-items: center;
-  height: 7.5%;
+  height: 15%;
 }
 .video-thumb-container .video-thumb .video-thumb-rank {
   width: 10%;

@@ -108,40 +108,41 @@ export default function SlideWork(props) {
                         Sorry, your browser doesn't support embedded videos.
                     </video>
 
-                    <div className="video-controls">
-                        <button className="video-play"
-                            onClick={handlePlay}>
-                            {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
-                        </button>
-                        <button className="video-prev"
-                            onClick={() => handleNav(-1)}>
-                            <FontAwesomeIcon icon={faStepBackward} />
-                        </button>
-                        <button className="video-stop"
-                            onClick={handleStop}>
-                            <FontAwesomeIcon icon={faStop} />
-                        </button>
-                        <button className="video-next"
-                            onClick={() => handleNav(1)}>
-                            <FontAwesomeIcon icon={faStepForward} />
-                        </button>
-                        <button className="video-volume"
-                            onClick={() => handleVolume(0)}>
-                            <FontAwesomeIcon icon={faVolumeMute} />
-                        </button>
-                        <button className="video-volume"
-                            onClick={() => handleVolume(-.1)}>
-                            <FontAwesomeIcon icon={faVolumeDown} />
-                        </button>
-                        <button className="video-volume"
-                            onClick={() => handleVolume(.1)}>
-                            <FontAwesomeIcon icon={faVolumeUp} />
-                        </button>
-                    </div>
+                </div>
+
+                <div className="video-controls">
+                    <button className="video-play"
+                        onClick={handlePlay}>
+                        {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
+                    </button>
+                    <button className="video-prev"
+                        onClick={() => handleNav(-1)}>
+                        <FontAwesomeIcon icon={faStepBackward} />
+                    </button>
+                    <button className="video-stop"
+                        onClick={handleStop}>
+                        <FontAwesomeIcon icon={faStop} />
+                    </button>
+                    <button className="video-next"
+                        onClick={() => handleNav(1)}>
+                        <FontAwesomeIcon icon={faStepForward} />
+                    </button>
+                    <button className="video-volume"
+                        onClick={() => handleVolume(0)}>
+                        <FontAwesomeIcon icon={faVolumeMute} />
+                    </button>
+                    <button className="video-volume"
+                        onClick={() => handleVolume(-.1)}>
+                        <FontAwesomeIcon icon={faVolumeDown} />
+                    </button>
+                    <button className="video-volume"
+                        onClick={() => handleVolume(.1)}>
+                        <FontAwesomeIcon icon={faVolumeUp} />
+                    </button>
                 </div>
 
                 <div className="video-thumb-container">
-                    {/* Ajouter ici unbtn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
+                    {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
                     {dataVideos.map((item, index) => {
                         return (
                             <div className="video-thumb" key={index}>

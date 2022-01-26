@@ -37,6 +37,7 @@
   position: relative;
   grid-area: links;
   height: 9vh;
+  z-index: 10;
 }
 .status-container .status {
   position: relative;
@@ -82,6 +83,7 @@
   justify-self: center;
   align-self: center;
   transition: 0.05s font-size ease-in-out;
+  z-index: 10;
 }
 .social-network a:hover {
   font-size: 3.75rem;
@@ -150,4 +152,5 @@
   border-radius: 0 0 25px 25px;
   cursor: -webkit-grab;
   cursor: grab;
+  z-index: 10;
 }/*# sourceMappingURL=slideHome.css.map */

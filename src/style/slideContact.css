@@ -1,0 +1,373 @@
+.contact-wrapper {
+  position: absolute;
+  top: 10vh;
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+.postcard-container {
+  position: absolute;
+  top: 45vh;
+  left: 50vw;
+  width: 100vh;
+  height: 75vh;
+  transform: translate(-50%, -50%);
+  font-family: var(--fontfam3);
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-linear-gradient(315deg, var(--bg-color1), var(--bg-color1) 2%, whitesmoke 2%, whitesmoke 3%, #4ccaf0 3%, #4ccaf0 5%, whitesmoke 5%, whitesmoke 6%);
+  border: 1px solid #404040;
+  border-radius: 1vmin;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 10;
+}
+
+.animation-container {
+  display: none;
+}
+
+/* ------------- POSTCARD ------------- */
+.postcard {
+  background: ivory;
+  width: 95vh;
+  height: 70vh;
+  border: 1px solid #404040;
+  display: flex;
+  border-radius: 5px;
+}
+
+.postcard-left,
+.postcard-right {
+  padding: 2.5%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.postcard-left {
+  width: 60%;
+  border-right: 1px solid #404040;
+}
+
+.postcard-left-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postcard-left-salutation {
+  margin-left: 5vw;
+}
+
+.postcard-left-input {
+  width: 100%;
+  margin: 1% 0;
+  position: relative;
+  border: 1px solid #bfbfbf;
+  background: whitesmoke;
+  border-radius: 5px;
+}
+
+.postcard-left-input input,
+.postcard-left-input textarea {
+  padding: 5%;
+  border: 0;
+  width: 90%;
+  font-family: var(--fontfam3);
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.postcard-left-input label {
+  position: absolute;
+  left: 0;
+  padding: 0.5vw;
+  font-family: var(--fontfam2);
+  font-weight: 400;
+  font-size: 1rem;
+  color: #404040;
+  transition: padding 0.25s ease, font-size 0.25s ease;
+  pointer-events: none;
+}
+
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+  font-size: 0.75rem;
+  padding: 0;
+}
+
+.postcard-left-message {
+  height: 25vh;
+}
+
+textarea {
+  height: calc(20vh - 2px);
+}
+
+.postcard-left-submit-btn {
+  height: 5vmin;
+  width: 40%;
+  align-self: end;
+  border-radius: 5px;
+  border: 2px solid var(--bg-color1);
+  background-color: var(--bg-color1);
+  font-size: 2.5vmin;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.postcard-left-submit-btn:hover {
+  background-color: whitesmoke;
+  color: var(--bg-color1);
+}
+
+.postcard-right {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postcard-right-stamp {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 15%;
+  height: auto;
+}
+
+.postcard-right-stamp img {
+  width: 100%;
+}
+
+.postcard-right-exp {
+  padding-bottom: 5%;
+}
+
+.postcard-right-exp > div {
+  border-bottom: 1px solid #404040;
+  padding-top: 7.5%;
+}
+
+/* ------------- ENVELOPPE ------------- */
+.enveloppe-container {
+  transform: translateY(44vh);
+}
+
+.enveloppe {
+  position: absolute;
+  left: calc(50% - 50vmin);
+  top: calc(50% - 37.5vmin);
+  width: 100vmin;
+  height: 75vmin;
+  background: transparent;
+  -webkit-animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
+  animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
+}
+
+@-webkit-keyframes apparition-enveloppe {
+  from {
+    transform: translateY(75vmin);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes apparition-enveloppe {
+  from {
+    transform: translateY(75vmin);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes reduction {
+  to {
+    transform: scale(0.25);
+  }
+}
+@keyframes reduction {
+  to {
+    transform: scale(0.25);
+  }
+}
+@-webkit-keyframes deplacement {
+  to {
+    transform: scale(0.025) rotate(-35deg) translateX(2500vw);
+    opacity: 0;
+  }
+}
+@keyframes deplacement {
+  to {
+    transform: scale(0.025) rotate(-35deg) translateX(2500vw);
+    opacity: 0;
+  }
+}
+.enveloppe::before {
+  /* languette */
+  content: "";
+  width: 100vmin;
+  height: 75vmin;
+  top: -40%;
+  position: absolute;
+  background: #e1e1e1;
+  -webkit-clip-path: polygon(0% 40%, 50% 0%, 100% 40%);
+  clip-path: polygon(0% 40%, 50% 0%, 100% 40%);
+  -webkit-animation: 0.5s ease-in-out 0.5s forwards fermeture;
+  animation: 0.5s ease-in-out 0.5s forwards fermeture;
+  transform-origin: 0 30vmin;
+}
+
+@-webkit-keyframes fermeture {
+  to {
+    transform: rotateX(-180deg);
+  }
+}
+@keyframes fermeture {
+  to {
+    transform: rotateX(-180deg);
+  }
+}
+.enveloppe::after {
+  content: "";
+  width: 100vmin;
+  height: 80vmin;
+  position: absolute;
+  background: white;
+  -webkit-clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ------------- MESSAGE ENVOYE ------------- */
+.message-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 8vw;
+  width: 65vw;
+  font-family: var(--font-2);
+  color: var(--font-color-1);
+  font-size: 7.5vw;
+}
+
+/* --- RESPONSIVE --- */
+@media (orientation: portrait) {
+  /* ------------- POSTCARD ------------- */
+  .postcard-container {
+    font-size: min(1.5rem, 5vmin);
+  }
+
+  .postcard-border {
+    width: 95vw;
+    height: 85vh;
+  }
+
+  .postcard {
+    width: 90vw;
+    height: calc(85vh - 5vw);
+    flex-direction: column-reverse;
+  }
+
+  .postcard-left {
+    width: 100%;
+    height: 75%;
+    border-right: none;
+  }
+
+  .postcard-left-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .postcard-left-input input,
+.postcard-left-input textarea {
+    padding: 2.5%;
+    font-size: min(1.5rem, 5vmin);
+  }
+
+  .postcard-left-input label {
+    font-size: min(0.75rem, 2.5vmin);
+  }
+
+  input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+    font-size: min(0.5rem, 1.5vmin);
+  }
+
+  .postcard-left-message {
+    height: 82.5%;
+  }
+
+  .postcard-left-submit-btn {
+    height: 20%;
+    font-size: min(1.5rem, 5vmin);
+    align-self: center;
+  }
+
+  .postcard-right {
+    height: 17.5%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .postcard-right-stamp {
+    width: 25%;
+  }
+
+  .postcard-right-exp {
+    padding-bottom: 5%;
+  }
+
+  .postcard-right-exp > div {
+    border-bottom: 0;
+  }
+
+  /* ------------- ENVELOPPE ------------- */
+  .enveloppe-container {
+    transform: translateY(44vh);
+  }
+
+  .enveloppe {
+    left: 0;
+    top: calc(50% - 42.5vh);
+    height: 85vh;
+  }
+
+  .enveloppe::before {
+    height: 85vh;
+    transform-origin: 0 34vh;
+  }
+
+  .enveloppe::after {
+    height: 85vh;
+  }
+
+  /* ------------- MESSAGE ENVOYE ------------- */
+  .message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 8vw;
+    width: 65vw;
+    font-family: var(--font-2);
+    color: var(--font-color-1);
+    font-size: 7.5vw;
+  }
+}/*# sourceMappingURL=slideContact.css.map */
