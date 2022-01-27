@@ -15,10 +15,14 @@ export default function SlideContact() {
     const sendEmail = e => {
         e.preventDefault()
 
-        emailjs.sendForm(process.env.REACT_APP_EMAILKEY_SERVICE_ID, process.env.REACT_APP_EMAILKEY_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILKEY_USER_ID)
+        emailjs.sendForm(
+            process.env.REACT_APP_EMAILKEY_SERVICE_ID, 
+            process.env.REACT_APP_EMAILKEY_TEMPLATE_ID, 
+            form.current, 
+            process.env.REACT_APP_EMAILKEY_USER_ID)
             .then(result => {
                 console.log(result.text)
-                const postcard = document.querySelector('.postcard-border'),
+                const postcard = document.querySelector('.postcard-container'),
                     animationContainer = document.querySelector('.animation-container')
 
                 animationContainer.style.display = 'block'
@@ -52,7 +56,10 @@ export default function SlideContact() {
             }, error => {
                 console.log(error.text)
                 alert('le message n\'a pas pu être envoyé.')
-            })
+            })      
+            .catch((err) => {
+                console.error('FAILED...', err)
+            });
     }
 
 

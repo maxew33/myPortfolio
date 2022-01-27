@@ -1,0 +1,96 @@
+.skills-wrapper {
+  position: relative;
+  top: 10vh;
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  grid-template: repeat(8, 1fr)/repeat(4, 1fr);
+  grid-template-areas: "x bubble bubble bubble" "x bubble bubble bubble" "skill1 skill2 avatar avatar" "skill3 skill4 avatar avatar" "skill5 skill6 avatar avatar" "skill7 skill8 avatar avatar" "skill9 skill10 avatar avatar" "skill11 skill12 avatar avatar";
+}
+
+.intro-of-myself {
+  grid-area: bubble;
+  position: relative;
+  max-width: 75vmax;
+  max-height: 12vh;
+  font-family: var(--fontfam2);
+  line-height: 1.15;
+  font-size: 1.5rem;
+  font-style: italic;
+  align-self: flex-end;
+  margin: 0 1rem 0 2rem;
+  border-radius: 25px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.intro-of-myself > p:first-of-type {
+  padding-bottom: 0.5vmax;
+}
+.intro-of-myself .resume-download {
+  display: inline-block;
+  font-size: 1.5rem;
+  -webkit-animation: 3s linear infinite remind-click;
+  animation: 3s linear infinite remind-click;
+}
+.intro-of-myself a:link,
+.intro-of-myself a:visited,
+.intro-of-myself a:hover,
+.intro-of-myself a:active {
+  color: var(--font-color-1);
+}
+.intro-of-myself::after {
+  content: "";
+  bottom: -2rem;
+  right: 10vw;
+  position: absolute;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-top: 2rem solid rgba(0, 0, 0, 0.25);
+  border-right: 1.5rem solid transparent;
+  border-left: 0.75rem solid transparent;
+}
+
+@-webkit-keyframes remind-click {
+  0%, 45% {
+    transform: rotate(0deg);
+  }
+  47%, 53% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  55%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes remind-click {
+  0%, 45% {
+    transform: rotate(0deg);
+  }
+  47%, 53% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  55%, 100% {
+    transform: rotate(0deg);
+  }
+}
+.avatar-at-work {
+  grid-area: avatar;
+  max-height: 67.5vh;
+}
+
+.hit-zone {
+  grid-area: avatar;
+  align-self: flex-end;
+  width: 50%;
+  height: 40%;
+  cursor: pointer;
+  z-index: 10;
+}/*# sourceMappingURL=slideSkills.css.map */
