@@ -4,16 +4,12 @@
     height: 90vh;
     width: 100vw;
     display: grid;
-    grid-template: repeat(8, 1fr) / repeat(4, 1fr);
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
     grid-template-areas:
-        "x bubble bubble bubble"
-        "x bubble bubble bubble"
-        "skill1 skill2 avatar avatar"
-        "skill3 skill4 avatar avatar"
-        "skill5 skill6 avatar avatar"
-        "skill7 skill8 avatar avatar"
-        "skill9 skill10 avatar avatar"
-        "skill11 skill12 avatar avatar";
+        "bubble bubble"
+        "skills avatar"
+        "skills avatar"
+        "skills avatar";
 }
 
 .intro-of-myself {
@@ -25,8 +21,8 @@
     line-height: 1.15;
     font-size: 1.5rem;
     font-style: italic;
-    align-self: flex-end;
-    margin: 0 1rem 0 2rem;
+    align-self: center;
+    justify-self: center;
     border-radius: 25px;
     padding: 2rem;
     background: hsl(0deg, 0%, 0%, 0.25);
@@ -94,4 +90,81 @@
     height: 40%;
     cursor: pointer;
     z-index: 10;
+}
+
+.skills-container {
+    grid-area: skills;
+    display: grid;
+    margin: 1.5rem;
+    grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+}
+
+.my-skill {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+
+    .skill-img {
+        height: 9vh;
+        width: 9vh;
+        object-fit: contain;
+        padding-right: 0.5rem;
+        transition: transform .5s ease-in;
+    }
+
+    .skill-name {
+        font-family: var(--fontfam2);
+        font-size: 1.25rem;
+        transition: opacity .25s ease-in-out;
+    }
+
+    .hidden-name{
+        opacity: 0;
+    }
+}
+
+// position of the skill in the grid and, for the hidden class, the translate values
+$column: 1;
+$xValue: 0vw;
+$yValue: 0vh;
+$row: 1;
+
+@for $i from 1 through 10 {
+    @if $i < 6 {
+        $xValue: 37.5vw;
+        $column: 2;
+    } @else {
+        $xValue: 62.5vw;
+        $column: 1;
+    }
+
+    // for the 5,10 / 1,6 / 2,7 / 3,8 / 4,9 skill
+    @if $i % 5 == 0 {
+        $row: 5;
+        $yValue: -6.75vh;
+    } @else {
+        @for $j from 1 through 5 {
+            @if $i % 5 == $j {
+                $row: $j;
+                $yValue: (13.5vh * (5 - $j)) - 6.75vh;
+            }
+        }
+    }
+
+    .my-skill#{$i} {
+        grid-column: $column;
+        grid-row: $row;
+
+        .skill-img{
+            transition-delay: .125s * $i;
+        }
+
+        .skill-name{
+            transition-delay: (.125s * $i) + .5s;
+        }
+
+        .hidden-img {
+            transform: translate($xValue, $yValue) scale(0);
+        }
+    }
 }

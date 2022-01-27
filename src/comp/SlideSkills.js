@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 
 import atWork from '../assets/avataratwork.png'
 
+import dataSkills from './dataSkills.js'
 
 import '../style/slideSkills.css'
 
 export default function SlideSkills() {
 
+    const [skillsDisplayed, setSkillsDisplayed] = useState(false)
+
     const handleLaptopClick = () => {
         console.log('clic')
+        if(!skillsDisplayed){
+            Array.from(document.querySelectorAll('.skill-img')).forEach(skill => skill.classList.remove('hidden-img'))            
+            Array.from(document.querySelectorAll('.skill-name')).forEach(skill => skill.classList.remove('hidden-name'))
+            setSkillsDisplayed(true)
+        }
     }
 
 
@@ -38,10 +46,25 @@ export default function SlideSkills() {
                     src={atWork}
                     alt="avatar à son poste de travail" />
 
-                    <div className="hit-zone"
+                <div className="hit-zone"
                     onClick={handleLaptopClick}>
+                </div>
 
-                    </div>
+                <div className="skills-container">
+                    {dataSkills.map((item, index) => {
+                        return (
+                            <div className={'my-skill my-skill' + (index + 1)} key={item.id}>
+                                <img
+                                    className='skill-img hidden-img'
+                                    src={item.src}
+                                    alt={item.name} />
+                                <div className='skill-name hidden-name'>
+                                    {item.name}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
 
             </div>
         </div>

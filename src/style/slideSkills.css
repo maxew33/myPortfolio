@@ -4,8 +4,8 @@
   height: 90vh;
   width: 100vw;
   display: grid;
-  grid-template: repeat(8, 1fr)/repeat(4, 1fr);
-  grid-template-areas: "x bubble bubble bubble" "x bubble bubble bubble" "skill1 skill2 avatar avatar" "skill3 skill4 avatar avatar" "skill5 skill6 avatar avatar" "skill7 skill8 avatar avatar" "skill9 skill10 avatar avatar" "skill11 skill12 avatar avatar";
+  grid-template: repeat(4, 1fr)/repeat(2, 1fr);
+  grid-template-areas: "bubble bubble" "skills avatar" "skills avatar" "skills avatar";
 }
 
 .intro-of-myself {
@@ -17,8 +17,8 @@
   line-height: 1.15;
   font-size: 1.5rem;
   font-style: italic;
-  align-self: flex-end;
-  margin: 0 1rem 0 2rem;
+  align-self: center;
+  justify-self: center;
   border-radius: 25px;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.25);
@@ -93,4 +93,173 @@
   height: 40%;
   cursor: pointer;
   z-index: 10;
+}
+
+.skills-container {
+  grid-area: skills;
+  display: grid;
+  margin: 1.5rem;
+  grid-template: repeat(5, 1fr)/repeat(2, 1fr);
+}
+
+.my-skill {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+.my-skill .skill-img {
+  height: 9vh;
+  width: 9vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding-right: 0.5rem;
+  transition: transform 0.5s ease-in;
+}
+.my-skill .skill-name {
+  font-family: var(--fontfam2);
+  font-size: 1.25rem;
+  transition: opacity 0.25s ease-in-out;
+}
+.my-skill .hidden-name {
+  opacity: 0;
+}
+
+.my-skill1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.my-skill1 .skill-img {
+  transition-delay: 0.125s;
+}
+.my-skill1 .skill-name {
+  transition-delay: 0.625s;
+}
+.my-skill1 .hidden-img {
+  transform: translate(37.5vw, 47.25vh) scale(0);
+}
+
+.my-skill2 {
+  grid-column: 2;
+  grid-row: 2;
+}
+.my-skill2 .skill-img {
+  transition-delay: 0.25s;
+}
+.my-skill2 .skill-name {
+  transition-delay: 0.75s;
+}
+.my-skill2 .hidden-img {
+  transform: translate(37.5vw, 33.75vh) scale(0);
+}
+
+.my-skill3 {
+  grid-column: 2;
+  grid-row: 3;
+}
+.my-skill3 .skill-img {
+  transition-delay: 0.375s;
+}
+.my-skill3 .skill-name {
+  transition-delay: 0.875s;
+}
+.my-skill3 .hidden-img {
+  transform: translate(37.5vw, 20.25vh) scale(0);
+}
+
+.my-skill4 {
+  grid-column: 2;
+  grid-row: 4;
+}
+.my-skill4 .skill-img {
+  transition-delay: 0.5s;
+}
+.my-skill4 .skill-name {
+  transition-delay: 1s;
+}
+.my-skill4 .hidden-img {
+  transform: translate(37.5vw, 6.75vh) scale(0);
+}
+
+.my-skill5 {
+  grid-column: 2;
+  grid-row: 5;
+}
+.my-skill5 .skill-img {
+  transition-delay: 0.625s;
+}
+.my-skill5 .skill-name {
+  transition-delay: 1.125s;
+}
+.my-skill5 .hidden-img {
+  transform: translate(37.5vw, -6.75vh) scale(0);
+}
+
+.my-skill6 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.my-skill6 .skill-img {
+  transition-delay: 0.75s;
+}
+.my-skill6 .skill-name {
+  transition-delay: 1.25s;
+}
+.my-skill6 .hidden-img {
+  transform: translate(62.5vw, 47.25vh) scale(0);
+}
+
+.my-skill7 {
+  grid-column: 1;
+  grid-row: 2;
+}
+.my-skill7 .skill-img {
+  transition-delay: 0.875s;
+}
+.my-skill7 .skill-name {
+  transition-delay: 1.375s;
+}
+.my-skill7 .hidden-img {
+  transform: translate(62.5vw, 33.75vh) scale(0);
+}
+
+.my-skill8 {
+  grid-column: 1;
+  grid-row: 3;
+}
+.my-skill8 .skill-img {
+  transition-delay: 1s;
+}
+.my-skill8 .skill-name {
+  transition-delay: 1.5s;
+}
+.my-skill8 .hidden-img {
+  transform: translate(62.5vw, 20.25vh) scale(0);
+}
+
+.my-skill9 {
+  grid-column: 1;
+  grid-row: 4;
+}
+.my-skill9 .skill-img {
+  transition-delay: 1.125s;
+}
+.my-skill9 .skill-name {
+  transition-delay: 1.625s;
+}
+.my-skill9 .hidden-img {
+  transform: translate(62.5vw, 6.75vh) scale(0);
+}
+
+.my-skill10 {
+  grid-column: 1;
+  grid-row: 5;
+}
+.my-skill10 .skill-img {
+  transition-delay: 1.25s;
+}
+.my-skill10 .skill-name {
+  transition-delay: 1.75s;
+}
+.my-skill10 .hidden-img {
+  transform: translate(62.5vw, -6.75vh) scale(0);
 }/*# sourceMappingURL=slideSkills.css.map */
