@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, useMemo, Fragment } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 import SlideHome from './comp/SlideHome'
@@ -15,7 +15,8 @@ function App() {
 
   const size = useWindowSize()
 
-  const mySlideContent = [
+  const mySlideContent = useMemo(() => {
+    return [
     {
       name: 'accueil',
       slideDisplayed: <SlideHome />,
@@ -36,8 +37,8 @@ function App() {
       slideDisplayed: <SlideContact />,
       id: uuidv4()
     }
-
   ]
+}, [])
 
   useEffect(() => {
     console.log(`
@@ -54,7 +55,7 @@ function App() {
 
   useEffect(() => {
     // effect triggered when changing slide displayed
-
+console.log('chgt de slide')
   }, [mySlide])
 
   function slideAnim(direction) {

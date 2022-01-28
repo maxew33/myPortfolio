@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
@@ -15,8 +15,8 @@ export default function SlideSkills() {
 
     const handleLaptopClick = () => {
         console.log('clic')
-        if(!skillsDisplayed){
-            Array.from(document.querySelectorAll('.skill-img')).forEach(skill => skill.classList.remove('hidden-img'))            
+        if (!skillsDisplayed) {
+            Array.from(document.querySelectorAll('.skill-img')).forEach(skill => skill.classList.remove('hidden-img'))
             Array.from(document.querySelectorAll('.skill-name')).forEach(skill => skill.classList.remove('hidden-name'))
             setSkillsDisplayed(true)
         }
@@ -48,6 +48,18 @@ export default function SlideSkills() {
 
                 <div className="hit-zone"
                     onClick={handleLaptopClick}>
+
+                    {!skillsDisplayed &&
+                        <div className="remind-cta">
+                            <div className="circle">
+                            </div>
+                            <div className="circle">
+                            </div>
+                            <div className="circle">
+                            </div>
+                        </div>
+                    }
+                    
                 </div>
 
                 <div className="skills-container">

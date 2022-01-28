@@ -10,7 +10,8 @@
   --fontfam3: "Ephesis", cursive;
   --fontcol1: hsl(0deg, 0%, 85%);
   --fontcol2: hsl(194deg, 85%, 62%);
-  --ctacol: hsl(300deg, 100% , 45%);
+  --ctacol: orangered;
+  --chest-color: #4896EF;
 }
 
 /* hsl(258, 86%, 34%) 

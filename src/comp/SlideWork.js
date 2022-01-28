@@ -15,6 +15,7 @@ export default function SlideWork(props) {
 
     // useEffect watch the face displayed, when this face is displayed, play the video, stop it when it is not
     useEffect(() => {
+        console.log('caca')
         if (props.slide === 1) {
             playVideo()
         }
@@ -31,6 +32,10 @@ export default function SlideWork(props) {
     //         console.log('volume change')
     //     }
     // }, [volumeLvl])
+
+    useEffect(() => {
+        console.log('montage du work slide')
+    },[])
 
     const handlePlay = () => {
         videoIsPlaying ? document.querySelector('.my-video').pause() : document.querySelector('.my-video').play()

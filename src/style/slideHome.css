@@ -150,7 +150,125 @@
   justify-content: center;
   border: none;
   border-radius: 0 0 25px 25px;
+  z-index: 10;
+}
+
+.chest-container {
+  position: relative;
+  height: 15vw;
+  width: 15vw;
+  cursor: pointer;
+  grid-row: 1/3;
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: flex-end;
+}
+.chest-container .chest-top {
+  position: relative;
+  height: 7vw;
+  width: 15vw;
+}
+.chest-container .chest-top .chest-top-front {
+  position: absolute;
+  bottom: 0;
+  height: 6.5vw;
+  width: 15vw;
+  background: var(--chest-color);
+  border-radius: 999px 999px 0 0;
+  transition: transform 0.25s ease-in-out;
+  transform-origin: bottom left;
+}
+.chest-container .open {
+  transform: rotate(-90deg);
+}
+.chest-container .wide-open {
+  transform: rotate(-120deg);
+}
+.chest-container .chest-bottom {
+  height: 6.5vw;
+  width: 15vw;
+  background: var(--chest-color);
+  border-radius: 0% 0% 2vw 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remind-cta {
+  position: relative;
+  height: 5vw;
+  width: 5vw;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.remind-cta .circle {
+  position: absolute;
+  border-radius: 100%;
+  height: inherit;
+  width: inherit;
+  border: 8px solid white;
+  opacity: 0;
+  -webkit-animation: 3s linear infinite remind-cta;
+          animation: 3s linear infinite remind-cta;
+}
+.remind-cta .circle:nth-child(0) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.remind-cta .circle:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+.remind-cta .circle:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.remind-cta .circle:nth-child(3) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+@-webkit-keyframes remind-cta {
+  0%, 50% {
+    opacity: 0;
+    transform: scale(1);
+    background: transparent;
+  }
+  70% {
+    transform: scale(0.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.2);
+    background: white;
+    opacity: 0;
+  }
+}
+
+@keyframes remind-cta {
+  0%, 50% {
+    opacity: 0;
+    transform: scale(1);
+    background: transparent;
+  }
+  70% {
+    transform: scale(0.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.2);
+    background: white;
+    opacity: 0;
+  }
+}
+.react-draggable-dragged {
   cursor: -webkit-grab;
   cursor: grab;
-  z-index: 10;
+}
+
+.react-draggable-dragging {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }/*# sourceMappingURL=slideHome.css.map */

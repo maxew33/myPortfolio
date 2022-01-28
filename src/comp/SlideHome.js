@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
+import dataHome from './dataHome.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Draggable from 'react-draggable'
 
 import { faRedo, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faHandPointUp } from '@fortawesome/free-regular-svg-icons'
 
 import body from '../assets/body.png'
 import headCartoon from '../assets/head-cartoon.png'
@@ -22,6 +24,63 @@ export default function SlideHome() {
     })
 
     const [reloadButtonRotation, setReloadButtonRotation] = useState(360)
+
+    const [remindCta, setRemindCta] = useState(true)
+
+    useEffect(() => {
+
+        const chest = document.querySelector('.chest-container'),
+            chestTop = document.querySelector('.chest-top-front'),
+            chestBottom = document.querySelector('.chest-bottom')
+        // accessoryContainer = [...document.querySelectorAll('.accessory-container')],
+        // accessory = [...document.querySelectorAll('.avatar-accessory')]
+
+        let chestOpen = false
+        // let accessoryThrown = 0
+
+
+        //chest opening / closing and stuff thrown
+
+
+        // accessoryContainer.forEach(container => container.classList.add('accessory-hidden'))
+
+        chest.addEventListener('click', () => {
+
+            setRemindCta(false)
+
+            if (!chestOpen) {
+                chestTop.classList.toggle('open')
+                chestOpen = true
+
+                setTimeout(() => {
+                    chestTop.classList.toggle('open')
+                    chestOpen = false
+                }, 750)
+            }
+
+            // if (!chestOpen && accessoryThrown < accessory.length) {
+            //     if (accessoryThrown < (accessory.length - 1)) {
+            //         chestTop.classList.toggle('open')
+            //     }
+            //     else {
+            //         chestTop.classList.add('wide-open')
+            //         chestBottom.innerText = ''
+            //     }
+            //     accessory[accessoryThrown].classList.add('accessory-ejection')
+            //     accessoryContainer[accessoryThrown].classList.remove('accessory-hidden')
+
+            //     accessoryThrown++
+            //     chestOpen = true
+
+            //     accessoryThrown < accessory.length && (setTimeout(() => {
+            //         chestTop.classList.toggle('open')
+            //         chestOpen = false
+            //     }, 750))
+            // }
+
+        })
+
+    }, [])
 
     const myStatus = [
         'vous dit bonjour!',
@@ -42,8 +101,6 @@ export default function SlideHome() {
 
     const handleReloadStatus = () => {
 
-        console.log('clic')
-
         if (!myStatusIdx.preventSpam) {
             const statusHeight = document.querySelector('.status').getBoundingClientRect().height
             document.querySelector('.status').style.height = 0
@@ -60,7 +117,6 @@ export default function SlideHome() {
                 myNewStatusIdx >= myStatus.length && (myNewStatusIdx = 0)
                 setMyStatusIdx({ index: myNewStatusIdx, preventSpam: true })
                 document.querySelector('.status').style.height = statusHeight + 'px'
-                console.log(document.querySelector('.status').style.height = statusHeight + 'px')
 
                 setTimeout(() => {
                     setMyStatusIdx({ index: myNewStatusIdx, preventSpam: false })
@@ -74,8 +130,6 @@ export default function SlideHome() {
 
         let clipValue = (21 * ui.y / heightRef)
         clipValue > 20 && (clipValue = 20)
-
-        console.log(clipValue)
 
         document.querySelector('.my-avatar').style.setProperty('--avatar-clip-value', clipValue + '%')
     }
@@ -168,6 +222,50 @@ export default function SlideHome() {
                     </Draggable>
                 </div>
             </div>
+
+            {/* chest and draggables objects */}
+
+            <div className="chest-container">
+                <div className="chest-top">
+                    <div className="chest-top-front">
+                    </div>
+                </div>
+                <div className="chest-bottom">
+                    {remindCta &&
+                        <div className="remind-cta">
+                            <div className="circle">
+                            </div>
+                            <div className="circle">
+                            </div>
+                            <div className="circle">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            {/* {chestObjects.map((item, index) => {
+                    return (
+                        <Draggable
+                            bounds="parent"
+                            key={chestObjects[index].id}
+                            onStart={handleStart}
+                            onStop={handleStop}>
+                            <div className={'accessory-container accessory-container' + (index + 1)}
+                                data-id={index}
+                                style={{
+                                    width: chestObjects[index].width,
+                                    zIndex: chestObjects[index].zIndex
+                                }}>
+                                <img
+                                    className="avatar-accessory"
+                                    src={chestObjects[index].src}
+                                    alt={chestObjects[index].alt} />
+
+                            </div>
+                        </Draggable>
+                    )
+                })} */}
 
         </div>
     )
