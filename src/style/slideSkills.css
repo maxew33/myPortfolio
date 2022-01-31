@@ -84,6 +84,7 @@
 .avatar-at-work {
   grid-area: avatar;
   max-height: 67.5vh;
+  pointer-events: none;
 }
 
 .hit-zone {

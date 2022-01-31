@@ -22,7 +22,6 @@ export default function SlideSkills() {
         }
     }
 
-
     return (
         <div className='slide-wrapper'>
             <div className="skills-wrapper">
@@ -31,7 +30,7 @@ export default function SlideSkills() {
                     <p>
                         Formé aux principaux langages de programmation , j’aime créer des interfaces efficaces, originales et interactives.
                     </p>
-                    <p>Pour en savoir plus, je vous invite à cliquer sur mon ordinateur puis à consulter mon CV :
+                    <p>Pour en savoir plus, je vous invite {!skillsDisplayed && 'à cliquer sur mon ordinateur puis'} à consulter mon CV :
                         &nbsp;
                         <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
                             className="resume-download"

@@ -1,16 +1,15 @@
 import { v4 as uuidv4 } from 'uuid'
 
-
-import html5 from '../assets/html.png'
-import css3 from '../assets/css.png'
+import html5 from '../assets/html-5.svg'
+import css3 from '../assets/css3.svg'
 import sass from '../assets/Sass.svg'
-import javascript from '../assets/js.png'
-import react from '../assets/react.png'
-import github from '../assets/github.png'
-import firebase from '../assets/firebase.png'
-import email from '../assets/email.png'
-import anglais from '../assets/USK.png'
-import francais from '../assets/pen.png'
+import javascript from '../assets/javascript.svg'
+import react from '../assets/react.svg'
+import github from '../assets/github.svg'
+import firebase from '../assets/firebase.svg'
+import email from '../assets/mail.svg'
+import anglais from '../assets/US-UK_Flag.svg'
+import francais from '../assets/abc.svg'
 
 const dataSkills = [
     {

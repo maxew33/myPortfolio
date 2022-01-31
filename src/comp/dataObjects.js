@@ -12,11 +12,11 @@ import mustache from '../assets/mustache.svg'
 import mustache2 from '../assets/mustache2.svg'
 import tie from '../assets/tie.svg'
 
-const dataHome = [
+const dataObjects = [
     {
         src: mustache,
         alt: "mustache",
-        width: 'calc(35 * var(--avatar-length-unit))',
+        width: 'calc(45 * var(--avatar-length-unit))',
         zIndex: 10,
         id: uuidv4()
     },
@@ -92,4 +92,4 @@ const dataHome = [
     }
 ]
 
-export default dataHome
+export default dataObjects

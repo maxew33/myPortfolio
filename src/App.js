@@ -42,14 +42,13 @@ function App() {
 
   useEffect(() => {
     console.log(`
- ____              _                  
-|  _ \\            (_)                 
-| |_) | ___  _ __  _  ___  _   _ _ __ 
-|  _ < / _ \\| '_ \\| |/ _ \\| | | | '__|
-| |_) | (_) | | | | | (_) | |_| | |   
-|____/ \\___/|_| |_| |\\___/ \\__,_|_|
-                 _/ |                 
-                |__/               `)
+ _                       
+|_)  _   _  o  _       _ 
+|_) (_) | | | (_) |_| |  
+           _|            
+      \\_________/
+      
+`)
 
   }, [])
 
@@ -103,8 +102,9 @@ console.log('chgt de slide')
   return (
     <div className="App">
 
+{/* arrow navigation */}
       {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-        &#8592;
+        <div></div>
       </div>
       }
 
@@ -112,17 +112,18 @@ console.log('chgt de slide')
         &#8594;
       </div>
 }
+
+
       <div className='banner'>
         <div className="icon">
-
           &#123;m&#125;
-
         </div>
         <ul className='navbar'>
           {mySlideContent.map((item, index) => {
             return (
               <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
                 {item.name}
+                <div className="underline"></div>
               </li>
             )
           })}
@@ -137,7 +138,7 @@ console.log('chgt de slide')
         {mySlideContent.map((item) => {
           return (
             <Fragment key={item.id}>
-              {item.slideDisplayed}
+              {item.name === 'portfolio' ? <SlideWork slide={mySlide}/> : item.slideDisplayed}
             </Fragment>
           )
         })}

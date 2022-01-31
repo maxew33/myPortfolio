@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import dataHome from './dataHome.js'
+import dataObjects from './dataObjects.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Draggable from 'react-draggable'
@@ -12,7 +12,6 @@ import { faHandPointUp } from '@fortawesome/free-regular-svg-icons'
 import body from '../assets/body.png'
 import headCartoon from '../assets/head-cartoon.png'
 import headReal from '../assets/head-real.webp'
-
 
 import '../style/slideHome.css'
 
@@ -27,56 +26,91 @@ export default function SlideHome() {
 
     const [remindCta, setRemindCta] = useState(true)
 
+    const [drag, setDrag] = useState(false)
+
+    const [chestObjects, setChestObjects] = useState(dataObjects)
+
+    const handleStart = e => {
+
+        // dispatch({ type: 'DRAG_START' })
+
+        setDrag(true)
+
+        console.log(drag)
+
+        /* when I take an accessory, set its z index to 20 */
+
+        const myId = parseInt(e.target.dataset.id)
+
+        const newArr = [...chestObjects]
+
+        for (let i = 0; i < newArr.length; i++) {
+            i !== myId ? (newArr[i].zIndex > e.target.style.zIndex && newArr[i].zIndex--) : newArr[i].zIndex = 20
+
+        }
+
+        setChestObjects(newArr)
+    }
+
+    const handleStop = () => {
+        setTimeout(() => setDrag(false), 50)
+            // dispatch({ type: 'DRAG_STOP' }), 50)
+
+        console.log(drag)
+    }
+
     useEffect(() => {
+
+        console.log(dataObjects)
 
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
-            chestBottom = document.querySelector('.chest-bottom')
-        // accessoryContainer = [...document.querySelectorAll('.accessory-container')],
-        // accessory = [...document.querySelectorAll('.avatar-accessory')]
+            chestBottom = document.querySelector('.chest-bottom'),
+        accessoryContainer = [...document.querySelectorAll('.accessory-container')],
+            accessory = [...document.querySelectorAll('.avatar-accessory')]
 
         let chestOpen = false
-        // let accessoryThrown = 0
+        let accessoryThrown = 0
 
 
         //chest opening / closing and stuff thrown
 
 
-        // accessoryContainer.forEach(container => container.classList.add('accessory-hidden'))
+        accessoryContainer.forEach(container => container.classList.add('accessory-hidden'))
 
         chest.addEventListener('click', () => {
 
             setRemindCta(false)
 
-            if (!chestOpen) {
-                chestTop.classList.toggle('open')
-                chestOpen = true
-
-                setTimeout(() => {
-                    chestTop.classList.toggle('open')
-                    chestOpen = false
-                }, 750)
-            }
-
-            // if (!chestOpen && accessoryThrown < accessory.length) {
-            //     if (accessoryThrown < (accessory.length - 1)) {
-            //         chestTop.classList.toggle('open')
-            //     }
-            //     else {
-            //         chestTop.classList.add('wide-open')
-            //         chestBottom.innerText = ''
-            //     }
-            //     accessory[accessoryThrown].classList.add('accessory-ejection')
-            //     accessoryContainer[accessoryThrown].classList.remove('accessory-hidden')
-
-            //     accessoryThrown++
+            // if (!chestOpen) {
+            //     chestTop.classList.toggle('open')
             //     chestOpen = true
 
-            //     accessoryThrown < accessory.length && (setTimeout(() => {
+            //     setTimeout(() => {
             //         chestTop.classList.toggle('open')
             //         chestOpen = false
-            //     }, 750))
+            //     }, 750)
             // }
+
+            if (!chestOpen && accessoryThrown < accessory.length) {
+                if (accessoryThrown < (accessory.length - 1)) {
+                    chestTop.classList.toggle('open')
+                }
+                else {
+                    chestTop.classList.add('wide-open')
+                    chestBottom.innerText = ''
+                }
+                accessory[accessoryThrown].classList.add('accessory-ejection')
+                accessoryContainer[accessoryThrown].classList.remove('accessory-hidden')
+
+                accessoryThrown++
+                chestOpen = true
+
+                accessoryThrown < accessory.length && (setTimeout(() => {
+                    chestTop.classList.toggle('open')
+                    chestOpen = false
+                }, 750))
+            }
 
         })
 
@@ -244,28 +278,28 @@ export default function SlideHome() {
                 </div>
             </div>
 
-            {/* {chestObjects.map((item, index) => {
-                    return (
-                        <Draggable
-                            bounds="parent"
-                            key={chestObjects[index].id}
-                            onStart={handleStart}
-                            onStop={handleStop}>
-                            <div className={'accessory-container accessory-container' + (index + 1)}
-                                data-id={index}
-                                style={{
-                                    width: chestObjects[index].width,
-                                    zIndex: chestObjects[index].zIndex
-                                }}>
-                                <img
-                                    className="avatar-accessory"
-                                    src={chestObjects[index].src}
-                                    alt={chestObjects[index].alt} />
+            {dataObjects.map((item, index) => {
+                return (
+                    <Draggable
+                        bounds="parent"
+                        key={dataObjects[index].id}
+                        onStart={handleStart}
+                        onStop={handleStop}>
+                        <div className={'accessory-container accessory-container' + (index + 1)}
+                            data-id={index}
+                            style={{
+                                width: dataObjects[index].width,
+                                zIndex: dataObjects[index].zIndex
+                            }}>
+                            <img
+                                className="avatar-accessory"
+                                src={dataObjects[index].src}
+                                alt={dataObjects[index].alt} />
 
-                            </div>
-                        </Draggable>
-                    )
-                })} */}
+                        </div>
+                    </Draggable>
+                )
+            })}
 
         </div>
     )

@@ -11,34 +11,43 @@ export default function SlideWork(props) {
 
     const [channel, setChannel] = useState(0)
     const [videoIsPlaying, setVideoIsPlaying] = useState(false)
+    const [videoOnPause, setVideoOnPause] = useState(false)
     const [volumeLvl, setVolumeLvl] = useState(0)
 
     // useEffect watch the face displayed, when this face is displayed, play the video, stop it when it is not
     useEffect(() => {
-        console.log('caca')
+        
+        document.querySelector('.my-video').volume = volumeLvl
+
         if (props.slide === 1) {
-            playVideo()
+            videoOnPause ? document.querySelector('.my-video').play() : playVideo()
+            setVideoOnPause(false)
+            setVideoIsPlaying(true)
         }
         else {
             document.querySelector('.my-video').pause()
             setVideoIsPlaying(false)
+            setVideoOnPause(true)
         }
     },
         [props.slide, channel])
 
-    // useEffect(() => {
-    //     if (props.slide === 1) {
-    //         document.querySelector('.my-video').volume = volumeLvl
-    //         console.log('volume change')
-    //     }
-    // }, [volumeLvl])
+    useEffect(() => {
+        if (props.slide === 1) {
+            document.querySelector('.my-video').volume = volumeLvl
+            console.log('volume change')
+        }
+    }, [volumeLvl])
 
     useEffect(() => {
         console.log('montage du work slide')
+
     },[])
 
     const handlePlay = () => {
+        console.log('videoOnPause', videoOnPause)
         videoIsPlaying ? document.querySelector('.my-video').pause() : document.querySelector('.my-video').play()
+        videoIsPlaying && setVideoOnPause(true)
         setVideoIsPlaying(!videoIsPlaying)
     }
 
@@ -79,10 +88,6 @@ export default function SlideWork(props) {
         console.log(newChannel)
         setChannel(newChannel)
         console.log('channel: ', channel)
-    }
-
-    const handleWheel = () => {
-        console.log('toto')
     }
 
     const playVideo = () => {
