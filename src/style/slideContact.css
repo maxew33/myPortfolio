@@ -31,6 +31,7 @@
 
 .animation-container {
   display: none;
+  z-index: 20;
 }
 
 /* ------------- POSTCARD ------------- */
@@ -161,16 +162,13 @@ textarea {
 }
 
 /* ------------- ENVELOPPE ------------- */
-.enveloppe-container {
-  transform: translateY(44vh);
-}
-
 .enveloppe {
   position: absolute;
   left: calc(50% - 50vmin);
-  top: calc(50% - 37.5vmin);
-  width: 100vmin;
-  height: 75vmin;
+  bottom: calc(50% - 37.5vmin);
+  width: 100vh;
+  height: 75vh;
+  transform: translate(-50%, -50%);
   background: transparent;
   -webkit-animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
   animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
@@ -241,8 +239,8 @@ textarea {
 }
 .enveloppe::after {
   content: "";
-  width: 100vmin;
-  height: 80vmin;
+  width: 100vh;
+  height: 75vh;
   position: absolute;
   background: white;
   -webkit-clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);

@@ -16,7 +16,7 @@ export default function SlideWork(props) {
 
     // useEffect watch the face displayed, when this face is displayed, play the video, stop it when it is not
     useEffect(() => {
-        
+
         document.querySelector('.my-video').volume = volumeLvl
 
         if (props.slide === 1) {
@@ -42,7 +42,13 @@ export default function SlideWork(props) {
     useEffect(() => {
         console.log('montage du work slide')
 
-    },[])
+    }, [])
+
+
+    const handleChooseVideo = (id) => {
+        const newChannel = id
+        setChannel(newChannel)
+    }
 
     const handlePlay = () => {
         console.log('videoOnPause', videoOnPause)
@@ -158,49 +164,61 @@ export default function SlideWork(props) {
                             <div className="video-thumb" key={index}>
                                 <div className="video-thumb-rank">
                                     {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
+                                    <img className="video-thumb-img"
+                                        src={item.thumb}
+                                        onClick={() => handleChooseVideo(index)} />
                                 </div>
-                                <div className="video-thumb-img">
-                                    image
-                                </div>
+
                                 <div className="video-thumb-name">
                                     {item.name}
                                 </div>
+
                             </div>
                         )
                     })}
                 </div>
 
                 <div className="video-infos-container">
-                    {channel + 1} / {dataVideos.length} - {dataVideos[channel].name}
-                    <br />
-                    {dataVideos[channel].prez}
-                    <br />
-                    {dataVideos[channel].txt}
-                    <br />
-                    {dataVideos[channel].youtubeLink &&
-                        <a href={dataVideos[channel].youtubeLink}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="link to the youtube video">
-                            <FontAwesomeIcon icon={faYoutube} />
-                        </a>
-                    }
-                    {dataVideos[channel].gitHubLink &&
-                        <a href={dataVideos[channel].gitHubLink}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="link to the github page">
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
-                    }
-                    {dataVideos[channel].codePenLink &&
-                        <a href={dataVideos[channel].codePenLink}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="link to the codepen page">
-                            <FontAwesomeIcon icon={faCodepen} />
-                        </a>
-                    }
+
+                    <div className="video-name">
+                        {channel + 1} / {dataVideos.length} - {dataVideos[channel].name}
+                    </div>
+
+                    <div className="video-prez">
+                        {dataVideos[channel].prez}
+                    </div>
+
+                    <div className="video-descr">
+                        {dataVideos[channel].txt}
+                    </div>
+
+                    <div className="video-links">
+
+                        {dataVideos[channel].youtubeLink &&
+                            <a href={dataVideos[channel].youtubeLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the youtube video">
+                                <FontAwesomeIcon icon={faYoutube} />
+                            </a>
+                        }
+                        {dataVideos[channel].gitHubLink &&
+                            <a href={dataVideos[channel].gitHubLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the github page">
+                                <FontAwesomeIcon icon={faGithub} />
+                            </a>
+                        }
+                        {dataVideos[channel].codePenLink &&
+                            <a href={dataVideos[channel].codePenLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the codepen page">
+                                <FontAwesomeIcon icon={faCodepen} />
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
 

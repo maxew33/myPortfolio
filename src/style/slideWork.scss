@@ -62,25 +62,34 @@
     grid-area: thumbnail;
     width: calc(100% - 6rem);
     height: calc(100% - 4rem);
-    background-color: olive;
+    background: hsl(180deg, 100%, 80%, 0.15);
     margin: 2rem 4rem 2rem 2rem;
+    border-radius: 0.5rem;
     z-index: 10;
     overflow-y: scroll;
 
     .video-thumb {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        height: 15%;
+        margin: 5% 0;
+        padding: 2%;
+        // border: 2px solid white;
 
         .video-thumb-rank {
-            width: 10%;
+            width: 90%;
             padding-left: 1%;
-        }
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
 
-        .video-thumb-img {
-            width: 50%;
-            height: 50%;
-            border: 2px solid green;
+            .video-thumb-img {
+                width: 65%;
+                height: 65%;
+                object-fit: contain;
+                cursor: pointer;
+                border-radius: 0.2rem;
+            }
         }
     }
 }
@@ -89,6 +98,44 @@
     grid-area: infos;
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
+    border-radius: 0.5rem;
     margin: 2rem 0 2rem 4rem;
-    background-color: olive;
+    background: hsl(180deg, 100%, 80%, 0.15);
+    font-family: var(--fontfam2);
+    line-height: 1.25;
+    font-size: 1.25rem;
+    z-index: 10;
+
+    > div {
+        margin: 1rem 1rem -0.5rem 1rem;
+    }
+
+    .video-name {
+        font-family: var(--fontfam1);
+        margin-left: 2rem;
+    }
+
+    .video-descr {
+        font-size: 1rem;
+    }
+
+    .video-links {
+        a {
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:focus,
+        a:hover,
+        a:active {
+            color: var(--fontcol2);
+        }
+
+        a:hover {
+            color: var(--ctacol);
+        }
+    }
 }
