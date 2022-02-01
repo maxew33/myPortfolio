@@ -97,8 +97,11 @@ export default function SlideHome() {
                     chestTop.classList.toggle('open')
                 }
                 else {
-                    chestTop.classList.add('wide-open')
-                    chestBottom.innerText = ''
+                    chestTop.classList.toggle('open')
+                    setTimeout(() => {
+                        chestTop.classList.toggle('open')
+                        chest.classList.add('chest-closed')
+                    }, 750)
                 }
                 accessory[accessoryThrown].classList.add('accessory-ejection')
                 accessoryContainer[accessoryThrown].classList.remove('accessory-hidden')

@@ -35,15 +35,8 @@ export default function SlideWork(props) {
     useEffect(() => {
         if (props.slide === 1) {
             document.querySelector('.my-video').volume = volumeLvl
-            console.log('volume change')
         }
     }, [volumeLvl])
-
-    useEffect(() => {
-        console.log('montage du work slide')
-
-    }, [])
-
 
     const handleChooseVideo = (id) => {
         const newChannel = id
@@ -51,22 +44,17 @@ export default function SlideWork(props) {
     }
 
     const handlePlay = () => {
-        console.log('videoOnPause', videoOnPause)
         videoIsPlaying ? document.querySelector('.my-video').pause() : document.querySelector('.my-video').play()
         videoIsPlaying && setVideoOnPause(true)
         setVideoIsPlaying(!videoIsPlaying)
     }
 
     const handleNav = (dir) => {
-        console.log('nav', dir)
-        console.log('ended')
         let newChannel = channel
         newChannel += dir
         newChannel === dataVideos.length && (newChannel = 0)
         newChannel < 0 && (newChannel = dataVideos.length - 1)
-        console.log(newChannel)
         setChannel(newChannel)
-        console.log('channel: ', channel)
     }
 
     const handleStop = () => {
@@ -76,8 +64,6 @@ export default function SlideWork(props) {
     }
 
     const handleVolume = (volume) => {
-        console.log('volume', volume)
-        console.log(volumeLvl)
         let newVolume = volumeLvl
         volume === 0 ? newVolume = 0 : newVolume += volume
         newVolume < 0 && (newVolume = 0)
@@ -87,25 +73,22 @@ export default function SlideWork(props) {
     }
 
     const handleEnd = () => {
-        console.log('ended')
         let newChannel = channel
         newChannel++
         newChannel === dataVideos.length && (newChannel = 0)
-        console.log(newChannel)
         setChannel(newChannel)
-        console.log('channel: ', channel)
     }
 
     const playVideo = () => {
         const myVideo = document.querySelector('.my-video')
-        console.log('play video channel: ', channel)
+
         myVideo.src = dataVideos[channel].src
         myVideo.play().then(() => {
-            setVideoIsPlaying(true)
-            console.log("Yay ! La vidéo est lancée !");
+            setVideoIsPlaying(true);
         }).catch((error) => {
-            console.error('pb avec la video:', error)
+            return(console.error('pb avec la video:', error))
         })
+        
         myVideo.volume = volumeLvl
     }
 
@@ -164,11 +147,10 @@ export default function SlideWork(props) {
                             <div className="video-thumb" key={index}>
                                 <div className="video-thumb-rank">
                                     {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
-                                    <img className="video-thumb-img"
-                                        src={item.thumb}
-                                        onClick={() => handleChooseVideo(index)} />
                                 </div>
-
+                                <img className="video-thumb-img"
+                                    src={item.thumb}
+                                    onClick={() => handleChooseVideo(index)} />
                                 <div className="video-thumb-name">
                                     {item.name}
                                 </div>
@@ -181,19 +163,9 @@ export default function SlideWork(props) {
                 <div className="video-infos-container">
 
                     <div className="video-name">
-                        {channel + 1} / {dataVideos.length} - {dataVideos[channel].name}
-                    </div>
-
-                    <div className="video-prez">
-                        {dataVideos[channel].prez}
-                    </div>
-
-                    <div className="video-descr">
-                        {dataVideos[channel].txt}
-                    </div>
-
-                    <div className="video-links">
-
+                        {channel + 1} / {dataVideos.length} - {dataVideos[channel].name} 
+                        <div className="video-links">
+                             &nbsp;
                         {dataVideos[channel].youtubeLink &&
                             <a href={dataVideos[channel].youtubeLink}
                                 target="_blank"
@@ -219,6 +191,17 @@ export default function SlideWork(props) {
                             </a>
                         }
                     </div>
+                    </div>
+
+                    <div className="video-prez">
+                        {dataVideos[channel].prez}
+                    </div>
+
+                    <div className="video-descr">
+                        {dataVideos[channel].txt}
+                    </div>
+
+                    
                 </div>
             </div>
 

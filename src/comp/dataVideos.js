@@ -13,6 +13,9 @@ import ticTacGhost from '../assets/tic-tac-ghost.png'
 import it from '../assets/it.png'
 import xFiles from '../assets/x-files.png'
 import restaurant from '../assets/restaurant.png'
+import newsletter from '../assets/newsletter.png'
+import cocktail from '../assets/cocktail.png'
+import landingPage from '../assets/landing-page.png'
 
 const dataTvShow = [
     {
@@ -26,6 +29,42 @@ const dataTvShow = [
         youtubeLink: false,
         gitHubLink: false,
         codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        name: 'Vous avez un message.',
+        src: process.env.PUBLIC_URL + ' /video/newsletter.mp4',
+        sound: false,
+        prez: 'Newsletter en HTML',
+        txt: 'Cette newsletter a été codée en prenant en compte toutes les contraintes liées au mailing (imbrication de tableaux, css inline).',
+        thumb: newsletter,
+        youtubeLink: false,
+        gitHubLink: 'https://github.com/maxew33/newsletter',
+        codePenLink: 'https://codepen.io/maxew33/full/bGYERvz'
+    },
+    {
+        id: uuidv4(),
+        name: 'Cocktail',
+        src: process.env.PUBLIC_URL + ' /video/cocktail.mp4',
+        sound: false,
+        prez: '627 recettes de cocktails',
+        txt: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
+        thumb: cocktail,
+        youtubeLink: false,
+        gitHubLink: false,
+        codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
+    },
+    {
+        id: uuidv4(),
+        name: 'landing page',
+        src: process.env.PUBLIC_URL + ' /video/landing-page.mp4',
+        sound: false,
+        prez: 'Landing page d\'une agence de voyage',
+        txt: 'Le but est de créer une page qui présente efficacement et élégamment le service proposé. Il y a également un effet de transition entre le light et le dark mode.(Réalisé dans le cadre d\'un challenge discord).',
+        thumb: landingPage,
+        youtubeLink: false,
+        gitHubLink: false,
+        codePenLink: 'https://codepen.io/maxew33/full/NWgvVVa'
     },
     {
         id: uuidv4(),

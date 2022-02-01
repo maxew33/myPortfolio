@@ -135,16 +135,14 @@ font-family: 'Ephesis', cursive;*/
     }
 
     &:hover > div{
-        
-        transform: rotate(-30deg);
         &::after{
-            transform: rotate(60deg);
+            transform: scaleX(.25) rotate(15deg);
             background: var(--ctacol);
         } 
-        // &::before{
-        //     transform: rotate(-30deg);
-        //     background: var(--ctacol);
-        // }
+        &::before{
+            transform: scaleX(.25) rotate(-15deg);
+            background: var(--ctacol);
+        }
     }
 
     &[data-direction="left"] {
@@ -153,7 +151,7 @@ font-family: 'Ephesis', cursive;*/
     }
 
     &[data-direction="right"] {
-        --arrow-transform-origin: left;
+        --arrow-transform-origin: right;
         right: 12px;
     }
 }

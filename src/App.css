@@ -116,11 +116,12 @@ font-family: 'Ephesis', cursive;*/
   transition: 0.25s transform ease-in-out, 0.5s background ease-in-out;
   transform-origin: var(--arrow-transform-origin);
 }
-.arrow:hover > div {
-  transform: rotate(-30deg);
-}
 .arrow:hover > div::after {
-  transform: rotate(60deg);
+  transform: scaleX(0.25) rotate(15deg);
+  background: var(--ctacol);
+}
+.arrow:hover > div::before {
+  transform: scaleX(0.25) rotate(-15deg);
   background: var(--ctacol);
 }
 .arrow[data-direction=left] {
@@ -128,7 +129,7 @@ font-family: 'Ephesis', cursive;*/
   left: 12px;
 }
 .arrow[data-direction=right] {
-  --arrow-transform-origin: left;
+  --arrow-transform-origin: right;
   right: 12px;
 }
 

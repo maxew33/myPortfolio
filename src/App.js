@@ -24,7 +24,7 @@ function App() {
     },
     {
       name: 'portfolio',
-      slideDisplayed: <SlideWork slide={mySlide}/>,
+      slideDisplayed: <SlideWork/>,
       id: uuidv4()
     },
     {
@@ -109,7 +109,7 @@ console.log('chgt de slide')
       }
 
 {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-        &#8594;
+        <div></div>
       </div>
 }
 
@@ -138,7 +138,7 @@ console.log('chgt de slide')
         {mySlideContent.map((item) => {
           return (
             <Fragment key={item.id}>
-              {item.name === 'portfolio' ? <SlideWork slide={mySlide}/> : item.slideDisplayed}
+              {item.name === 'portfolio' ? <SlideWork slide={mySlide} size={size}/> : item.slideDisplayed}
             </Fragment>
           )
         })}
