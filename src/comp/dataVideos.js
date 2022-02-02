@@ -51,7 +51,7 @@ const dataTvShow = [
         txt: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
         thumb: cocktail,
         youtubeLink: false,
-        gitHubLink: false,
+        gitHubLink: 'https://github.com/maxew33/cocktail',
         codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
     },
     {
