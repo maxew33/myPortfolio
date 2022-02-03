@@ -99,8 +99,9 @@
 .skills-container {
     grid-area: skills;
     display: grid;
-    margin: 1.5rem;
-    grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+    padding: 1.5rem;
+    margin-left: 15%;
+    grid-template: repeat(5, 1fr) / auto;
 }
 
 .my-skill {

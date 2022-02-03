@@ -45,42 +45,47 @@ font-family: 'Ephesis', cursive;*/
     justify-content: space-around;
     align-items: center;
     background: hsl(0, 0%, 0%, 0.6);
-    background: linear-gradient(hsl(180deg, 100%, 80%, 0.15) 50%, hsl(180deg, 100%, 80%, 0.1) 95%, hsl(180deg, 100%, 80%, 0.25));
+    background: linear-gradient(
+        hsl(180deg, 100%, 80%, 0.15) 50%,
+        hsl(180deg, 100%, 80%, 0.1) 95%,
+        hsl(180deg, 100%, 80%, 0.25)
+    );
     font-size: 3rem;
     z-index: 10;
     font-family: "Ubuntu", sans-serif;
-
-    & > div {
-        width: 25%;
-        display: flex;
-        justify-content: center;
-    }
 }
 
 .navbar {
     display: flex;
     justify-content: space-evenly;
     width: 50%;
-}
 
-.nav-items {
-    position: relative;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color .25s ease-in-out;
-    transform-origin: left;
-    > .underline {
-        width: 100%;
-        height: 2px;
-        border-radius: 99px;
-        background: var(--ctacol);
+    .nav-items {
+        position: relative;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.25s ease-in-out;
         transform-origin: left;
-        transition: 0.25s transform ease-in-out;
-        transform: scale(0);
-        pointer-events: none;
+        > .underline {
+            width: 100%;
+            height: 2px;
+            border-radius: 99px;
+            background: var(--ctacol);
+            transform-origin: left;
+            transition: 0.25s transform ease-in-out;
+            transform: scale(0);
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: white;
+            > .underline {
+                transform: scale(1);
+            }
+        }
     }
 
-    &:hover {
+    .active {
         color: white;
         > .underline {
             transform: scale(1);
@@ -88,12 +93,44 @@ font-family: 'Ephesis', cursive;*/
     }
 }
 
-.active {
-    color: white;
-    > .underline {
-        transform: scale(1);
+.language-toggle{
+
+    width : 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .language-toggle-img{
+        height: 4vh;
+    }
+
+    .language-toggle-selector-container{
+        position: relative;
+        cursor: pointer;
+        width: 3rem;
+        height: 1.5rem;
+        border-radius: 999px;
+        border: 2px solid whitesmoke;
+        margin: 0 1vmin;
+
+        .language-toggle-selector {
+            pointer-events: none;
+            position: absolute;
+            height: 1.5rem;
+            width: 1.5rem;
+            background: whitesmoke;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.25s ease-in-out;
+            border-radius: 999px;
+        }
+
+        .english-selected{
+            transform: translate(100%, -50%);
+        }
     }
 }
+
 
 .arrow {
     position: absolute;
@@ -111,36 +148,35 @@ font-family: 'Ephesis', cursive;*/
     z-index: 10;
     color: var(--ctacol);
 
-    div{
+    div {
         position: relative;
         height: 2.5px;
         width: 40px;
         background: var(--ctacol);
         border-radius: 25px;
         transform-origin: var(--arrow-transform-origin);
-        transition: .25s transform ease-in-out,
-        .5s background ease-in-out;
+        transition: 0.25s transform ease-in-out, 0.5s background ease-in-out;
 
-        &::after, &::before{
-            content:'';
+        &::after,
+        &::before {
+            content: "";
             position: absolute;
             background: var(--ctacol);
             height: 2.5px;
             width: 100%;
             border-radius: 25px;
-            transition: .25s transform ease-in-out,
-            .5s background ease-in-out;
+            transition: 0.25s transform ease-in-out, 0.5s background ease-in-out;
             transform-origin: var(--arrow-transform-origin);
         }
     }
 
-    &:hover > div{
-        &::after{
-            transform: scaleX(.25) rotate(15deg);
+    &:hover > div {
+        &::after {
+            transform: scaleX(0.25) rotate(15deg);
             background: var(--ctacol);
-        } 
-        &::before{
-            transform: scaleX(.25) rotate(-15deg);
+        }
+        &::before {
+            transform: scaleX(0.25) rotate(-15deg);
             background: var(--ctacol);
         }
     }

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { Context } from '../context/languageContext.js'
 
-import dataObjects from './dataObjects.js'
+import dataObjects from '../datas/dataObjects.js'
+import dataLanguage from '../datas/dataLanguage.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Draggable from 'react-draggable'
@@ -29,6 +31,8 @@ export default function SlideHome() {
     const [drag, setDrag] = useState(false)
 
     const [chestObjects, setChestObjects] = useState(dataObjects)
+
+    const {language} = useContext(Context)
 
     const handleStart = e => {
 
@@ -60,6 +64,8 @@ export default function SlideHome() {
     }
 
     useEffect(() => {
+
+        console.log(language)
 
         console.log(dataObjects)
 
@@ -119,22 +125,8 @@ export default function SlideHome() {
 
     }, [])
 
-    const myStatus = [
-        'vous dit bonjour!',
-        'a hâte de vous rencontrer. ',
-        'a codé ce site avec rigueur...',
-        'et avec React.',
-        'sait se former tout seul.',
-        'est aussi un mari...',
-        'et un papa.',
-        'est un grand gaillard de 2m ...',
-        'qui aime le rugby ...',
-        'jouer à Hearthstone ...',
-        'aux jeux de société ...',
-        'mais n\'a pas de chance aux dés.',
-        'fait des blagues à papa  ...',
-        'et n\'a plus rien à dire.'
-    ]
+
+    let myStatus = language === 'FR' ? dataLanguage.home.myStatus.FR : dataLanguage.home.myStatus.EN
 
     const handleReloadStatus = () => {
 

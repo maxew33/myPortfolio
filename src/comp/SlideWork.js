@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import dataVideos from './dataVideos.js'
+import dataVideos from '../datas/dataVideos.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faPlay, faStepForward, faStepBackward, faStop, faPause, faVolumeMute, faVolumeUp, faVolumeDown } from '@fortawesome/free-solid-svg-icons'

@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useMemo, Fragment } from 'react'
+import React, { useState, useEffect, useMemo, Fragment, useContext } from 'react'
+import { Context } from './context/languageContext'
+import ContextProvider from './context/languageContext'
 import { v4 as uuidv4 } from 'uuid'
 
 import SlideHome from './comp/SlideHome'
 import SlideWork from './comp/SlideWork'
 import SlideSkills from './comp/SlideSkills'
 import SlideContact from './comp/SlideContact'
+
+import english from './assets/donut.svg'
+import french from './assets/croissant.svg'
 
 import './app.css';
 
@@ -13,32 +18,34 @@ function App() {
   const [mySlide, setMySlide] = useState(0)
   const [wheel, setWheel] = useState(false)
 
+  const [toggle, setToggle] = useState(true)
+
   const size = useWindowSize()
 
   const mySlideContent = useMemo(() => {
     return [
-    {
-      name: 'accueil',
-      slideDisplayed: <SlideHome />,
-      id: uuidv4()
-    },
-    {
-      name: 'portfolio',
-      slideDisplayed: <SlideWork/>,
-      id: uuidv4()
-    },
-    {
-      name: 'compétences',
-      slideDisplayed: <SlideSkills />,
-      id: uuidv4()
-    },
-    {
-      name: 'contact',
-      slideDisplayed: <SlideContact />,
-      id: uuidv4()
-    }
-  ]
-}, [])
+      {
+        name: 'accueil',
+        slideDisplayed: <SlideHome />,
+        id: uuidv4()
+      },
+      {
+        name: 'portfolio',
+        slideDisplayed: <SlideWork />,
+        id: uuidv4()
+      },
+      {
+        name: 'compétences',
+        slideDisplayed: <SlideSkills />,
+        id: uuidv4()
+      },
+      {
+        name: 'contact',
+        slideDisplayed: <SlideContact />,
+        id: uuidv4()
+      }
+    ]
+  }, [])
 
   useEffect(() => {
     console.log(`
@@ -54,7 +61,7 @@ function App() {
 
   useEffect(() => {
     // effect triggered when changing slide displayed
-console.log('chgt de slide')
+    console.log('chgt de slide')
   }, [mySlide])
 
   function slideAnim(direction) {
@@ -99,53 +106,78 @@ console.log('chgt de slide')
     slideAnim(e.target.dataset.index - mySlide)
   }
 
+  // language toggle
+  const handleClickToggle = (e) => {
+    if (toggle) {
+      document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
+
+      
+
+      setToggle(false)
+
+      setTimeout(() => {
+        setToggle(true)
+      }, 350);
+    }
+  }
+
   return (
-    <div className="App">
+    <ContextProvider>
+      <div className="App">
 
-{/* arrow navigation */}
-      {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-        <div></div>
-      </div>
-      }
-
-{mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-        <div></div>
-      </div>
-}
-
-
-      <div className='banner'>
-        <div className="icon">
-          &#123;m&#125;
+        {/* arrow navigation */}
+        {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
+          <div></div>
         </div>
-        <ul className='navbar'>
-          {mySlideContent.map((item, index) => {
+        }
+
+        {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
+          <div></div>
+        </div>
+        }
+
+        <div className='banner'>
+          <div className="icon">
+            &#123;m&#125;
+          </div>
+          <ul className='navbar'>
+            {mySlideContent.map((item, index) => {
+              return (
+                <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
+                  {item.name}
+                  <div className="underline"></div>
+                </li>
+              )
+            })}
+          </ul>
+          <div className="language-toggle">
+            <img
+              className='language-toggle-img'
+              src={french} />
+            <div className="language-toggle-selector-container"
+              onClick={handleClickToggle}>
+              <div className="language-toggle-selector"></div>
+            </div>
+            <img
+              className='language-toggle-img'
+              src={english} />
+          </div>
+
+        </div>
+
+        <div className="slide-container">
+          {mySlideContent.map((item) => {
             return (
-              <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
-                {item.name}
-                <div className="underline"></div>
-              </li>
+              <Fragment key={item.id}>
+                {item.name === 'portfolio' ? <SlideWork slide={mySlide} size={size} /> : item.slideDisplayed}
+              </Fragment>
             )
           })}
-        </ul>
-        <div className="language-toggle">
-          lang
+          <div className="overlay" onWheel={handleWheel}></div>
         </div>
 
       </div>
-
-      <div className="slide-container">
-        {mySlideContent.map((item) => {
-          return (
-            <Fragment key={item.id}>
-              {item.name === 'portfolio' ? <SlideWork slide={mySlide} size={size}/> : item.slideDisplayed}
-            </Fragment>
-          )
-        })}
-        <div className="overlay" onWheel={handleWheel}></div>
-      </div>
-
-    </div>
+    </ContextProvider>
   )
 }
 

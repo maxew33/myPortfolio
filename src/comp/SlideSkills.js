@@ -5,7 +5,7 @@ import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 
 import atWork from '../assets/avataratwork.png'
 
-import dataSkills from './dataSkills.js'
+import dataSkills from '../datas/dataSkills.js'
 
 import '../style/slideSkills.css'
 
@@ -34,6 +34,7 @@ export default function SlideSkills() {
                         &nbsp;
                         <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
                             className="resume-download"
+                            target="_blank"
                             aria-label="Resume download">
                             <FontAwesomeIcon icon={faFileAlt} />
                         </a>
