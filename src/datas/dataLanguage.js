@@ -25,6 +25,7 @@ const dataLanguage = {
                 'is looking to meet you. ',
                 'has coded this site with rigor...',
                 'and React.',
+                'is a selfmade man.',
                 'is also a husband...',
                 'and a dad.',
                 'is a 6.5ft big boy ...',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, Fragment, useContext } from 'react'
 import { Context } from './context/languageContext'
-import ContextProvider from './context/languageContext'
+
 import { v4 as uuidv4 } from 'uuid'
 
 import SlideHome from './comp/SlideHome'
@@ -12,6 +12,7 @@ import english from './assets/donut.svg'
 import french from './assets/croissant.svg'
 
 import './app.css';
+import ToggleLanguage from './comp/ToggleLanguage'
 
 function App() {
 
@@ -22,25 +23,33 @@ function App() {
 
   const size = useWindowSize()
 
+  const {language} = useContext(Context)
+
+  // console.log('langue', language)
+
   const mySlideContent = useMemo(() => {
     return [
       {
-        name: 'accueil',
+        nameFR: 'accueil',
+        nameEN: 'home',
         slideDisplayed: <SlideHome />,
         id: uuidv4()
       },
       {
-        name: 'portfolio',
+        nameFR: 'portfolio',
+        nameEN: 'portfolio',
         slideDisplayed: <SlideWork />,
         id: uuidv4()
       },
       {
-        name: 'compétences',
+        nameFR: 'compétences',
+        nameEN: 'skills',
         slideDisplayed: <SlideSkills />,
         id: uuidv4()
       },
       {
-        name: 'contact',
+        nameFR: 'contact',
+        nameEN: 'contact',
         slideDisplayed: <SlideContact />,
         id: uuidv4()
       }
@@ -107,50 +116,49 @@ function App() {
   }
 
   // language toggle
-  const handleClickToggle = (e) => {
-    if (toggle) {
-      document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
+  // const handleClickToggle = (e) => {
+  //   if (toggle) {
+  //     document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
 
-      
+  //     setToggle(false)
 
-      setToggle(false)
-
-      setTimeout(() => {
-        setToggle(true)
-      }, 350);
-    }
-  }
+  //     setTimeout(() => {
+  //       setToggle(true)
+  //     }, 350);
+  //   }
+  // }
 
   return (
-    <ContextProvider>
-      <div className="App">
+    <div className="App">
 
-        {/* arrow navigation */}
-        {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-          <div></div>
+      {/* arrow navigation */}
+      {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
+        <div></div>
+      </div>
+      }
+
+      {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
+        <div></div>
+      </div>
+      }
+
+      <div className='banner'>
+        <div className="icon">
+          &#123;m&#125;
         </div>
-        }
+        <ul className='navbar'>
+          {mySlideContent.map((item, index) => {
+            return (
+              <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
+                {language === 'FR' ? item.nameFR : item.nameEN}
+                {item.name}
 
-        {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-          <div></div>
-        </div>
-        }
-
-        <div className='banner'>
-          <div className="icon">
-            &#123;m&#125;
-          </div>
-          <ul className='navbar'>
-            {mySlideContent.map((item, index) => {
-              return (
-                <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
-                  {item.name}
-                  <div className="underline"></div>
-                </li>
-              )
-            })}
-          </ul>
-          <div className="language-toggle">
+                <div className="underline"></div>
+              </li>
+            )
+          })}
+        </ul>
+        {/* <div className="language-toggle">
             <img
               className='language-toggle-img'
               src={french} />
@@ -161,23 +169,24 @@ function App() {
             <img
               className='language-toggle-img'
               src={english} />
-          </div>
+          </div> */}
 
-        </div>
-
-        <div className="slide-container">
-          {mySlideContent.map((item) => {
-            return (
-              <Fragment key={item.id}>
-                {item.name === 'portfolio' ? <SlideWork slide={mySlide} size={size} /> : item.slideDisplayed}
-              </Fragment>
-            )
-          })}
-          <div className="overlay" onWheel={handleWheel}></div>
-        </div>
+        <ToggleLanguage />
 
       </div>
-    </ContextProvider>
+
+      <div className="slide-container">
+        {mySlideContent.map((item) => {
+          return (
+            <Fragment key={item.id}>
+              {item.nameFR === 'portfolio' ? <SlideWork slide={mySlide} size={size} /> : item.slideDisplayed}
+            </Fragment>
+          )
+        })}
+        <div className="overlay" onWheel={handleWheel}></div>
+      </div>
+
+    </div>
   )
 }
 

@@ -14,52 +14,62 @@ import francais from '../assets/abc.svg'
 const dataSkills = [
     {
         id: uuidv4(),
-        name: 'HTML 5',
+        nameFR: 'HTML 5',
+        nameEN: 'HTML 5',
         src: html5
     },
     {
         id: uuidv4(),
-        name: 'CSS 3',
+        nameFR: 'CSS 3',
+        nameEN: 'CSS 3',
         src: css3
     },
     {
         id: uuidv4(),
-        name: 'SASS',
+        nameFR: 'SASS',
+        nameEN: 'SASS',
         src: sass
     },
     {
         id: uuidv4(),
-        name: 'javascript',
+        nameFR: 'javascript',
+        nameEN: 'javascript',
         src: javascript
     },
     {
         id: uuidv4(),
-        name: 'REACT',
+        nameFR: 'REACT',
+        nameEN: 'REACT',
         src: react
     },
     {
         id: uuidv4(),
-        name: 'github',
+        nameFR: 'github',
+        nameEN: 'github',
         src: github
     },
     {
         id: uuidv4(),
-        name: 'firebase',
+        nameFR: 'firebase',
+        nameEN: 'firebase',
         src: firebase
     },
     {
         id: uuidv4(),
-        name: 'emailing',
+        nameFR: 'emailing',
+        nameEN: 'emailing',
         src: email
     },
     {
         id: uuidv4(),
-        name: 'anglais: professionnel',
+        nameFR: 'anglais: professionnel',
+        nameEN: 'English spoken (with a French accent)',
         src: anglais
     },
     {
         id: uuidv4(),
-        name: 'maîtrise de l\'orthographe',
+        nameFR: 'maîtrise de l\'orthographe',
+        nameEN: 'French spelling and grammar skills',
         src: francais
     }
 ]

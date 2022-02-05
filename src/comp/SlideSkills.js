@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Context } from '../context/languageContext.js'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
@@ -12,6 +13,8 @@ import '../style/slideSkills.css'
 export default function SlideSkills() {
 
     const [skillsDisplayed, setSkillsDisplayed] = useState(false)
+
+    const { language } = useContext(Context)
 
     const handleLaptopClick = () => {
         console.log('clic')
@@ -27,18 +30,36 @@ export default function SlideSkills() {
             <div className="skills-wrapper">
 
                 <div className="intro-of-myself">
-                    <p>
-                        Formé aux principaux langages de programmation , j’aime créer des interfaces efficaces, originales et interactives.
-                    </p>
-                    <p>Pour en savoir plus, je vous invite {!skillsDisplayed && 'à cliquer sur mon ordinateur puis'} à consulter mon CV :
-                        &nbsp;
-                        <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
-                            className="resume-download"
-                            target="_blank"
-                            aria-label="Resume download">
-                            <FontAwesomeIcon icon={faFileAlt} />
-                        </a>
-                    </p>
+                    {language === 'FR' ?
+                        <>
+                            <p>
+                                Formé aux principaux langages de programmation , j’aime créer des interfaces efficaces, originales et interactives.
+                            </p>
+                            <p>Pour en savoir plus, je vous invite {!skillsDisplayed && 'à cliquer sur mon ordinateur puis'} à consulter mon CV :
+                                &nbsp;
+                                <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
+                                    className="resume-download"
+                                    target="_blank"
+                                    aria-label="Resume download">
+                                    <FontAwesomeIcon icon={faFileAlt} />
+                                </a>
+                            </p>
+                        </>
+                        : <>
+                            <p>
+                            Trained in the main programming languages, I like to create effective, original and interactive interfaces.
+                            </p>
+                            <p>To find out more, I invite you to  {!skillsDisplayed && 'click on my computer and then'} consult my resume :
+                                &nbsp;
+                                <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
+                                    className="resume-download"
+                                    target="_blank"
+                                    aria-label="Resume download">
+                                    <FontAwesomeIcon icon={faFileAlt} />
+                                </a>
+                            </p>
+                        </>
+                    }
                 </div>
 
                 <img
@@ -59,7 +80,7 @@ export default function SlideSkills() {
                             </div>
                         </div>
                     }
-                    
+
                 </div>
 
                 <div className="skills-container">
@@ -69,9 +90,9 @@ export default function SlideSkills() {
                                 <img
                                     className='skill-img hidden-img'
                                     src={item.src}
-                                    alt={item.name} />
+                                    alt={language === 'FR' ? item.nameFR : item.nameEN} />
                                 <div className='skill-name hidden-name'>
-                                    {item.name}
+                                    {language === 'FR' ? item.nameFR : item.nameEN}
                                 </div>
                             </div>
                         )

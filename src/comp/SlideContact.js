@@ -1,4 +1,5 @@
-import { React, useRef } from 'react'
+import { React, useRef, useContext } from 'react'
+import { Context } from '../context/languageContext.js'
 import emailjs from 'emailjs-com'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,13 +13,15 @@ export default function SlideContact() {
 
     const form = useRef()
 
+    const { language } = useContext(Context)
+
     const sendEmail = e => {
         e.preventDefault()
 
         emailjs.sendForm(
-            process.env.REACT_APP_EMAILKEY_SERVICE_ID, 
-            process.env.REACT_APP_EMAILKEY_TEMPLATE_ID, 
-            form.current, 
+            process.env.REACT_APP_EMAILKEY_SERVICE_ID,
+            process.env.REACT_APP_EMAILKEY_TEMPLATE_ID,
+            form.current,
             process.env.REACT_APP_EMAILKEY_USER_ID)
             .then(result => {
                 console.log(result.text)
@@ -32,7 +35,7 @@ export default function SlideContact() {
                 }, 600)
 
                 setTimeout(function () {
-                    let words = "message envoyé".split('')
+                    let words = language === 'FR' ? "message envoyé".split('') : "message sent".split('')
                     let delay = 0
                     for (let i = 0; i < words.length; i++) {
                         setTimeout(() => {
@@ -55,8 +58,8 @@ export default function SlideContact() {
                 }, 1750);
             }, error => {
                 console.log(error.text)
-                alert('le message n\'a pas pu être envoyé.')
-            })      
+                alert(language === 'FR' ? 'le message n\'a pas pu être envoyé.' : 'the message cannot be sent.')
+            })
             .catch((err) => {
                 console.error('FAILED...', err)
             });
@@ -78,7 +81,13 @@ export default function SlideContact() {
                                 onSubmit={sendEmail}
                                 className="postcard-left-form">
 
-                                <div className="postcard-left-salutation">Cher Max,</div>
+                                <div className="postcard-left-salutation">
+                                    {language === 'FR' ?
+                                        <>Cher Max,</>
+                                        :
+                                        <>Dear Max,</>
+                                    }
+                                </div>
 
                                 <div className="postcard-left-input postcard-left-message">
                                     <textarea id="message-input" name="message" required defaultValue={""} />
@@ -87,7 +96,9 @@ export default function SlideContact() {
 
                                 <div className="postcard-left-input postcard-left-nom">
                                     <input id="name-input" type="text" name="from_name" required />
-                                    <label htmlFor="name-input">Nom</label>
+                                    <label htmlFor="name-input">
+                                        {language === 'FR' ? <>Nom</> : <>Name</>}
+                                    </label>
                                 </div>
 
                                 <div className="postcard-left-input postcard-left-mail">
@@ -96,7 +107,8 @@ export default function SlideContact() {
                                 </div>
 
                                 <button type="submit" className="postcard-left-submit-btn" >
-                                    Envoyer <FontAwesomeIcon icon={faPaperPlane} />
+                                    {language === 'FR' ? <>Envoyer </> : <>Send </>}
+                                    <FontAwesomeIcon icon={faPaperPlane} />
                                 </button>
                             </form>
                         </div>
@@ -109,7 +121,7 @@ export default function SlideContact() {
                             </div>
                             <div className="postcard-right-exp">
                                 <div className="postcard-right-nom">Maxime Malfilâtre</div>
-                                <div className="postcard-right-adresse">Bordeaux</div>
+                                <div className="postcard-right-adresse">Bordeaux - France</div>
                                 <div className="postcard-right-mail">
                                     malfilatre.dev@gmail.com
                                 </div>

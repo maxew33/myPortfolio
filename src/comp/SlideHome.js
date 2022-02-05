@@ -176,8 +176,15 @@ export default function SlideHome() {
                         malfilâtre
                     </span>
                 </h1>
+
                 {/* <div className="my-name-line"></div> */}
+
+                {language === 'FR' ? 
                 <h2 className='my-role'><span className="custom-text-color">dév</span>eloppeur <span className="custom-text-color">front</span>-end</h2>
+                :
+                
+                <h2 className='my-role'> <span className="custom-text-color">front</span>end<span className="custom-text-color"> dev</span>elopper</h2>
+                }
             </div>
 
             {/* My current status + cta */}
