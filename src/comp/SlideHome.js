@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Context } from '../context/languageContext.js'
 
 import dataObjects from '../datas/dataObjects.js'
-import dataLanguage from '../datas/dataLanguage.js'
+import dataStatus from '../datas/dataStatus.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Draggable from 'react-draggable'
@@ -23,24 +23,15 @@ export default function SlideHome() {
         index: 0,
         preventSpam: false
     })
-
     const [reloadButtonRotation, setReloadButtonRotation] = useState(360)
-
     const [remindCta, setRemindCta] = useState(true)
-
     const [drag, setDrag] = useState(false)
-
     const [chestObjects, setChestObjects] = useState(dataObjects)
 
-    const {language} = useContext(Context)
+    const { language } = useContext(Context)
 
     const handleStart = e => {
-
-        // dispatch({ type: 'DRAG_START' })
-
         setDrag(true)
-
-        console.log(drag)
 
         /* when I take an accessory, set its z index to 20 */
 
@@ -50,53 +41,34 @@ export default function SlideHome() {
 
         for (let i = 0; i < newArr.length; i++) {
             i !== myId ? (newArr[i].zIndex > e.target.style.zIndex && newArr[i].zIndex--) : newArr[i].zIndex = 20
-
         }
-
         setChestObjects(newArr)
     }
 
     const handleStop = () => {
         setTimeout(() => setDrag(false), 50)
-            // dispatch({ type: 'DRAG_STOP' }), 50)
 
         console.log(drag)
     }
 
     useEffect(() => {
 
-        console.log(language)
-
-        console.log(dataObjects)
-
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
             chestBottom = document.querySelector('.chest-bottom'),
-        accessoryContainer = [...document.querySelectorAll('.accessory-container')],
+            accessoryContainer = [...document.querySelectorAll('.accessory-container')],
             accessory = [...document.querySelectorAll('.avatar-accessory')]
 
         let chestOpen = false
         let accessoryThrown = 0
 
-
         //chest opening / closing and stuff thrown
-
 
         accessoryContainer.forEach(container => container.classList.add('accessory-hidden'))
 
         chest.addEventListener('click', () => {
 
             setRemindCta(false)
-
-            // if (!chestOpen) {
-            //     chestTop.classList.toggle('open')
-            //     chestOpen = true
-
-            //     setTimeout(() => {
-            //         chestTop.classList.toggle('open')
-            //         chestOpen = false
-            //     }, 750)
-            // }
 
             if (!chestOpen && accessoryThrown < accessory.length) {
                 if (accessoryThrown < (accessory.length - 1)) {
@@ -126,13 +98,15 @@ export default function SlideHome() {
     }, [])
 
 
-    let myStatus = language === 'FR' ? dataLanguage.home.myStatus.FR : dataLanguage.home.myStatus.EN
+    let myStatus = language === 'FR' ? dataStatus.FR : dataStatus.EN
 
     const handleReloadStatus = () => {
 
         if (!myStatusIdx.preventSpam) {
             const statusHeight = document.querySelector('.status').getBoundingClientRect().height
             document.querySelector('.status').style.height = 0
+
+console.log(statusHeight)
 
             setReloadButtonRotation(reloadButtonRotation + 360)
 
@@ -164,7 +138,7 @@ export default function SlideHome() {
     }
 
     return (
-        <div className='slide-wrapper home-wrapper'>
+        <section className='slide-wrapper home-wrapper'>
 
             {/* My presentation : firstname / lastname / job */}
             <div className='introducing-myself'>
@@ -179,11 +153,11 @@ export default function SlideHome() {
 
                 {/* <div className="my-name-line"></div> */}
 
-                {language === 'FR' ? 
-                <h2 className='my-role'><span className="custom-text-color">dév</span>eloppeur <span className="custom-text-color">front</span>-end</h2>
-                :
-                
-                <h2 className='my-role'> <span className="custom-text-color">front</span>end<span className="custom-text-color"> dev</span>elopper</h2>
+                {language === 'FR' ?
+                    <h2 className='my-role'><span className="custom-text-color">dév</span>eloppeur <span className="custom-text-color">front</span>-end</h2>
+                    :
+
+                    <h2 className='my-role'> <span className="custom-text-color">front</span>end<span className="custom-text-color"> dev</span>elopper</h2>
                 }
             </div>
 
@@ -303,6 +277,6 @@ export default function SlideHome() {
                 )
             })}
 
-        </div>
+        </section>
     )
 }

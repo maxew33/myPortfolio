@@ -1,9 +1,4 @@
 .skills-wrapper {
-    position: relative;
-    top: 10vh;
-    height: 90vh;
-    width: 100vw;
-    display: grid;
     grid-template: repeat(4, 1fr) / repeat(2, 1fr);
     grid-template-areas:
         "bubble bubble"

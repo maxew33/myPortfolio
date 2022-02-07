@@ -26,8 +26,7 @@ export default function SlideSkills() {
     }
 
     return (
-        <div className='slide-wrapper'>
-            <div className="skills-wrapper">
+            <section className="slide-wrapper skills-wrapper">
 
                 <div className="intro-of-myself">
                     {language === 'FR' ?
@@ -99,7 +98,6 @@ export default function SlideSkills() {
                     })}
                 </div>
 
-            </div>
-        </div>
+            </section>
     )
 }

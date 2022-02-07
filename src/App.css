@@ -18,7 +18,7 @@
 font-family: 'Ubuntu', sans-serif;
 font-family: 'Ephesis', cursive;*/
 .App {
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   color: var(--fontcol1);
@@ -49,16 +49,14 @@ font-family: 'Ephesis', cursive;*/
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.25s ease-in-out;
-  transform-origin: left;
 }
 .navbar .nav-items > .underline {
   width: 100%;
   height: 2px;
   border-radius: 99px;
   background: var(--ctacol);
-  transform-origin: left;
   transition: 0.25s transform ease-in-out;
-  transform: scale(0);
+  transform: scaleX(0);
   pointer-events: none;
 }
 .navbar .nav-items:hover {
@@ -162,8 +160,10 @@ font-family: 'Ephesis', cursive;*/
 .slide-container {
   position: relative;
   width: 400vw;
+  height: 100vh;
   display: flex;
   transition: transform 0.5s ease-in-out;
+  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color1), var(--bg-color2), var(--bg-color3), var(--bg-color4), var(--bg-color5));
 }
 .slide-container .overlay {
   position: absolute;
@@ -174,22 +174,22 @@ font-family: 'Ephesis', cursive;*/
 }
 
 .slide-wrapper {
+  display: grid;
+  position: relative;
+  top: 10vh;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
-.slide-wrapper:nth-of-type(1) {
-  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color1), var(--bg-color2));
-  left: 0vw;
-}
-.slide-wrapper:nth-of-type(2) {
-  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color2), var(--bg-color3));
-  left: 100vw;
-}
-.slide-wrapper:nth-of-type(3) {
-  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color3), var(--bg-color4));
-  left: 200vw;
-}
-.slide-wrapper:nth-of-type(4) {
-  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color4), var(--bg-color5));
-  left: 300vw;
+
+@media (orientation: portrait) {
+  .slide-container {
+    position: relative;
+    width: 100vw;
+    height: 400vw;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide-container .overlay {
+    display: none;
+  }
 }/*# sourceMappingURL=app.css.map */

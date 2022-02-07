@@ -14,6 +14,7 @@ export default function SlideWork(props) {
     const [videoIsPlaying, setVideoIsPlaying] = useState(false)
     const [videoOnPause, setVideoOnPause] = useState(false)
     const [volumeLvl, setVolumeLvl] = useState(0)
+    const [videoIsLoaded, setVideoIsLoaded] = useState(false)
 
     const { language } = useContext(Context)
 
@@ -26,7 +27,7 @@ export default function SlideWork(props) {
             videoOnPause ? document.querySelector('.my-video').play() : playVideo()
             setVideoOnPause(false)
             setVideoIsPlaying(true)
-            document.querySelector('.video-loader-container').classList.toggle('loader-apparition')
+            !videoIsLoaded && document.querySelector('.video-loader-container').classList.add('loader-apparition')
             console.log(123)
         }
         else {
@@ -46,6 +47,7 @@ export default function SlideWork(props) {
     const handleChooseVideo = (id) => {
         const newChannel = id
         setChannel(newChannel)
+        setVideoIsLoaded(false)
     }
 
     const handlePlay = () => {
@@ -60,6 +62,7 @@ export default function SlideWork(props) {
         newChannel === dataVideos.length && (newChannel = 0)
         newChannel < 0 && (newChannel = dataVideos.length - 1)
         setChannel(newChannel)
+        setVideoIsLoaded(false)
     }
 
     const handleStop = () => {
@@ -83,6 +86,7 @@ export default function SlideWork(props) {
             newChannel++
             newChannel === dataVideos.length && (newChannel = 0)
             setChannel(newChannel)
+            setVideoIsLoaded(false)
         }, 500)
     }
 
@@ -101,131 +105,142 @@ export default function SlideWork(props) {
 
     const handleLoad = () => {
         console.log('loaded')
+        setVideoIsLoaded(true)
         document.querySelector('.video-loader-container').classList.remove('loader-apparition')
     }
 
     return (
-        <div className='slide-wrapper'>
-            <div className="work-wrapper">
-                <div className="video-player-container">
-                    <div className="video-loader-container">
-                        <div className="video-loader video-loader-div1">
-                            <div className="video-loader video-loader-div2">
-                                <div className="video-loader video-loader-div3">
-                                </div>
-                            </div>
-                        </div>
+        <section className="slide-wrapper work-wrapper">
+            <div className="video-player-container">
+                <div className="video-loader-container">
+                    <div className="link">
+                        <span className="brace">
+                            &#123;
+                        </span>
+                        <span className="my-text">
+                            <span className="my-text-content my-text-1">
+                                m
+                            </span>
+                            <span className="my-text-content my-text-2">
+                                loading&nbsp;...
+                            </span>
+                            <span className="my-text-content my-text-3">
+                                please&nbsp;wait
+                            </span>
+                        </span>
+                        <span className="brace">
+                            &#125;
+                        </span>
                     </div>
-                    <video
-                        className="my-video"
-                        loop={false}
-                        onEnded={handleEnd}
-                        onLoadedData={handleLoad}>
-                        <source
-                            src={dataVideos[channel].src}
-                            type="video/mp4"
-                        />
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
-
                 </div>
+                <video
+                    className="my-video"
+                    loop={false}
+                    onEnded={handleEnd}
+                    onLoadedData={handleLoad}>
+                    <source
+                        src={dataVideos[channel].src}
+                        type="video/mp4"
+                    />
+                    Sorry, your browser doesn't support embedded videos.
+                </video>
 
-                <div className="video-controls">
-                    <button className="video-play"
-                        onClick={handlePlay}>
-                        {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
-                    </button>
-                    <button className="video-prev"
-                        onClick={() => handleNav(-1)}>
-                        <FontAwesomeIcon icon={faStepBackward} />
-                    </button>
-                    <button className="video-stop"
-                        onClick={handleStop}>
-                        <FontAwesomeIcon icon={faStop} />
-                    </button>
-                    <button className="video-next"
-                        onClick={() => handleNav(1)}>
-                        <FontAwesomeIcon icon={faStepForward} />
-                    </button>
-                    <button className="video-volume"
-                        onClick={() => handleVolume(0)}>
-                        <FontAwesomeIcon icon={faVolumeMute} />
-                    </button>
-                    <button className="video-volume"
-                        onClick={() => handleVolume(-.1)}>
-                        <FontAwesomeIcon icon={faVolumeDown} />
-                    </button>
-                    <button className="video-volume"
-                        onClick={() => handleVolume(.1)}>
-                        <FontAwesomeIcon icon={faVolumeUp} />
-                    </button>
-                </div>
-
-                <div className="video-thumb-container">
-                    {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
-                    {dataVideos.map((item, index) => {
-                        return (
-                            <div className="video-thumb" key={index}>
-                                <div className="video-thumb-rank">
-                                    {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
-                                </div>
-                                <img className="video-thumb-img"
-                                    src={item.thumb}
-                                    onClick={() => handleChooseVideo(index)} />
-                                <div className="video-thumb-name">
-                                    {language === 'FR' ? item.nameFR : item.nameEN}
-                                </div>
-
-                            </div>
-                        )
-                    })}
-                </div>
-
-                <div className="video-infos-container">
-
-                    <div className="video-name">
-                        {channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
-                        <div className="video-links">
-                            &nbsp;
-                            {dataVideos[channel].youtubeLink &&
-                                <a href={dataVideos[channel].youtubeLink}
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="link to the youtube video">
-                                    <FontAwesomeIcon icon={faYoutube} />
-                                </a>
-                            }
-                            {dataVideos[channel].gitHubLink &&
-                                <a href={dataVideos[channel].gitHubLink}
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="link to the github page">
-                                    <FontAwesomeIcon icon={faGithub} />
-                                </a>
-                            }
-                            {dataVideos[channel].codePenLink &&
-                                <a href={dataVideos[channel].codePenLink}
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="link to the codepen page">
-                                    <FontAwesomeIcon icon={faCodepen} />
-                                </a>
-                            }
-                        </div>
-                    </div>
-
-                    <div className="video-prez">
-                        {language === 'FR' ? dataVideos[channel].prezFR : dataVideos[channel].prezEN}
-                    </div>
-
-                    <div className="video-descr">
-                        {language === 'FR' ? dataVideos[channel].txtFR : dataVideos[channel].txtEN}
-                    </div>
-
-
-                </div>
             </div>
 
-        </div>
+            <div className="video-controls">
+                <button className="video-play"
+                    onClick={handlePlay}>
+                    {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
+                </button>
+                <button className="video-prev"
+                    onClick={() => handleNav(-1)}>
+                    <FontAwesomeIcon icon={faStepBackward} />
+                </button>
+                <button className="video-stop"
+                    onClick={handleStop}>
+                    <FontAwesomeIcon icon={faStop} />
+                </button>
+                <button className="video-next"
+                    onClick={() => handleNav(1)}>
+                    <FontAwesomeIcon icon={faStepForward} />
+                </button>
+                <button className="video-volume"
+                    onClick={() => handleVolume(0)}>
+                    <FontAwesomeIcon icon={faVolumeMute} />
+                </button>
+                <button className="video-volume"
+                    onClick={() => handleVolume(-.1)}>
+                    <FontAwesomeIcon icon={faVolumeDown} />
+                </button>
+                <button className="video-volume"
+                    onClick={() => handleVolume(.1)}>
+                    <FontAwesomeIcon icon={faVolumeUp} />
+                </button>
+            </div>
+
+            <div className="video-thumb-container">
+                {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
+                {dataVideos.map((item, index) => {
+                    return (
+                        <div className="video-thumb" key={index}>
+                            <div className="video-thumb-rank">
+                                {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
+                            </div>
+                            <img className="video-thumb-img"
+                                src={item.thumb}
+                                onClick={() => handleChooseVideo(index)} />
+                            <div className="video-thumb-name">
+                                {language === 'FR' ? item.nameFR : item.nameEN}
+                            </div>
+
+                        </div>
+                    )
+                })}
+            </div>
+
+            <div className="video-infos-container">
+
+                <div className="video-name">
+                    {channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
+                    <div className="video-links">
+                        &nbsp;
+                        {dataVideos[channel].youtubeLink &&
+                            <a href={dataVideos[channel].youtubeLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the youtube video">
+                                <FontAwesomeIcon icon={faYoutube} />
+                            </a>
+                        }
+                        {dataVideos[channel].gitHubLink &&
+                            <a href={dataVideos[channel].gitHubLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the github page">
+                                <FontAwesomeIcon icon={faGithub} />
+                            </a>
+                        }
+                        {dataVideos[channel].codePenLink &&
+                            <a href={dataVideos[channel].codePenLink}
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="link to the codepen page">
+                                <FontAwesomeIcon icon={faCodepen} />
+                            </a>
+                        }
+                    </div>
+                </div>
+
+                <div className="video-prez">
+                    {language === 'FR' ? dataVideos[channel].prezFR : dataVideos[channel].prezEN}
+                </div>
+
+                <div className="video-descr">
+                    {language === 'FR' ? dataVideos[channel].txtFR : dataVideos[channel].txtEN}
+                </div>
+
+
+            </div>
+        </section>
     )
 }

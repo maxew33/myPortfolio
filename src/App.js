@@ -8,24 +8,19 @@ import SlideWork from './comp/SlideWork'
 import SlideSkills from './comp/SlideSkills'
 import SlideContact from './comp/SlideContact'
 
-import english from './assets/donut.svg'
-import french from './assets/croissant.svg'
-
 import './app.css';
 import ToggleLanguage from './comp/ToggleLanguage'
+import useWindowSize from './comp/useWindowSize'
 
 function App() {
 
   const [mySlide, setMySlide] = useState(0)
   const [wheel, setWheel] = useState(false)
-
-  const [toggle, setToggle] = useState(true)
+  const [orientation, setOrientation] = useState('landscape')
 
   const size = useWindowSize()
 
-  const {language} = useContext(Context)
-
-  // console.log('langue', language)
+  const { language } = useContext(Context)
 
   const mySlideContent = useMemo(() => {
     return [
@@ -66,12 +61,19 @@ function App() {
       
 `)
 
+    size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
+
   }, [])
 
   useEffect(() => {
     // effect triggered when changing slide displayed
     console.log('chgt de slide')
   }, [mySlide])
+
+  useEffect(() => {
+    // effect triggered when changing viewport size
+    size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
+  }, [size])
 
   function slideAnim(direction) {
 
@@ -87,7 +89,7 @@ function App() {
 
     setMySlide(oldSlide)
 
-    document.querySelector('.slide-container').style.transform = "translateX(" + 100 * -oldSlide + "vw)"
+    document.querySelector('.slide-container').style.transform = orientation === 'landscape' ? "translateX(" + 100 * -oldSlide + "vw)" : "translateY(" + 100 * -oldSlide + "vh)"
   }
 
   // changing the slide using the wheel
@@ -114,19 +116,6 @@ function App() {
     console.log(e.target.dataset.index - mySlide)
     slideAnim(e.target.dataset.index - mySlide)
   }
-
-  // language toggle
-  // const handleClickToggle = (e) => {
-  //   if (toggle) {
-  //     document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
-
-  //     setToggle(false)
-
-  //     setTimeout(() => {
-  //       setToggle(true)
-  //     }, 350);
-  //   }
-  // }
 
   return (
     <div className="App">
@@ -179,7 +168,10 @@ function App() {
         {mySlideContent.map((item) => {
           return (
             <Fragment key={item.id}>
-              {item.nameFR === 'portfolio' ? <SlideWork slide={mySlide} size={size} /> : item.slideDisplayed}
+              {item.nameFR === 'portfolio' ?
+                <SlideWork slide={mySlide} size={size} />
+                :
+                item.slideDisplayed}
             </Fragment>
           )
         })}
@@ -188,32 +180,6 @@ function App() {
 
     </div>
   )
-}
-
-
-// custom hook for window size and resizing
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  })
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-
-    // Add event listener
-    window.addEventListener("resize", handleResize)
-    // Call handler right away so state gets updated with initial window size
-    handleResize()
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-  return windowSize;
 }
 
 export default App;

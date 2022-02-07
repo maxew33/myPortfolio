@@ -67,76 +67,73 @@ export default function SlideContact() {
 
 
     return (
-        <div className='slide-wrapper'>
+        <section className="slide-wrapper contact-wrapper">
 
-            <div className="contact-wrapper">
+            <div className="message-container"></div>
 
-                <div className="message-container"></div>
+            <div className="postcard-container">
+                <div className="postcard">
+                    <div className="postcard-left">
+                        <form
+                            ref={form}
+                            onSubmit={sendEmail}
+                            className="postcard-left-form">
 
-                <div className="postcard-container">
-                    <div className="postcard">
-                        <div className="postcard-left">
-                            <form
-                                ref={form}
-                                onSubmit={sendEmail}
-                                className="postcard-left-form">
-
-                                <div className="postcard-left-salutation">
-                                    {language === 'FR' ?
-                                        <>Cher Max,</>
-                                        :
-                                        <>Dear Max,</>
-                                    }
-                                </div>
-
-                                <div className="postcard-left-input postcard-left-message">
-                                    <textarea id="message-input" name="message" required defaultValue={""} />
-                                    <label htmlFor="message-input">Message</label>
-                                </div>
-
-                                <div className="postcard-left-input postcard-left-nom">
-                                    <input id="name-input" type="text" name="from_name" required />
-                                    <label htmlFor="name-input">
-                                        {language === 'FR' ? <>Nom</> : <>Name</>}
-                                    </label>
-                                </div>
-
-                                <div className="postcard-left-input postcard-left-mail">
-                                    <input id="email-input" type="email" name="user_email" required />
-                                    <label htmlFor="email-input" >Email</label>
-                                </div>
-
-                                <button type="submit" className="postcard-left-submit-btn" >
-                                    {language === 'FR' ? <>Envoyer </> : <>Send </>}
-                                    <FontAwesomeIcon icon={faPaperPlane} />
-                                </button>
-                            </form>
-                        </div>
-                        <div className="postcard-right">
-                            <div className="postcard-right-stamp">
-                                <img
-                                    className="gladys"
-                                    src={stamp}
-                                    alt='stamp' />
+                            <div className="postcard-left-salutation">
+                                {language === 'FR' ?
+                                    <>Cher Max,</>
+                                    :
+                                    <>Dear Max,</>
+                                }
                             </div>
-                            <div className="postcard-right-exp">
-                                <div className="postcard-right-nom">Maxime Malfilâtre</div>
-                                <div className="postcard-right-adresse">Bordeaux - France</div>
-                                <div className="postcard-right-mail">
-                                    malfilatre.dev@gmail.com
-                                </div>
+
+                            <div className="postcard-left-input postcard-left-message">
+                                <textarea id="message-input" name="message" required defaultValue={""} />
+                                <label htmlFor="message-input">Message</label>
                             </div>
-                        </div>
+
+                            <div className="postcard-left-input postcard-left-nom">
+                                <input id="name-input" type="text" name="from_name" required />
+                                <label htmlFor="name-input">
+                                    {language === 'FR' ? <>Nom</> : <>Name</>}
+                                </label>
+                            </div>
+
+                            <div className="postcard-left-input postcard-left-mail">
+                                <input id="email-input" type="email" name="user_email" required />
+                                <label htmlFor="email-input" >Email</label>
+                            </div>
+
+                            <button type="submit" className="postcard-left-submit-btn" >
+                                {language === 'FR' ? <>Envoyer </> : <>Send </>}
+                                <FontAwesomeIcon icon={faPaperPlane} />
+                            </button>
+                        </form>
                     </div>
-                </div>
-                <div className="animation-container">
-                    {/* ------------- ENVELOPPE ------------- */}
-                    <div className="enveloppe-container">
-                        <div className="enveloppe">
+                    <div className="postcard-right">
+                        <div className="postcard-right-stamp">
+                            <img
+                                className="gladys"
+                                src={stamp}
+                                alt='stamp' />
+                        </div>
+                        <div className="postcard-right-exp">
+                            <div className="postcard-right-nom">Maxime Malfilâtre</div>
+                            <div className="postcard-right-adresse">Bordeaux - France</div>
+                            <div className="postcard-right-mail">
+                                malfilatre.dev@gmail.com
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="animation-container">
+                {/* ------------- ENVELOPPE ------------- */}
+                <div className="enveloppe-container">
+                    <div className="enveloppe">
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }

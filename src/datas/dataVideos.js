@@ -2,6 +2,8 @@ import { v4 as uuidv4 } from 'uuid'
 
 import theOffice from '../assets/the-office.png'
 import Ben from '../assets/Ben.png'
+import maxamp from '../assets/maxamp.png'
+import infernalForm from '../assets/infernal-form.png'
 import kaleidoscope from '../assets/kaleidoscope.png'
 import friends from '../assets/friends.png'
 import robocop from '../assets/robocop.png'
@@ -37,8 +39,8 @@ const dataTvShow = [
     },
     {
         id: uuidv4(),
-        nameFR: 'The office',
-        nameEN: 'The office',
+        nameFR: 'Ben',
+        nameEN: 'Ben',
         src: process.env.PUBLIC_URL + ' /video/Ben.mp4',
         sound: true,
         prezFR: 'Portfolio de Benedict Priam',
@@ -61,6 +63,36 @@ const dataTvShow = [
         txtFR: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
         txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
         thumb: cocktail,
+        youtubeLink: false,
+        gitHubLink: 'https://github.com/maxew33/cocktail',
+        codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Maxamp',
+        nameEN: 'Maxamp',
+        src: process.env.PUBLIC_URL + ' /video/maxamp.mp4',
+        sound: false,
+        prezFR: '627 recettes de cocktails',
+        prezEN: '627 cocktails recipes',
+        txtFR: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
+        txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
+        thumb: maxamp,
+        youtubeLink: false,
+        gitHubLink: 'https://github.com/maxew33/cocktail',
+        codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'infernal form',
+        nameEN: 'infernal form',
+        src: process.env.PUBLIC_URL + ' /video/infernal-form.mp4',
+        sound: false,
+        prezFR: '627 recettes de cocktails',
+        prezEN: '627 cocktails recipes',
+        txtFR: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
+        txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
+        thumb: infernalForm,
         youtubeLink: false,
         gitHubLink: 'https://github.com/maxew33/cocktail',
         codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
