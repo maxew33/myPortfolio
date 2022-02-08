@@ -8,14 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Draggable from 'react-draggable'
 
 import { faRedo, faArrowDown } from '@fortawesome/free-solid-svg-icons'
-import { faTwitter, faLinkedin, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faHandPointUp } from '@fortawesome/free-regular-svg-icons'
 
 import body from '../assets/body.png'
 import headCartoon from '../assets/head-cartoon.png'
 import headReal from '../assets/head-real.webp'
 
 import '../style/slideHome.css'
+import SocialNetwork from './SocialNetwork.js'
 
 export default function SlideHome() {
 
@@ -106,7 +105,7 @@ export default function SlideHome() {
             const statusHeight = document.querySelector('.status').getBoundingClientRect().height
             document.querySelector('.status').style.height = 0
 
-console.log(statusHeight)
+            console.log(statusHeight)
 
             setReloadButtonRotation(reloadButtonRotation + 360)
 
@@ -176,32 +175,7 @@ console.log(statusHeight)
             </div>
 
             {/* Social network links */}
-            <div className="social-network">
-                <a href="https://github.com/maxew33"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="link to my Github page">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
-                <a href="https://www.linkedin.com/in/maxime-malfilatre-1a3b97204/"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="link to my Github page">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a href="https://twitter.com/m4xew"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="link to my twitter page">
-                    <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a href="https://codepen.io/maxew33"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="link to my codepen page">
-                    <FontAwesomeIcon icon={faCodepen} />
-                </a>
-            </div>
+            <SocialNetwork />
 
             {/* Avatar */}
             <div className="my-avatar">

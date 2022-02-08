@@ -7,10 +7,12 @@ import SlideHome from './comp/SlideHome'
 import SlideWork from './comp/SlideWork'
 import SlideSkills from './comp/SlideSkills'
 import SlideContact from './comp/SlideContact'
+import BurgerMenu from './comp/BurgerMenu'
 
-import './app.css';
+import './app.css'
 import ToggleLanguage from './comp/ToggleLanguage'
 import useWindowSize from './comp/useWindowSize'
+import SocialNetwork from './comp/SocialNetwork'
 
 function App() {
 
@@ -120,21 +122,28 @@ function App() {
   return (
     <div className="App">
 
-      {/* arrow navigation */}
-      {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-        <div></div>
-      </div>
-      }
+      {orientation === 'landscape' && <>
+        {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
+          <div></div>
+        </div>}
 
-      {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-        <div></div>
-      </div>
-      }
+
+        {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
+          <div></div>
+        </div>
+        }
+      </>}
+
+      {orientation === 'portrait' && <BurgerMenu />}
 
       <div className='banner'>
-        <div className="icon">
+
+        <div className="logo">
           &#123;m&#125;
         </div>
+
+        {orientation === 'portrait' && <SocialNetwork />}
+
         <ul className='navbar'>
           {mySlideContent.map((item, index) => {
             return (
@@ -147,18 +156,6 @@ function App() {
             )
           })}
         </ul>
-        {/* <div className="language-toggle">
-            <img
-              className='language-toggle-img'
-              src={french} />
-            <div className="language-toggle-selector-container"
-              onClick={handleClickToggle}>
-              <div className="language-toggle-selector"></div>
-            </div>
-            <img
-              className='language-toggle-img'
-              src={english} />
-          </div> */}
 
         <ToggleLanguage />
 

@@ -1,0 +1,36 @@
+.burger-container {
+  position: absolute;
+  z-index: 30;
+  height: 10vw;
+  width: 10vw;
+  cursor: pointer;
+  transition: 0.2s transform 0.05s ease-in;
+}
+.burger-container .burger {
+  position: absolute;
+  left: 1vw;
+  width: 9vw;
+  height: 1vw;
+  background-color: var(--fontcol1);
+  border-radius: 999px;
+  transition: transform 0.25s ease-in, opacity 0.25s ease-in;
+}
+.burger-container .burger:nth-child(1) {
+  top: 1.5vw;
+}
+.burger-container .burger:nth-child(2) {
+  top: 4.5vw;
+}
+.burger-container .burger:nth-child(3) {
+  bottom: 1.5vw;
+}
+.burger-container .burger-open:nth-child(1) {
+  transform: translateY(3vw) rotate(45deg);
+}
+.burger-container .burger-open:nth-child(2) {
+  transform: translateX(10%);
+  opacity: 0;
+}
+.burger-container .burger-open:nth-child(3) {
+  transform: translateY(-3vw) rotate(-45deg);
+}/*# sourceMappingURL=burger-menu.css.map */

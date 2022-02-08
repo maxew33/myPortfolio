@@ -50,8 +50,9 @@ font-family: 'Ephesis', cursive;*/
         hsl(180deg, 100%, 80%, 0.1) 95%,
         hsl(180deg, 100%, 80%, 0.25)
     );
+    backdrop-filter: blur(10px);
     font-size: 3rem;
-    z-index: 10;
+    z-index: 20;
     font-family: "Ubuntu", sans-serif;
 }
 
@@ -61,6 +62,7 @@ font-family: 'Ephesis', cursive;*/
     width: 50%;
 
     .nav-items {
+        // width: fit-content;
         position: relative;
         font-size: 1.5rem;
         cursor: pointer;
@@ -223,15 +225,121 @@ font-family: 'Ephesis', cursive;*/
 }
 
 @media (orientation: portrait) {
+    .banner {
+        overflow: hidden;
+        width: 0vw;
+        height: 100vh;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1vw 0;
+        background: linear-gradient(
+            90deg,
+            hsl(180deg, 100%, 80%, 0.15) 50%,
+            hsl(180deg, 100%, 80%, 0.1) 95%,
+            hsl(180deg, 100%, 80%, 0.25)
+        );
+        transition: width .25s ease-in-out;
+
+        .navbar {
+            padding-left: 2rem;
+            height: 30vh;
+            flex-direction: column;
+
+            .nav-items {
+                width: fit-content;
+            }
+        }
+
+        .social-network {
+            padding: 0;
+            padding-left: 2rem;
+            width: auto;
+            align-self: flex-start;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            a {
+                align-self: flex-start;
+            }
+        }
+
+        .logo{
+            padding-left: 2rem;
+        }
+
+        .language-toggle {
+            padding-left: 2rem;
+            width: auto;
+        }
+    }
+
+    //     .navbar {
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         padding: 2rem;
+    //     flex-direction: column;
+    //     background: hsl(0, 0%, 0%, 0.6);
+    //     background: linear-gradient(
+    //         hsl(180deg, 100%, 80%, 0.15) 50%,
+    //         hsl(180deg, 100%, 80%, 0.1) 95%,
+    //         hsl(180deg, 100%, 80%, 0.25)
+    //     );
+    //     backdrop-filter: blur(5px);
+    //     justify-content: space-evenly;
+    //     height: 100vh;
+
+    //     .nav-items {
+    //         position: relative;
+    //         font-size: 1.5rem;
+    //         cursor: pointer;
+    //         transition: color 0.25s ease-in-out;
+
+    //         > .underline {
+    //             width: 100%;
+    //             height: 2px;
+    //             border-radius: 99px;
+    //             background: var(--ctacol);
+    //             //transform-origin: left;
+    //             transition: 0.25s transform ease-in-out;
+    //             transform: scaleX(0);
+    //             pointer-events: none;
+    //         }
+
+    //         &:hover {
+    //             color: white;
+    //             > .underline {
+    //                 transform: scale(1);
+    //             }
+    //         }
+    //     }
+
+    //     .active {
+    //         color: white;
+    //         > .underline {
+    //             transform: scale(1);
+    //         }
+    //     }
+    // }
+
     .slide-container {
         position: relative;
         width: 100vw;
-        height: 400vw;
-        display: flex;
+        height: 400vh;
+        flex-direction: column;
         transition: transform 0.5s ease-in-out;
+        --bg-gradient-angle: 180deg;
 
         .overlay {
-            display: none;
+            width: 100vw;
+            height: 400vh;
         }
+    }
+
+    .slide-wrapper {
+        top: 0;
+        height: 100vh;
     }
 }
