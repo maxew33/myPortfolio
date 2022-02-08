@@ -129,9 +129,7 @@ export default function SlideContact() {
             </div>
             <div className="animation-container">
                 {/* ------------- ENVELOPPE ------------- */}
-                <div className="enveloppe-container">
                     <div className="enveloppe">
-                    </div>
                 </div>
             </div>
         </section>

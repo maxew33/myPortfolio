@@ -183,6 +183,10 @@ font-family: 'Ephesis', cursive;*/
   height: 90vh;
 }
 
+.section-title {
+  display: none;
+}
+
 @media (orientation: portrait) {
   .banner {
     overflow: hidden;
@@ -190,7 +194,7 @@ font-family: 'Ephesis', cursive;*/
     height: 100vh;
     flex-direction: column-reverse;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1vw 0;
     background: linear-gradient(90deg, rgba(153, 255, 255, 0.15) 50%, rgba(153, 255, 255, 0.1) 95%, rgba(153, 255, 255, 0.25));
     transition: width 0.25s ease-in-out;
@@ -242,5 +246,11 @@ font-family: 'Ephesis', cursive;*/
   .slide-wrapper {
     top: 0;
     height: 100vh;
+  }
+
+  .section-title {
+    display: block;
+    width: 100vw;
+    text-align: center;
   }
 }/*# sourceMappingURL=app.css.map */

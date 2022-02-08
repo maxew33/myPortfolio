@@ -109,16 +109,16 @@
         width: 9vh;
         object-fit: contain;
         padding-right: 0.5rem;
-        transition: transform .5s ease-in;
+        transition: transform 0.5s ease-in;
     }
 
     .skill-name {
         font-family: var(--fontfam2);
         font-size: 1.25rem;
-        transition: opacity .25s ease-in-out;
+        transition: opacity 0.25s ease-in-out;
     }
 
-    .hidden-name{
+    .hidden-name {
         opacity: 0;
     }
 }
@@ -155,16 +155,68 @@ $row: 1;
         grid-column: $column;
         grid-row: $row;
 
-        .skill-img{
-            transition-delay: .125s * $i;
+        .skill-img {
+            transition-delay: 0.125s * $i;
         }
 
-        .skill-name{
-            transition-delay: (.125s * $i) + .5s;
+        .skill-name {
+            transition-delay: (0.125s * $i) + 0.5s;
         }
 
         .hidden-img {
             transform: translate($xValue, $yValue) scale(0);
         }
     }
+}
+
+@media (orientation: portrait) {
+    .skills-wrapper {
+        grid-template: repeat(7, 1fr) / 1fr;
+        grid-template-areas:
+            "bubble"
+            "bubble"
+            "skills"
+            "skills"
+            "avatar"
+            "avatar"
+            "avatar";
+    }
+
+    .intro-of-myself {
+        max-width: 95vw;
+        max-height: 28vh;
+        align-self: flex-end;
+        padding: 1.25vw;
+        overflow: hidden;
+    }
+
+    .avatar-at-work {
+        height: 40vh;
+        width: auto;
+        pointer-events: none;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+
+    .hit-zone {
+        justify-self: center;
+    }
+
+    .skills-container {
+        grid-area: skills;
+        padding: 0;
+        margin: 0;
+        margin-top: 2.5vh;
+        width: 100vw;
+    }
+
+    .my-skill {
+        height: 5vh;
+
+        .skill-img {
+            height: 4.5vh;
+            width: 4.5vh;
+        }
+    }
+
 }

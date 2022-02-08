@@ -69,13 +69,13 @@ const dataObjects = [
         zIndex: 10,
         id: uuidv4()
     },
-    {
-        src: tie,
-        alt: "tie",
-        width: 'calc(25 * var(--avatar-length-unit))',
-        zIndex: 10,
-        id: uuidv4()
-    },
+    // {
+    //     src: tie,
+    //     alt: "tie",
+    //     width: 'calc(25 * var(--avatar-length-unit))',
+    //     zIndex: 10,
+    //     id: uuidv4()
+    // },
     {
         src: helmet,
         alt: "helmet",

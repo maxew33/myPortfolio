@@ -260,4 +260,59 @@
 }
 .video-infos-container .video-links a:hover {
   color: var(--ctacol);
+}
+
+@media (orientation: portrait) {
+  .work-wrapper {
+    grid-template: repeat(10, 1fr)/1fr;
+    width: 80vw;
+    grid-template-areas: "section" "video" "video" "video" "controls" "thumbnail" "thumbnail" "infos" "infos" "infos";
+  }
+  .work-wrapper > * {
+    margin: 0;
+  }
+
+  .video-player-container {
+    align-self: flex-end;
+    justify-self: center;
+  }
+
+  .video-controls {
+    position: relative;
+    height: 75%;
+    justify-self: center;
+    align-self: flex-start;
+    grid-area: controls;
+    width: calc(100% - 4rem);
+    background: none;
+    border: none;
+  }
+
+  .video-thumb-container {
+    grid-area: thumbnail;
+    width: calc(100% - 4rem);
+    justify-self: center;
+    align-self: center;
+    height: calc(100% - 2rem);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+  }
+  .video-thumb-container .video-thumb {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "video video video video video" "video video video video video" "video video video video video" "rank title title title title";
+    margin: 0;
+  }
+  .video-thumb-container .video-thumb .video-thumb-img {
+    width: 20vw;
+    height: auto;
+  }
+
+  .video-infos-container {
+    grid-area: infos;
+    height: 95%;
+    justify-self: center;
+    align-self: flex-start;
+  }
 }/*# sourceMappingURL=slideWork.css.map */

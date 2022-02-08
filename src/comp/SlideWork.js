@@ -111,6 +111,12 @@ export default function SlideWork(props) {
 
     return (
         <section className="slide-wrapper work-wrapper">
+
+            <div className="section-title">
+                Portfolio
+            </div>
+
+
             <div className="video-player-container">
                 <div className="video-loader-container">
                     <div className="link">

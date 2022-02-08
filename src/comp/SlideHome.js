@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Context } from '../context/languageContext.js'
 
+import SocialNetwork from './SocialNetwork.js'
 import dataObjects from '../datas/dataObjects.js'
 import dataStatus from '../datas/dataStatus.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,7 +15,6 @@ import headCartoon from '../assets/head-cartoon.png'
 import headReal from '../assets/head-real.webp'
 
 import '../style/slideHome.css'
-import SocialNetwork from './SocialNetwork.js'
 
 export default function SlideHome() {
 
