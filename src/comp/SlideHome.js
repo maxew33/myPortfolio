@@ -63,8 +63,6 @@ export default function SlideHome() {
 
         //chest opening / closing and stuff thrown
 
-        accessoryContainer.forEach(container => container.classList.add('accessory-hidden'))
-
         chest.addEventListener('click', () => {
 
             setRemindCta(false)
@@ -137,7 +135,7 @@ export default function SlideHome() {
     }
 
     return (
-        <section className='slide-wrapper home-wrapper'>
+        <div className='home-wrapper'>
 
             {/* My presentation : firstname / lastname / job */}
             <div className='introducing-myself'>
@@ -235,7 +233,7 @@ export default function SlideHome() {
                         key={dataObjects[index].id}
                         onStart={handleStart}
                         onStop={handleStop}>
-                        <div className={'accessory-container accessory-container' + (index + 1)}
+                        <div className={'accessory-container accessory-hidden accessory-container' + (index + 1)}
                             data-id={index}
                             style={{
                                 width: dataObjects[index].width,
@@ -251,6 +249,6 @@ export default function SlideHome() {
                 )
             })}
 
-        </section>
+        </div>
     )
 }

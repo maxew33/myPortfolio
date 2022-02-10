@@ -164,18 +164,18 @@ function App() {
       <div className="slide-container">
         {mySlideContent.map((item) => {
           return (
-            <Fragment key={item.id}>
+            <section className="slide-wrapper" key={item.id}>
               {item.nameFR === 'portfolio' ?
                 <SlideWork slide={mySlide} size={size} />
                 :
                 item.slideDisplayed}
-            </Fragment>
+            </section>
           )
         })}
         <div className="overlay" onWheel={handleWheel}></div>
       </div>
 
-    </div>
+    </div >
   )
 }
 

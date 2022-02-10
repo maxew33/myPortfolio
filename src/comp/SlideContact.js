@@ -67,7 +67,7 @@ export default function SlideContact() {
 
 
     return (
-        <section className="slide-wrapper contact-wrapper">
+        <div className="contact-wrapper">
 
             <div className="message-container"></div>
 
@@ -132,6 +132,6 @@ export default function SlideContact() {
                     <div className="enveloppe">
                 </div>
             </div>
-        </section>
+        </div>
     )
 }

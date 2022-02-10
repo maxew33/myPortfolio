@@ -110,7 +110,7 @@ export default function SlideWork(props) {
     }
 
     return (
-        <section className="slide-wrapper work-wrapper">
+        <div className="work-wrapper">
 
             <div className="section-title">
                 Portfolio
@@ -247,6 +247,6 @@ export default function SlideWork(props) {
 
 
             </div>
-        </section>
+        </div>
     )
 }

@@ -51,20 +51,24 @@ font-family: 'Ephesis', cursive;*/
         hsl(180deg, 100%, 80%, 0.25)
     );
     backdrop-filter: blur(10px);
-    font-size: 3rem;
     z-index: 20;
     font-family: "Ubuntu", sans-serif;
+}
+
+.logo{
+    pointer-events: none;
+    font-size: 30px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    width: min(75%, 800px);
 
     .nav-items {
         // width: fit-content;
         position: relative;
-        font-size: 1.5rem;
+        font-size: 24px;
         cursor: pointer;
         transition: color 0.25s ease-in-out;
 
@@ -96,13 +100,13 @@ font-family: 'Ephesis', cursive;*/
 }
 
 .language-toggle {
-    width: 10vw;
+    width: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .language-toggle-img {
-        height: 4vh;
+        height: 2.5rem;
     }
 
     .language-toggle-selector-container {
@@ -137,21 +141,18 @@ font-family: 'Ephesis', cursive;*/
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
-    height: 50px;
-    width: 50px;
+    height: 3rem;
+    width: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 2rem;
-    font-weight: bolder;
     z-index: 10;
-    color: var(--ctacol);
 
     div {
         position: relative;
         height: 2.5px;
-        width: 40px;
+        width: 3rem;
         background: var(--ctacol);
         border-radius: 25px;
         transform-origin: var(--arrow-transform-origin);
@@ -172,11 +173,11 @@ font-family: 'Ephesis', cursive;*/
 
     &:hover > div {
         &::after {
-            transform: scaleX(0.25) rotate(15deg);
+            transform: scaleX(0.25) rotate(7.5deg);
             background: var(--ctacol);
         }
         &::before {
-            transform: scaleX(0.25) rotate(-15deg);
+            transform: scaleX(0.25) rotate(-7.5deg);
             background: var(--ctacol);
         }
     }
@@ -218,14 +219,53 @@ font-family: 'Ephesis', cursive;*/
 
 .slide-wrapper {
     display: grid;
+    place-content: center;
     position: relative;
     top: 10vh;
     width: 100vw;
     height: 90vh;
+
+    > div{
+        display: grid;
+        width: inherit;
+        height: inherit;
+    }
 }
 
 .section-title{
     display: none;
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+@media (orientation: landscape) and (max-width: 1680px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1366px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 812px) {
+    :root {
+        font-size: 8px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 420px) {
+    :root {
+        font-size: 6px;
+    }
 }
 
 @media (orientation: portrait) {
