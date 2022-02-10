@@ -207,7 +207,7 @@ export default function SlideWork(props) {
             <div className="video-infos-container">
 
                 <div className="video-name">
-                    {channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
+                    {channel < 9 && 0}{channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
                     <div className="video-links">
                         &nbsp;
                         {dataVideos[channel].youtubeLink &&
@@ -237,9 +237,9 @@ export default function SlideWork(props) {
                     </div>
                 </div>
 
-                <div className="video-prez">
+                {/* <div className="video-prez">
                     {language === 'FR' ? dataVideos[channel].prezFR : dataVideos[channel].prezEN}
-                </div>
+                </div> */}
 
                 <div className="video-descr">
                     {language === 'FR' ? dataVideos[channel].txtFR : dataVideos[channel].txtEN}

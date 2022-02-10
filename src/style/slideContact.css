@@ -111,7 +111,7 @@ textarea {
 
 .postcard-left-submit-btn {
   height: 5vh;
-  width: 40%;
+  width: max(15rem, 40%);
   align-self: end;
   border-radius: 5px;
   border: 2px solid var(--bg-color1);

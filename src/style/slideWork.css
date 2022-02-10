@@ -8,7 +8,7 @@
   grid-area: video;
   width: calc(100% - 4rem);
   height: calc(100% - 2rem);
-  margin: 2rem 0 0 4rem;
+  margin: 2rem 0 0 4.5rem;
   transition: 0.5s opacity ease-in-out;
 }
 .video-player-container .video-loader-container {
@@ -136,13 +136,13 @@
 
 .video-controls {
   position: relative;
-  height: 3rem;
+  height: 48px;
   justify-self: center;
   align-self: flex-end;
   margin-left: 4rem;
   grid-area: video;
   bottom: 0.25rem;
-  width: 25%;
+  width: 336px;
   display: flex;
   justify-content: space-around;
   padding: 0.5rem;
@@ -155,7 +155,7 @@
   border: none;
   background: none;
   color: var(--fontcol1);
-  font-size: 1.5rem;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -180,10 +180,8 @@
 
 .video-thumb-container {
   grid-area: thumbnail;
-  width: calc(100% - 6rem);
-  height: calc(100% - 4rem);
   background: rgba(153, 255, 255, 0.15);
-  margin: 2rem 4rem 2rem 2rem;
+  margin: 2rem 4.5rem 2rem 2rem;
   border-radius: 0.5rem;
   z-index: 10;
   overflow-y: scroll;
@@ -222,11 +220,10 @@
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
   border-radius: 0.5rem;
-  margin: 2rem 0 2rem 4rem;
+  margin: 2rem 0 2rem 4.5rem;
   background: rgba(153, 255, 255, 0.15);
   font-family: var(--fontfam2);
-  line-height: 1.25;
-  font-size: 1.25rem;
+  line-height: 1.5;
   z-index: 10;
 }
 .video-infos-container > div {
@@ -234,13 +231,10 @@
 }
 .video-infos-container .video-name {
   font-family: var(--fontfam1);
+  font-size: max(24px, 2rem);
   margin-left: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.video-infos-container .video-descr {
-  font-size: 1rem;
 }
 .video-infos-container .video-links {
   font-family: var(--fontfam2);
@@ -248,7 +242,7 @@
 }
 .video-infos-container .video-links a {
   margin-left: 0.5rem;
-  font-size: 1.5rem;
+  font-size: max(18px, 1.5rem);
 }
 .video-infos-container .video-links a,
 .video-infos-container .video-links a:link,
@@ -261,7 +255,25 @@
 .video-infos-container .video-links a:hover {
   color: var(--ctacol);
 }
+.video-infos-container .video-descr {
+  font-size: max(13.8px, 1.15rem);
+  line-height: 1.25;
+}
 
+@media (orientation: landscape) and (max-height: 500px) {
+  .video-infos-container {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+  .video-infos-container > div {
+    margin: 0;
+  }
+
+  .video-descr {
+    display: none;
+  }
+}
 @media (orientation: portrait) {
   .work-wrapper {
     grid-template: repeat(10, 1fr)/1fr;
