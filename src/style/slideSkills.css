@@ -98,17 +98,18 @@
   display: grid;
   padding: 1.5rem;
   margin-left: 15%;
+  font-size: 1.25rem;
   grid-template: repeat(5, 1fr)/auto;
 }
 
 .my-skill {
-  height: 10vh;
+  height: 5rem;
   display: flex;
   align-items: center;
 }
 .my-skill .skill-img {
-  height: 9vh;
-  width: 9vh;
+  height: 4.5rem;
+  width: 4.5rem;
   -o-object-fit: contain;
      object-fit: contain;
   padding-right: 0.5rem;
@@ -116,7 +117,6 @@
 }
 .my-skill .skill-name {
   font-family: var(--fontfam2);
-  font-size: 1.25rem;
   transition: opacity 0.25s ease-in-out;
 }
 .my-skill .hidden-name {
@@ -261,47 +261,4 @@
 }
 .my-skill10 .hidden-img {
   transform: translate(62.5vw, -6.75vh) scale(0);
-}
-
-@media (orientation: portrait) {
-  .skills-wrapper {
-    grid-template: repeat(7, 1fr)/1fr;
-    grid-template-areas: "bubble" "bubble" "skills" "skills" "avatar" "avatar" "avatar";
-  }
-
-  .intro-of-myself {
-    max-width: 95vw;
-    max-height: 28vh;
-    align-self: flex-end;
-    padding: 1.25vw;
-    overflow: hidden;
-  }
-
-  .avatar-at-work {
-    height: 40vh;
-    width: auto;
-    pointer-events: none;
-    align-self: flex-end;
-    justify-self: flex-end;
-  }
-
-  .hit-zone {
-    justify-self: center;
-  }
-
-  .skills-container {
-    grid-area: skills;
-    padding: 0;
-    margin: 0;
-    margin-top: 2.5vh;
-    width: 100vw;
-  }
-
-  .my-skill {
-    height: 5vh;
-  }
-  .my-skill .skill-img {
-    height: 4.5vh;
-    width: 4.5vh;
-  }
 }/*# sourceMappingURL=slideSkills.css.map */

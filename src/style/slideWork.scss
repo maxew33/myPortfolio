@@ -159,12 +159,12 @@
 
 .video-thumb-container::-webkit-scrollbar-track {
     background: hsl(285deg, 90%, 75%, 0.25);
-    border-radius: 100vw;
+    border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb {
     background: hsl(285deg, 90%, 35%, 0.75);
-    border-radius: 100vw;
+    border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb:hover {
@@ -265,110 +265,5 @@
     .video-descr {
         font-size: max(13.8px, 1.15rem);
         line-height: 1.25;
-    }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-    .video-infos-container{
-        display: flex;
-        align-items: center;
-        line-height: 0;
-
-        >div{
-            margin: 0;
-        }
-    }
-
-    .video-descr {
-        display: none;
-    }
-}
-
-
-@media (orientation: landscape) and (max-width: 1680px) {
-}
-
-@media (orientation: landscape) and (max-width: 1366px) {
-}
-
-@media (orientation: landscape) and (max-width: 1024px) {
-}
-
-@media (orientation: landscape) and (max-width: 812px) {
-}
-
-@media (orientation: portrait) and (max-width: 420px) {
-}
-
-
-@media (orientation: portrait) {
-    .work-wrapper {
-        grid-template: repeat(10, 1fr) / 1fr;
-        width: 80vw;
-        grid-template-areas:
-            "section"
-            "video"
-            "video"
-            "video"
-            "controls"
-            "thumbnail"
-            "thumbnail"
-            "infos"
-            "infos"
-            "infos";
-
-        > * {
-            margin: 0;
-        }
-    }
-
-    .video-player-container {
-        align-self: flex-end;
-        justify-self: center;
-    }
-
-    .video-controls {
-        position: relative;
-        height: 75%;
-        justify-self: center;
-        align-self: flex-start;
-        grid-area: controls;
-        width: calc(100% - 4rem);
-        background: none;
-        border: none;
-    }
-
-    .video-thumb-container {
-        grid-area: thumbnail;
-        width: calc(100% - 4rem);
-        justify-self: center;
-        align-self: center;
-        height: calc(100% - 2rem);
-        overflow-y: hidden;
-        overflow-x: scroll;
-        display: flex;
-
-        .video-thumb {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-areas:
-                "video video video video video"
-                "video video video video video"
-                "video video video video video"
-                "rank title title title title";
-            margin: 0;
-
-            .video-thumb-img {
-                width: 20vw;
-                height: auto;
-            }
-        }
-    }
-
-    .video-infos-container {
-        grid-area: infos;
-        height: 95%;
-        justify-self: center;
-        align-self: flex-start;
     }
 }

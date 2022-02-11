@@ -1,5 +1,5 @@
 :root {
-  --avatar-length-unit: 0.25vw;
+  --avatar-length-unit: .25rem;
   --avatar-clip-value: 0%;
 }
 
@@ -214,58 +214,58 @@
 }
 
 .accessory-container1 {
-  right: 28rem;
-  bottom: 47%;
-}
-
-.accessory-container2 {
-  right: 26rem;
-  bottom: 37%;
-}
-
-.accessory-container3 {
-  right: 28rem;
-  bottom: 46%;
-}
-
-.accessory-container4 {
-  right: 29rem;
-  bottom: 41%;
-}
-
-.accessory-container5 {
-  right: 25rem;
-  bottom: 37%;
-}
-
-.accessory-container6 {
-  right: 29rem;
-  bottom: 42%;
-}
-
-.accessory-container7 {
-  right: 26rem;
+  right: 27rem;
   bottom: 39%;
 }
 
-.accessory-container8 {
-  right: 28rem;
+.accessory-container2 {
+  right: 29rem;
+  bottom: 50%;
+}
+
+.accessory-container3 {
+  right: 27rem;
+  bottom: 43%;
+}
+
+.accessory-container4 {
+  right: 25rem;
+  bottom: 42%;
+}
+
+.accessory-container5 {
+  right: 26rem;
+  bottom: 44%;
+}
+
+.accessory-container6 {
+  right: 26rem;
+  bottom: 48%;
+}
+
+.accessory-container7 {
+  right: 25rem;
   bottom: 45%;
+}
+
+.accessory-container8 {
+  right: 29rem;
+  bottom: 49%;
 }
 
 .accessory-container9 {
   right: 27rem;
-  bottom: 40%;
+  bottom: 47%;
 }
 
 .accessory-container10 {
   right: 27rem;
-  bottom: 49%;
+  bottom: 41%;
 }
 
 .accessory-container11 {
-  right: 25rem;
-  bottom: 37%;
+  right: 29rem;
+  bottom: 40%;
 }
 
 .accessory-hidden {
@@ -351,96 +351,4 @@
 .react-draggable-dragging {
   cursor: -webkit-grabbing;
   cursor: grabbing;
-}
-
-@media (orientation: portrait) {
-  :root {
-    --avatar-length-unit: 0.4vw;
-  }
-
-  .home-wrapper {
-    grid-template-areas: "name name" "chest avatar";
-  }
-  .home-wrapper .social-network {
-    display: none;
-  }
-  .home-wrapper .introducing-myself {
-    padding: 2.5rem;
-    justify-self: flex-end;
-  }
-  .home-wrapper .introducing-myself .my-role {
-    text-align: center;
-  }
-  .home-wrapper .status-container {
-    top: 0;
-    align-self: flex-end;
-    grid-area: name;
-    height: 25%;
-  }
-  .home-wrapper .my-avatar {
-    bottom: 0;
-    right: 0;
-    width: 50vw;
-  }
-  .home-wrapper .chest-container {
-    height: 17.5vh;
-    width: 15vh;
-    grid-area: chest;
-    margin-left: 0;
-    align-self: flex-end;
-    justify-self: center;
-  }
-  .home-wrapper .accessory-container1 {
-    left: 27%;
-    bottom: 40%;
-  }
-  .home-wrapper .accessory-container2 {
-    left: 24%;
-    bottom: 35%;
-  }
-  .home-wrapper .accessory-container3 {
-    left: 34%;
-    bottom: 40%;
-  }
-  .home-wrapper .accessory-container4 {
-    left: 23%;
-    bottom: 38%;
-  }
-  .home-wrapper .accessory-container5 {
-    left: 31%;
-    bottom: 41%;
-  }
-  .home-wrapper .accessory-container6 {
-    left: 33%;
-    bottom: 33%;
-  }
-  .home-wrapper .accessory-container7 {
-    left: 18%;
-    bottom: 37%;
-  }
-  .home-wrapper .accessory-container8 {
-    left: 18%;
-    bottom: 41%;
-  }
-  .home-wrapper .accessory-container9 {
-    left: 26%;
-    bottom: 33%;
-  }
-  .home-wrapper .accessory-container10 {
-    left: 18%;
-    bottom: 36%;
-  }
-  .home-wrapper .accessory-container11 {
-    left: 33%;
-    bottom: 44%;
-  }
-  .home-wrapper .accessory-hidden {
-    left: calc(25% - 7.5vh);
-    bottom: 2vh;
-  }
-
-  .remind-cta {
-    height: 5vh;
-    width: 5vh;
-  }
 }/*# sourceMappingURL=slideHome.css.map */

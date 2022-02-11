@@ -166,12 +166,12 @@
 
 .video-thumb-container::-webkit-scrollbar-track {
   background: rgba(220, 134, 249, 0.25);
-  border-radius: 100vw;
+  border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb {
   background: rgba(129, 9, 170, 0.75);
-  border-radius: 100vw;
+  border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb:hover {
@@ -258,73 +258,4 @@
 .video-infos-container .video-descr {
   font-size: max(13.8px, 1.15rem);
   line-height: 1.25;
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .video-infos-container {
-    display: flex;
-    align-items: center;
-    line-height: 0;
-  }
-  .video-infos-container > div {
-    margin: 0;
-  }
-
-  .video-descr {
-    display: none;
-  }
-}
-@media (orientation: portrait) {
-  .work-wrapper {
-    grid-template: repeat(10, 1fr)/1fr;
-    width: 80vw;
-    grid-template-areas: "section" "video" "video" "video" "controls" "thumbnail" "thumbnail" "infos" "infos" "infos";
-  }
-  .work-wrapper > * {
-    margin: 0;
-  }
-
-  .video-player-container {
-    align-self: flex-end;
-    justify-self: center;
-  }
-
-  .video-controls {
-    position: relative;
-    height: 75%;
-    justify-self: center;
-    align-self: flex-start;
-    grid-area: controls;
-    width: calc(100% - 4rem);
-    background: none;
-    border: none;
-  }
-
-  .video-thumb-container {
-    grid-area: thumbnail;
-    width: calc(100% - 4rem);
-    justify-self: center;
-    align-self: center;
-    height: calc(100% - 2rem);
-    overflow-y: hidden;
-    overflow-x: scroll;
-    display: flex;
-  }
-  .video-thumb-container .video-thumb {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "video video video video video" "video video video video video" "video video video video video" "rank title title title title";
-    margin: 0;
-  }
-  .video-thumb-container .video-thumb .video-thumb-img {
-    width: 20vw;
-    height: auto;
-  }
-
-  .video-infos-container {
-    grid-area: infos;
-    height: 95%;
-    justify-self: center;
-    align-self: flex-start;
-  }
 }/*# sourceMappingURL=slideWork.css.map */

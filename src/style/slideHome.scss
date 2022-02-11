@@ -1,5 +1,5 @@
 :root {
-    --avatar-length-unit: 0.25vw;
+    --avatar-length-unit: .25rem;
     --avatar-clip-value: 0%;
 }
 
@@ -395,83 +395,4 @@
 .react-draggable-dragging {
     cursor: -webkit-grabbing;
     cursor: grabbing;
-}
-
-@media (orientation: landscape) and (max-width: 1680px) {
-}
-
-@media (orientation: landscape) and (max-width: 1366px) {
-}
-
-@media (orientation: landscape) and (max-width: 1024px) {
-}
-
-@media (orientation: landscape) and (max-width: 812px) {
-}
-
-@media (orientation: portrait) and (max-width: 420px) {
-}
-
-@media (orientation: portrait) {
-    :root {
-        --avatar-length-unit: 0.4vw;
-    }
-
-    .home-wrapper {
-        grid-template-areas:
-            "name name"
-            "chest avatar";
-
-        .social-network {
-            display: none;
-        }
-
-        .introducing-myself {
-            padding: 2.5rem;
-            justify-self: flex-end;
-
-            .my-role {
-                text-align: center;
-            }
-        }
-
-        .status-container {
-            top: 0;
-            align-self: flex-end;
-            grid-area: name;
-            height: 25%;
-        }
-
-        .my-avatar {
-            bottom: 0;
-            right: 0;
-            width: 50vw;
-        }
-
-        .chest-container {
-            height: 17.5vh;
-            width: 15vh;
-            grid-area: chest;
-            margin-left: 0;
-            align-self: flex-end;
-            justify-self: center;
-        }
-
-        @for $i from 1 through 11 {
-            .accessory-container#{$i} {
-                left: 15% + random(20);
-                bottom: 30% + random(15);
-            }
-        }
-
-        .accessory-hidden {
-            left: calc(25% - 7.5vh);
-            bottom: 2vh;
-        }
-    }
-
-    .remind-cta {
-        height: 5vh;
-        width: 5vh;
-    }
 }

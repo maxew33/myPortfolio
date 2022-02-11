@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, Fragment, useContext } from 'react'
 import { Context } from './context/languageContext'
 
+import { useSwipeable } from 'react-swipeable'
 import { v4 as uuidv4 } from 'uuid'
 
 import SlideHome from './comp/SlideHome'
@@ -10,6 +11,7 @@ import SlideContact from './comp/SlideContact'
 import BurgerMenu from './comp/BurgerMenu'
 
 import './app.css'
+import './style/responsive.css'
 import ToggleLanguage from './comp/ToggleLanguage'
 import useWindowSize from './comp/useWindowSize'
 import SocialNetwork from './comp/SocialNetwork'
@@ -77,13 +79,17 @@ function App() {
     size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
   }, [size])
 
+  useEffect(() => {
+    // effect triggered when changing viewport orientation    
+    slideAnim(mySlide*-1)
+  }, [orientation])
+
   function slideAnim(direction) {
 
-    let oldSlide
+    let oldSlide = mySlide
 
     console.log(size.width)
 
-    oldSlide = mySlide
     oldSlide += direction
 
     // check if i can move or not
@@ -119,8 +125,28 @@ function App() {
     slideAnim(e.target.dataset.index - mySlide)
   }
 
+  
+  // changig the slide by swipe
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+        orientation === 'landscape' && slideAnim(1)
+    },
+    onSwipedRight: () => {
+        orientation === 'landscape' && slideAnim(-1)
+    },
+    onSwipedUp: () => {
+        orientation === 'portrait' && slideAnim(1)
+    },
+    onSwipedDown: () => {
+        orientation === 'portrait' && slideAnim(-1)
+    },
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: false,
+    delta: 40  
+})
+
   return (
-    <div className="App">
+    <div className="App"  {...handlers}>
 
       {orientation === 'landscape' && <>
         {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
@@ -134,7 +160,7 @@ function App() {
         }
       </>}
 
-      {orientation === 'portrait' && <BurgerMenu />}
+      {orientation === 'portrait' && <BurgerMenu open = {false}/>}
 
       <div className='banner'>
 

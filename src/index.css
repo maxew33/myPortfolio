@@ -1,5 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Ubuntu&display=swap');
 
+
+/* loader */
+
+.page-loader {
+	height: 100vh;
+	width: 100vw;
+	background: #222;
+}
+
+.loader-container {
+	position: relative;
+	height: 50vmin;
+	width: 50vmin;
+}
+
+.ball {
+	position: absolute;
+	top: 25vmin;
+	height: 10vmin;
+	width: 10vmin;
+	background: whitesmoke;
+	border-radius: 100%;
+	transform-origin: -10vmin center;
+}
+
+.ball-2 {
+	right: 12.5vmin;
+	animation: linear 3s infinite sheep1;
+}
+
+.ball-1 {
+	right: -2.5vmin;
+	animation: linear 3s infinite sheep2;
+}
+
+@keyframes sheep1 {
+	33% {
+		transform: rotate(0deg);
+	}
+
+	66% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-180deg) translate(-30vmin);
+	}
+}
+
+@keyframes sheep2 {
+	33%, 66% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-180deg) translate(-30vmin);
+	}
+
+}
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -14,8 +75,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,25 +86,31 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;

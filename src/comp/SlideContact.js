@@ -69,6 +69,10 @@ export default function SlideContact() {
     return (
         <div className="contact-wrapper">
 
+            <div className="section-title">
+                Contact
+            </div>
+
             <div className="message-container"></div>
 
             <div className="postcard-container">
@@ -129,7 +133,7 @@ export default function SlideContact() {
             </div>
             <div className="animation-container">
                 {/* ------------- ENVELOPPE ------------- */}
-                    <div className="enveloppe">
+                <div className="enveloppe">
                 </div>
             </div>
         </div>

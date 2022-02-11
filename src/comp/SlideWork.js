@@ -155,30 +155,37 @@ export default function SlideWork(props) {
 
             <div className="video-controls">
                 <button className="video-play"
+                    aria-label={language === 'FR' ? 'lecture' : 'play'}
                     onClick={handlePlay}>
                     {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
                 </button>
                 <button className="video-prev"
+                    aria-label={language === 'FR' ? 'précédente' : 'previous'}
                     onClick={() => handleNav(-1)}>
                     <FontAwesomeIcon icon={faStepBackward} />
                 </button>
                 <button className="video-stop"
+                    aria-label={language === 'FR' ? 'stop' : 'stop'}
                     onClick={handleStop}>
                     <FontAwesomeIcon icon={faStop} />
                 </button>
                 <button className="video-next"
+                    aria-label={language === 'FR' ? 'suivante' : 'next'}
                     onClick={() => handleNav(1)}>
                     <FontAwesomeIcon icon={faStepForward} />
                 </button>
                 <button className="video-volume"
+                    aria-label={language === 'FR' ? 'muet' : 'mute'}
                     onClick={() => handleVolume(0)}>
                     <FontAwesomeIcon icon={faVolumeMute} />
                 </button>
                 <button className="video-volume"
+                    aria-label={language === 'FR' ? 'baisser le volume' : 'volume down'}
                     onClick={() => handleVolume(-.1)}>
                     <FontAwesomeIcon icon={faVolumeDown} />
                 </button>
                 <button className="video-volume"
+                    aria-label={language === 'FR' ? 'augmenter le volume' : 'volume up'}
                     onClick={() => handleVolume(.1)}>
                     <FontAwesomeIcon icon={faVolumeUp} />
                 </button>
@@ -188,13 +195,14 @@ export default function SlideWork(props) {
                 {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
                 {dataVideos.map((item, index) => {
                     return (
-                        <div className="video-thumb" key={index}>
+                        <div className={channel === index ? "video-thumb video-thumb-played" : "video-thumb" } key={index}>
+                            <img className="video-thumb-img"
+                                src={item.thumb}
+                                alt={language === 'FR' ? item.nameFR : item.nameEN}
+                                onClick={() => handleChooseVideo(index)} />
                             <div className="video-thumb-rank">
                                 {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
                             </div>
-                            <img className="video-thumb-img"
-                                src={item.thumb}
-                                onClick={() => handleChooseVideo(index)} />
                             <div className="video-thumb-name">
                                 {language === 'FR' ? item.nameFR : item.nameEN}
                             </div>

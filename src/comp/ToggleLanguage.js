@@ -12,7 +12,7 @@ export default function ToggleLanguage() {
     const {language, toggleLanguage} = useContext(Context)
 
       // language toggle
-  const handleClickToggle = (e) => {
+ /* const handleClickToggle = () => {
     if (toggle) {
 
         let newLanguage = language
@@ -29,12 +29,50 @@ export default function ToggleLanguage() {
         setToggle(true)
       }, 350);
     }
-  }
+  }*/
+  const handleClickToggle = () => {
+    if (toggle) {
 
+        let newLanguage = language
+
+        newLanguage === 'FR' ? toggleLanguage('EN') : toggleLanguage('FR')
+        
+      document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
+
+      setToggle(false)
+
+      setTimeout(() => {
+        setToggle(true)
+      }, 350);
+    }
+  }
+  
+  const handleClickToggleLang = (lang) => {
+    if (toggle) {
+
+        if(language === lang){
+          return
+        }
+        else{
+          toggleLanguage(lang)
+        }
+        
+      document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
+
+      setToggle(false)
+
+      setTimeout(() => {
+        setToggle(true)
+      }, 350);
+    }
+  }
+  
     return (
     <div className="language-toggle">
         <img
             className='language-toggle-img'
+            alt={ language ==='FR' ? 'français' : 'french'}
+            onClick={() => handleClickToggleLang('FR')}
             src={french} />
         <div className="language-toggle-selector-container"
             onClick={handleClickToggle}>
@@ -42,6 +80,8 @@ export default function ToggleLanguage() {
         </div>
         <img
             className='language-toggle-img'
+            alt={ language ==='FR' ? 'anglais' : 'english'}
+            onClick={() => handleClickToggleLang('EN')}
             src={english} />
     </div>
     )
