@@ -3,7 +3,7 @@ const dataStatus = {
         [
             'vous dit bonjour!',
             'a hâte de vous rencontrer. ',
-            'a codé ce site avec rigueur...',
+            'a codé ce site avec ❤ ...',
             'et avec React.',
             'sait se former tout seul.',
             'est aussi un mari...',
@@ -20,8 +20,8 @@ const dataStatus = {
         [
             'says hello !',
             'is looking to meet you. ',
-            'has coded this site with rigor...',
-            'and React.',
+            'has coded with ❤ ...',
+            'and using React.',
             'is a selfmade man.',
             'is also a husband...',
             'and a dad.',

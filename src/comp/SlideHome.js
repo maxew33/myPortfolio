@@ -10,8 +10,8 @@ import Draggable from 'react-draggable'
 
 import { faRedo, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-import body from '../assets/body.png'
-import headCartoon from '../assets/head-cartoon.png'
+import body from '../assets/body.webp'
+import headCartoon from '../assets/head-cartoon.webp'
 import headReal from '../assets/head-real.webp'
 
 import '../style/slideHome.css'

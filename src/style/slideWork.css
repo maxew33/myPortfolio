@@ -18,7 +18,7 @@
   border: 2px solid black;
   background: black;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .video-loader-container {
@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: center;
   -webkit-animation: 1s linear forwards text-container-apparition;
-          animation: 1s linear forwards text-container-apparition;
+  animation: 1s linear forwards text-container-apparition;
 }
 
 .my-text {
@@ -53,7 +53,7 @@
   align-items: center;
   justify-content: flex-start;
   -webkit-animation: 9s linear infinite 1s text-container-animation;
-          animation: 9s linear infinite 1s text-container-animation;
+  animation: 9s linear infinite 1s text-container-animation;
 }
 
 .my-text-content {
@@ -62,7 +62,7 @@
   width: 0;
   overflow: hidden;
   -webkit-animation: 9s linear infinite 1s text-apparition;
-          animation: 9s linear infinite 1s text-apparition;
+  animation: 9s linear infinite 1s text-apparition;
 }
 
 .my-text-1 {
@@ -72,13 +72,13 @@
 .my-text-2 {
   --width: calc(var(--loader-font-size) * 5.3);
   -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-delay: 4s;
 }
 
 .my-text-3 {
   --width: calc(var(--loader-font-size) * 6);
   -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  animation-delay: 7s;
 }
 
 @-webkit-keyframes text-container-apparition {
@@ -89,7 +89,6 @@
     opacity: 1;
   }
 }
-
 @keyframes text-container-apparition {
   0%, 80% {
     opacity: 0;
@@ -173,17 +172,18 @@
 }
 
 .video-thumb-container::-webkit-scrollbar-track {
-  background: rgba(220, 134, 249, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb {
-  background: rgba(129, 9, 170, 0.75);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb:hover {
-  background: #8109aa;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .video-thumb-container {
@@ -213,7 +213,7 @@
   width: 95%;
   height: 95%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   cursor: pointer;
   border-radius: 0.2rem;
   grid-area: video;

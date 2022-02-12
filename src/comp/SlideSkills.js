@@ -4,7 +4,7 @@ import { Context } from '../context/languageContext.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 
-import atWork from '../assets/avataratwork.png'
+import atWork from '../assets/avataratwork.webp'
 
 import dataSkills from '../datas/dataSkills.js'
 

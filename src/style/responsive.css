@@ -97,6 +97,7 @@
   }
   .banner .logo {
     padding-left: 2rem;
+    font-size: 5rem;
   }
   .banner .language-toggle {
     padding-left: 2rem;
@@ -180,48 +181,48 @@
     bottom: 7.5rem;
   }
   .home-wrapper .accessory-container1 {
-    left: 23%;
-    bottom: 37%;
+    left: 20%;
+    bottom: 39%;
   }
   .home-wrapper .accessory-container2 {
-    left: 35%;
-    bottom: 38%;
+    left: 24%;
+    bottom: 35%;
   }
   .home-wrapper .accessory-container3 {
-    left: 17%;
-    bottom: 44%;
+    left: 34%;
+    bottom: 36%;
   }
   .home-wrapper .accessory-container4 {
     left: 21%;
-    bottom: 35%;
+    bottom: 43%;
   }
   .home-wrapper .accessory-container5 {
-    left: 27%;
-    bottom: 34%;
+    left: 26%;
+    bottom: 42%;
   }
   .home-wrapper .accessory-container6 {
-    left: 20%;
-    bottom: 33%;
+    left: 34%;
+    bottom: 41%;
   }
   .home-wrapper .accessory-container7 {
-    left: 32%;
-    bottom: 45%;
+    left: 30%;
+    bottom: 44%;
   }
   .home-wrapper .accessory-container8 {
-    left: 25%;
-    bottom: 33%;
+    left: 33%;
+    bottom: 40%;
   }
   .home-wrapper .accessory-container9 {
     left: 25%;
-    bottom: 33%;
+    bottom: 42%;
   }
   .home-wrapper .accessory-container10 {
-    left: 19%;
-    bottom: 39%;
+    left: 24%;
+    bottom: 31%;
   }
   .home-wrapper .accessory-container11 {
-    left: 26%;
-    bottom: 39%;
+    left: 23%;
+    bottom: 42%;
   }
   .home-wrapper .accessory-hidden {
     left: calc(25% - 7.5vh);

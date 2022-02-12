@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
-import stamp from '../assets/stamp.svg'
+import stamp from '../assets/stamp.webp'
 
 import '../style/slideContact.css'
 
