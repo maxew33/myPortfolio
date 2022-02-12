@@ -40,10 +40,10 @@ export default function SlideSkills() {
                         </p>
                         <p>Pour en savoir plus, je vous invite {!skillsDisplayed && 'à cliquer sur mon ordinateur puis'} à consulter mon CV :
                             &nbsp;
-                            <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
+                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_CV.pdf'}
                                 className="resume-download"
                                 target="_blank"
-                                aria-label="Resume download">
+                                aria-label="téléchargement du CV de Maxime Malfilâtre">
                                 <FontAwesomeIcon icon={faFileAlt} />
                             </a>
                         </p>
@@ -54,10 +54,10 @@ export default function SlideSkills() {
                         </p>
                         <p>To find out more, I invite you to  {!skillsDisplayed && 'click on my computer and then'} consult my resume :
                             &nbsp;
-                            <a href={process.env.PUBLIC_URL + ' /cv-malfilatre-maxime.pdf'}
+                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_Resume.pdf'}
                                 className="resume-download"
                                 target="_blank"
-                                aria-label="Resume download">
+                                aria-label="Maxime Malfilatre's resume download">
                                 <FontAwesomeIcon icon={faFileAlt} />
                             </a>
                         </p>

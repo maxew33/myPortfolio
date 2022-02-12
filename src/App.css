@@ -1,15 +1,15 @@
 :root {
-  --bg-color1: hsl(285deg, 90%, 35%);
-  --bg-color2: hsl(267deg, 84%, 38%);
-  --bg-color3: hsl(249deg, 78%, 41%);
-  --bg-color4: hsl(231deg, 74%, 44%);
-  --bg-color5: hsl(213deg, 70%, 47%);
+  --bg-color1: #03002e;
+  --bg-color2: #010048;
+  --bg-color3: #010057;
+  --bg-color4: #02006c;
+  --bg-color5: #090088;
   --bg-gradient-angle: 90deg;
   --fontfam1: "arial black", Arial, Helvetica, sans-serif;
   --fontfam2: "Ubuntu", sans-serif;
   --fontfam3: "Ephesis", cursive;
   --fontcol1: hsl(0deg, 0%, 85%);
-  --fontcol2: hsl(194deg, 85%, 62%);
+  --fontcol2: #4896ef;
   --ctacol: orangered;
   --chest-color: #4896ef;
 }
@@ -42,7 +42,7 @@ font-family: 'Ephesis', cursive;*/
 
 .logo {
   pointer-events: none;
-  font-size: 30px;
+  font-size: 2.5rem;
 }
 
 .navbar {
@@ -79,13 +79,13 @@ font-family: 'Ephesis', cursive;*/
 }
 
 .language-toggle {
-  width: 10rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .language-toggle .language-toggle-img {
   height: 2.5rem;
+  cursor: pointer;
 }
 .language-toggle .language-toggle-selector-container {
   position: relative;

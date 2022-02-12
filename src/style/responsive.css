@@ -101,6 +101,7 @@
   .banner .language-toggle {
     padding-left: 2rem;
     width: auto;
+    font-size: 2rem;
   }
   .banner .language-toggle .language-toggle-img {
     height: 5rem;
@@ -175,51 +176,52 @@
   .home-wrapper .chest-container {
     height: 15rem;
     width: 12.5rem;
-    right: 40rem;
+    right: 42.5rem;
+    bottom: 7.5rem;
   }
   .home-wrapper .accessory-container1 {
     left: 23%;
-    bottom: 36%;
+    bottom: 37%;
   }
   .home-wrapper .accessory-container2 {
-    left: 19%;
-    bottom: 35%;
+    left: 35%;
+    bottom: 38%;
   }
   .home-wrapper .accessory-container3 {
-    left: 16%;
-    bottom: 37%;
+    left: 17%;
+    bottom: 44%;
   }
   .home-wrapper .accessory-container4 {
-    left: 19%;
-    bottom: 45%;
+    left: 21%;
+    bottom: 35%;
   }
   .home-wrapper .accessory-container5 {
-    left: 19%;
-    bottom: 37%;
+    left: 27%;
+    bottom: 34%;
   }
   .home-wrapper .accessory-container6 {
-    left: 24%;
-    bottom: 32%;
+    left: 20%;
+    bottom: 33%;
   }
   .home-wrapper .accessory-container7 {
-    left: 27%;
-    bottom: 44%;
+    left: 32%;
+    bottom: 45%;
   }
   .home-wrapper .accessory-container8 {
-    left: 33%;
-    bottom: 41%;
+    left: 25%;
+    bottom: 33%;
   }
   .home-wrapper .accessory-container9 {
-    left: 18%;
-    bottom: 32%;
+    left: 25%;
+    bottom: 33%;
   }
   .home-wrapper .accessory-container10 {
-    left: 27%;
-    bottom: 44%;
+    left: 19%;
+    bottom: 39%;
   }
   .home-wrapper .accessory-container11 {
-    left: 31%;
-    bottom: 37%;
+    left: 26%;
+    bottom: 39%;
   }
   .home-wrapper .accessory-hidden {
     left: calc(25% - 7.5vh);

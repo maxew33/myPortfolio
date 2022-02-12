@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, Fragment, useContext } from 'react'
 import { Context } from './context/languageContext'
 
+import { Helmet } from 'react-helmet'
 import { useSwipeable } from 'react-swipeable'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -81,7 +82,7 @@ function App() {
 
   useEffect(() => {
     // effect triggered when changing viewport orientation    
-    slideAnim(mySlide*-1)
+    slideAnim(mySlide * -1)
   }, [orientation])
 
   function slideAnim(direction) {
@@ -125,83 +126,113 @@ function App() {
     slideAnim(e.target.dataset.index - mySlide)
   }
 
-  
+
   // changig the slide by swipe
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-        orientation === 'landscape' && slideAnim(1)
+      orientation === 'landscape' && slideAnim(1)
     },
     onSwipedRight: () => {
-        orientation === 'landscape' && slideAnim(-1)
+      orientation === 'landscape' && slideAnim(-1)
     },
     onSwipedUp: () => {
-        orientation === 'portrait' && slideAnim(1)
+      orientation === 'portrait' && slideAnim(1)
     },
     onSwipedDown: () => {
-        orientation === 'portrait' && slideAnim(-1)
+      orientation === 'portrait' && slideAnim(-1)
     },
     preventDefaultTouchmoveEvent: true,
     trackMouse: false,
-    delta: 40  
-})
+    delta: 75
+  })
 
   return (
-    <div className="App"  {...handlers}>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'}</title>
+        <base target="_blank" href="https://www.maxime-malfilatre.com/" />
 
-      {orientation === 'landscape' && <>
-        {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-          <div></div>
-        </div>}
+        <link rel="canonical" href="https://www.maxime-malfilatre.com/" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-16x16"
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-32x32"
+          sizes="32x32"
+        />
+
+        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'} />
+        
+        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, frontend developper'} />
+        <meta name="author" content="Maxime Malfilâtre" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta property="og:type" content="article" />
+
+      </Helmet>
+      <div className="App"  {...handlers}>
+
+        {orientation === 'landscape' && <>
+          {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
+            <div></div>
+          </div>}
 
 
-        {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-          <div></div>
+          {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
+            <div></div>
+          </div>
+          }
+        </>}
+
+        {orientation === 'portrait' && <BurgerMenu open={false} />}
+
+        <div className='banner'>
+
+          <div className="logo">
+            &#123;m&#125;
+          </div>
+
+          {orientation === 'portrait' && <SocialNetwork />}
+
+          <ul className='navbar'>
+            {mySlideContent.map((item, index) => {
+              return (
+                <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
+                  {language === 'FR' ? item.nameFR : item.nameEN}
+                  {item.name}
+
+                  <div className="underline"></div>
+                </li>
+              )
+            })}
+          </ul>
+
+          <ToggleLanguage />
+
         </div>
-        }
-      </>}
 
-      {orientation === 'portrait' && <BurgerMenu open = {false}/>}
-
-      <div className='banner'>
-
-        <div className="logo">
-          &#123;m&#125;
-        </div>
-
-        {orientation === 'portrait' && <SocialNetwork />}
-
-        <ul className='navbar'>
-          {mySlideContent.map((item, index) => {
+        <div className="slide-container">
+          {mySlideContent.map((item) => {
             return (
-              <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
-                {language === 'FR' ? item.nameFR : item.nameEN}
-                {item.name}
-
-                <div className="underline"></div>
-              </li>
+              <section className="slide-wrapper" key={item.id}>
+                {item.nameFR === 'portfolio' ?
+                  <SlideWork slide={mySlide} size={size} />
+                  :
+                  item.slideDisplayed}
+              </section>
             )
           })}
-        </ul>
+          <div className="overlay" onWheel={handleWheel}></div>
+        </div>
 
-        <ToggleLanguage />
-
-      </div>
-
-      <div className="slide-container">
-        {mySlideContent.map((item) => {
-          return (
-            <section className="slide-wrapper" key={item.id}>
-              {item.nameFR === 'portfolio' ?
-                <SlideWork slide={mySlide} size={size} />
-                :
-                item.slideDisplayed}
-            </section>
-          )
-        })}
-        <div className="overlay" onWheel={handleWheel}></div>
-      </div>
-
-    </div >
+      </div >
+    </>
   )
 }
 

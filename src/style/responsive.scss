@@ -114,6 +114,7 @@
         .language-toggle {
             padding-left: 2rem;
             width: auto;
+            font-size: 2rem;
 
             .language-toggle-img {
                 height: 5rem;
@@ -205,7 +206,8 @@
         .chest-container {
             height: 15rem;
             width: 12.5rem;
-            right: 40rem;
+            right: 42.5rem;
+            bottom: 7.5rem;
         }
 
         @for $i from 1 through 11 {

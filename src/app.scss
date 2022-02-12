@@ -1,15 +1,43 @@
 :root {
+    // bleu-violet => bleu clair
     // --bg-color1: hsl(258deg, 86%, 34%);
     // --bg-color2: hsl(243deg, 57%, 50%);
     // --bg-color3: hsl(229deg, 83%, 60%);
     // --bg-color4: hsl(212deg, 84%, 61%);
     // --bg-color5: hsl(194deg, 85%, 62%);
 
-    --bg-color1: hsl(285deg, 90%, 35%);
-    --bg-color2: hsl(267deg, 84%, 38%);
-    --bg-color3: hsl(249deg, 78%, 41%);
-    --bg-color4: hsl(231deg, 74%, 44%);
-    --bg-color5: hsl(213deg, 70%, 47%);
+    // violet => bleu
+    // --bg-color1: hsl(277deg, 84%, 38%);
+    // --bg-color2: hsl(263deg, 90%, 40%);
+    // --bg-color3: hsl(249deg, 78%, 41%);
+    // --bg-color4: hsl(231deg, 74%, 44%);
+    // --bg-color5: hsl(213deg, 70%, 47%);
+
+    // bleu très foncé => bleu moyen
+    --bg-color1: #03002e;
+    --bg-color2: #010048;
+    --bg-color3: #010057;
+    --bg-color4: #02006c;
+    --bg-color5: #090088;
+
+    // "royal purple" => "st patrick's blue ???"
+    // --bg-color1: #7953A9;
+    // --bg-color2: #8B74BD;
+    // --bg-color3: #B9BFFF;
+    // --bg-color4: #4066E0;
+    // --bg-color5: #22277A;
+
+    // --bg-color1: hsl(300deg, 100%, 35%);
+    // --bg-color2: hsl(285deg, 100%, 24%);
+    // --bg-color3: hsl(270deg, 100%, 24%);
+    // --bg-color4: hsl(254deg, 100%, 24%);
+    // --bg-color5: hsl(240deg, 100%, 24%);
+
+    // --bg-color1: ;
+    // --bg-color2: ;
+    // --bg-color3: ;
+    // --bg-color4: ;
+    // --bg-color5: ;
 
     --bg-gradient-angle: 90deg;
 
@@ -18,7 +46,7 @@
     --fontfam3: "Ephesis", cursive;
 
     --fontcol1: hsl(0deg, 0%, 85%);
-    --fontcol2: hsl(194deg, 85%, 62%);
+    --fontcol2: #4896ef;
 
     --ctacol: orangered;
 
@@ -55,9 +83,9 @@ font-family: 'Ephesis', cursive;*/
     font-family: "Ubuntu", sans-serif;
 }
 
-.logo{
+.logo {
     pointer-events: none;
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 
 .navbar {
@@ -100,13 +128,13 @@ font-family: 'Ephesis', cursive;*/
 }
 
 .language-toggle {
-    width: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .language-toggle-img {
         height: 2.5rem;
+        cursor: pointer;
     }
 
     .language-toggle-selector-container {
@@ -123,7 +151,7 @@ font-family: 'Ephesis', cursive;*/
             position: absolute;
             height: 1.5rem;
             width: 1.5rem;
-            background:  var(--fontcol1);;
+            background: var(--fontcol1);
             transition: transform 0.25s ease-in-out;
             border-radius: 999px;
         }
@@ -223,15 +251,13 @@ font-family: 'Ephesis', cursive;*/
     width: 100vw;
     height: 90vh;
 
-    > div{
+    > div {
         display: grid;
         width: inherit;
         height: inherit;
     }
 }
 
-.section-title{
+.section-title {
     display: none;
 }
-
-

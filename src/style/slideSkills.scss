@@ -19,7 +19,8 @@
     justify-self: center;
     border-radius: 25px;
     padding: 2rem;
-    background: hsl(0deg, 0%, 0%, 0.25);
+    background: hsl(0deg, 0%, 100%, 0.15);
+    // background: hsl(0deg, 0%, 0%, 0.25);
     z-index: 10;
 
     & > p:first-of-type {
@@ -48,7 +49,8 @@
         display: inline-block;
         height: 0;
         width: 0;
-        border-top: 2rem solid rgba(0, 0, 0, 0.25);
+        // border-top: 2rem solid hsl(0deg, 0%, 0%, 0.25);
+        border-top: 2rem solid hsl(0deg, 0%, 100%, 0.15);
         border-right: 1.5rem solid transparent;
         border-left: 0.75rem solid transparent;
     }

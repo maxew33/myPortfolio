@@ -15,7 +15,7 @@
   justify-self: center;
   border-radius: 25px;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   z-index: 10;
 }
 .intro-of-myself > p:first-of-type {
@@ -41,7 +41,7 @@
   display: inline-block;
   height: 0;
   width: 0;
-  border-top: 2rem solid rgba(0, 0, 0, 0.25);
+  border-top: 2rem solid rgba(255, 255, 255, 0.15);
   border-right: 1.5rem solid transparent;
   border-left: 0.75rem solid transparent;
 }

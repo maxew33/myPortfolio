@@ -19,12 +19,12 @@
     align-items: center;
     background: repeating-linear-gradient(
         315deg,
-        var(--bg-color1),
-        var(--bg-color1) 2%,
+        var(--fontcol2),
+        var(--fontcol2) 2%,
         whitesmoke 2%,
         whitesmoke 3%,
-        hsl(194deg, 85%, 62%) 3%,
-        hsl(194deg, 85%, 62%) 5%,
+        hsl(0deg, 100, 50, .75) 3%,
+        hsl(0deg, 100, 50, .75) 5%,
         whitesmoke 5%,
         whitesmoke 6%
     );
@@ -125,8 +125,8 @@ textarea {
     width: max(15rem, 40%);
     align-self: end;
     border-radius: 5px;
-    border: 2px solid var(--bg-color1);
-    background-color: var(--bg-color1);
+    border: 2px solid hsl(244deg, 100%, 35%);
+    background-color: hsl(244deg, 100%, 35%);
     font-size: 1.5rem;
     color: whitesmoke;
     cursor: pointer;
@@ -135,7 +135,7 @@ textarea {
 
 .postcard-left-submit-btn:hover {
     background-color: whitesmoke;
-    color: var(--bg-color1);
+    color: hsl(244deg, 100%, 35%);
 }
 
 .postcard-right {
@@ -271,7 +271,7 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: var(--font-2);
-    color: var(--font-color-1);
+    font-family: var(--fontfam2);
+    color: var(--fontcol1);
     font-size: 7.5rem;
 }

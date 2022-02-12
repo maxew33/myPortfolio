@@ -19,103 +19,7 @@
     margin: 2rem 0 0 4.5rem;
     transition: 0.5s opacity ease-in-out;
 
-    // loading animation
-
-    .video-loader-container {
-        transform: translate(-50%, -50%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        color: #aaa;
-        font-family: arial;
-        font-weight: bolder;
-
-        &.loader-apparition {
-            display: flex;
-        }
-
-        .link {
-            --loader-font-size: 2.5rem;
-            font-size: var(--loader-font-size);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: 1s linear forwards text-container-apparition;
-        }
-
-        .my-text {
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            animation: 9s linear infinite 1s text-container-animation;
-        }
-
-        .my-text-content {
-            text-align: center;
-            display: inline-block;
-            width: 0;
-            overflow: hidden;
-            animation: 9s linear infinite 1s text-apparition;
-        }
-        .my-text-1 {
-            --width: calc(var(--loader-font-size) * 1.15);
-        }
-        .my-text-2 {
-            --width: calc(var(--loader-font-size) * 5.3);
-            animation-delay: 4s;
-        }
-        .my-text-3 {
-            --width: calc(var(--loader-font-size) * 6);
-            animation-delay: 7s;
-        }
-
-        @keyframes text-container-apparition {
-            0%,
-            80% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes text-container-animation {
-            0%,
-            33%,
-            66%,
-            100% {
-                width: 0;
-            }
-            1.1%,
-            31.9% {
-                width: calc(var(--loader-font-size) * 1.15);
-            }
-            38%,
-            61% {
-                width: calc(var(--loader-font-size) * 5.3);
-            }
-            71.6%,
-            94.4% {
-                width: calc(var(--loader-font-size) * 6);
-            }
-        }
-
-        @keyframes text-apparition {
-            0%,
-            33% {
-                width: 0;
-            }
-            .1%,
-            32.9% {
-                width: var(--width);
-            }
-        }
-    }
-
+    
     .my-video {
         border-radius: 0.5rem;
         height: 100%;
@@ -123,6 +27,103 @@
         border: 2px solid black;
         background: black;
         object-fit: contain;
+    }
+}
+
+// loading animation
+
+.video-loader-container {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    font-family: arial;
+    font-weight: bolder;
+
+    &.loader-apparition {
+        display: flex;
+    }
+}
+
+.link {
+    --loader-font-size: 2.5rem;
+    font-size: var(--loader-font-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: 1s linear forwards text-container-apparition;
+}
+
+.my-text {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: 9s linear infinite 1s text-container-animation;
+}
+
+.my-text-content {
+    text-align: center;
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    animation: 9s linear infinite 1s text-apparition;
+}
+.my-text-1 {
+    --width: calc(var(--loader-font-size) * 1.15);
+}
+.my-text-2 {
+    --width: calc(var(--loader-font-size) * 5.3);
+    animation-delay: 4s;
+}
+.my-text-3 {
+    --width: calc(var(--loader-font-size) * 6);
+    animation-delay: 7s;
+}
+
+@keyframes text-container-apparition {
+    0%,
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-container-animation {
+    0%,
+    33%,
+    66%,
+    100% {
+        width: 0;
+    }
+    1.1%,
+    31.9% {
+        width: calc(var(--loader-font-size) * 1.15);
+    }
+    38%,
+    61% {
+        width: calc(var(--loader-font-size) * 5.3);
+    }
+    71.6%,
+    94.4% {
+        width: calc(var(--loader-font-size) * 6);
+    }
+}
+
+@keyframes text-apparition {
+    0%,
+    33% {
+        width: 0;
+    }
+    .1%,
+    32.9% {
+        width: var(--width);
     }
 }
 

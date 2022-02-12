@@ -11,7 +11,17 @@
   margin: 2rem 0 0 4.5rem;
   transition: 0.5s opacity ease-in-out;
 }
-.video-player-container .video-loader-container {
+.video-player-container .my-video {
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  background: black;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.video-loader-container {
   transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
@@ -23,10 +33,11 @@
   font-family: arial;
   font-weight: bolder;
 }
-.video-player-container .video-loader-container.loader-apparition {
+.video-loader-container.loader-apparition {
   display: flex;
 }
-.video-player-container .video-loader-container .link {
+
+.link {
   --loader-font-size: 2.5rem;
   font-size: var(--loader-font-size);
   display: flex;
@@ -35,7 +46,8 @@
   -webkit-animation: 1s linear forwards text-container-apparition;
           animation: 1s linear forwards text-container-apparition;
 }
-.video-player-container .video-loader-container .my-text {
+
+.my-text {
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -43,7 +55,8 @@
   -webkit-animation: 9s linear infinite 1s text-container-animation;
           animation: 9s linear infinite 1s text-container-animation;
 }
-.video-player-container .video-loader-container .my-text-content {
+
+.my-text-content {
   text-align: center;
   display: inline-block;
   width: 0;
@@ -51,19 +64,23 @@
   -webkit-animation: 9s linear infinite 1s text-apparition;
           animation: 9s linear infinite 1s text-apparition;
 }
-.video-player-container .video-loader-container .my-text-1 {
+
+.my-text-1 {
   --width: calc(var(--loader-font-size) * 1.15);
 }
-.video-player-container .video-loader-container .my-text-2 {
+
+.my-text-2 {
   --width: calc(var(--loader-font-size) * 5.3);
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
-.video-player-container .video-loader-container .my-text-3 {
+
+.my-text-3 {
   --width: calc(var(--loader-font-size) * 6);
   -webkit-animation-delay: 7s;
           animation-delay: 7s;
 }
+
 @-webkit-keyframes text-container-apparition {
   0%, 80% {
     opacity: 0;
@@ -72,6 +89,7 @@
     opacity: 1;
   }
 }
+
 @keyframes text-container-apparition {
   0%, 80% {
     opacity: 0;
@@ -124,16 +142,6 @@
     width: var(--width);
   }
 }
-.video-player-container .my-video {
-  border-radius: 0.5rem;
-  height: 100%;
-  width: 100%;
-  border: 2px solid black;
-  background: black;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .video-controls {
   position: relative;
   height: 48px;

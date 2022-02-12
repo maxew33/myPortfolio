@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: repeating-linear-gradient(315deg, var(--bg-color1), var(--bg-color1) 2%, whitesmoke 2%, whitesmoke 3%, #4ccaf0 3%, #4ccaf0 5%, whitesmoke 5%, whitesmoke 6%);
+  background: repeating-linear-gradient(315deg, var(--fontcol2), var(--fontcol2) 2%, whitesmoke 2%, whitesmoke 3%, rgba(255, 0, 0, 0.75) 3%, rgba(255, 0, 0, 0.75) 5%, whitesmoke 5%, whitesmoke 6%);
   border: 1px solid #404040;
   border-radius: 5px;
   transition: opacity 0.5s ease-in-out;
@@ -114,8 +114,8 @@ textarea {
   width: max(15rem, 40%);
   align-self: end;
   border-radius: 5px;
-  border: 2px solid var(--bg-color1);
-  background-color: var(--bg-color1);
+  border: 2px solid #0c00b3;
+  background-color: #0c00b3;
   font-size: 1.5rem;
   color: whitesmoke;
   cursor: pointer;
@@ -124,7 +124,7 @@ textarea {
 
 .postcard-left-submit-btn:hover {
   background-color: whitesmoke;
-  color: var(--bg-color1);
+  color: #0c00b3;
 }
 
 .postcard-right {
@@ -248,7 +248,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--font-2);
-  color: var(--font-color-1);
+  font-family: var(--fontfam2);
+  color: var(--fontcol1);
   font-size: 7.5rem;
 }/*# sourceMappingURL=slideContact.css.map */

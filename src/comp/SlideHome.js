@@ -24,13 +24,13 @@ export default function SlideHome() {
     })
     const [reloadButtonRotation, setReloadButtonRotation] = useState(360)
     const [remindCta, setRemindCta] = useState(true)
-    const [drag, setDrag] = useState(false)
+    // const [drag, setDrag] = useState(false)
     const [chestObjects, setChestObjects] = useState(dataObjects)
 
     const { language } = useContext(Context)
 
     const handleStart = e => {
-        setDrag(true)
+        // setDrag(true)
 
         /* when I take an accessory, set its z index to 20 */
 
@@ -45,16 +45,14 @@ export default function SlideHome() {
     }
 
     const handleStop = () => {
-        setTimeout(() => setDrag(false), 50)
-
-        console.log(drag)
+        // setTimeout(() => setDrag(false), 50)
     }
 
     useEffect(() => {
 
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
-            chestBottom = document.querySelector('.chest-bottom'),
+            // chestBottom = document.querySelector('.chest-bottom'),
             accessoryContainer = [...document.querySelectorAll('.accessory-container')],
             accessory = [...document.querySelectorAll('.avatar-accessory')]
 
