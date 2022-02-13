@@ -173,13 +173,13 @@ function App() {
           sizes="32x32"
         />
 
-        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
+        {/* <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
         
         <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, front-end developer'} />
         <meta name="author" content="Maxime Malfilâtre" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="article" /> */}
 
       </Helmet>
       <div className="App"  onWheel={handleWheel} {...handlers}>
