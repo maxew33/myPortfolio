@@ -103,10 +103,16 @@ function App() {
 
   // changing the slide using the wheel
   const handleWheel = (e) => {
-    if (wheel) {
-      console.log('not now')
+    let canMove = true
+
+    if(e.target.dataset.id === 'thumb' || e.target.parentElement.dataset.id === 'thumb'){
+      canMove = false
     }
-    if (!wheel) {
+
+    if (wheel) {
+    }
+
+    if (!wheel && canMove) {
       setWheel(true)
 
       setTimeout(() => {
@@ -150,7 +156,7 @@ function App() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'}</title>
+        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'}</title>
         <base target="_blank" href="https://www.maxime-malfilatre.com/" />
 
         <link rel="canonical" href="https://www.maxime-malfilatre.com/" />
@@ -167,16 +173,16 @@ function App() {
           sizes="32x32"
         />
 
-        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'} />
+        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
         
-        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, frontend developper'} />
+        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, front-end developer'} />
         <meta name="author" content="Maxime Malfilâtre" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta property="og:type" content="article" />
 
       </Helmet>
-      <div className="App"  {...handlers}>
+      <div className="App"  onWheel={handleWheel} {...handlers}>
 
         {orientation === 'landscape' && <>
           {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
@@ -228,7 +234,6 @@ function App() {
               </section>
             )
           })}
-          <div className="overlay" onWheel={handleWheel}></div>
         </div>
 
       </div >

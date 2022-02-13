@@ -196,7 +196,7 @@ export default function SlideWork(props) {
                 {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
                 {dataVideos.map((item, index) => {
                     return (
-                        <div className={channel === index ? "video-thumb video-thumb-played" : "video-thumb"} key={index}>
+                        <div className={channel === index ? "video-thumb video-thumb-played" : "video-thumb"} data-id='thumb' key={index}>
                             <img className="video-thumb-img"
                                 src={item.thumb}
                                 alt={language === 'FR' ? item.nameFR : item.nameEN}

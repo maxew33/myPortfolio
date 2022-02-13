@@ -154,7 +154,7 @@ export default function SlideHome() {
                     <h2 className='my-role'><span className="custom-text-color">dév</span>eloppeur <span className="custom-text-color">front</span>-end</h2>
                     :
 
-                    <h2 className='my-role'> <span className="custom-text-color">front</span>end<span className="custom-text-color"> dev</span>elopper</h2>
+                    <h2 className='my-role'> <span className="custom-text-color">front</span>-end<span className="custom-text-color"> dev</span>eloper</h2>
                 }
             </div>
 
