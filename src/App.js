@@ -56,10 +56,6 @@ function App() {
     ]
   }, [])
 
-
-  let videoThumb = []
-
-
   useEffect(() => {
     console.log(`
  _                       
@@ -70,16 +66,14 @@ function App() {
       
 `)
 
-    videoThumb= [...document.querySelectorAll('.video-thumb')]
-
-    console.log(videoThumb)
-
     size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
+
   }, [])
 
-  // useEffect(() => {
-  //   // effect triggered when changing slide displayed
-  // }, [mySlide])
+  useEffect(() => {
+    // effect triggered when changing slide displayed
+    console.log('chgt de slide')
+  }, [mySlide])
 
   useEffect(() => {
     // effect triggered when changing viewport size
@@ -95,6 +89,8 @@ function App() {
 
     let oldSlide = mySlide
 
+    console.log(size.width)
+
     oldSlide += direction
 
     // check if i can move or not
@@ -107,18 +103,10 @@ function App() {
 
   // changing the slide using the wheel
   const handleWheel = (e) => {
-    console.log(e.target.dataset.id, e.target.parentElement.dataset.id )
-
-    let canMove = true
-
-    if(e.target.dataset.id === 'thumb' || e.target.parentElement.dataset.id === 'thumb'){
-      canMove = false
-    }
-
     if (wheel) {
+      console.log('not now')
     }
-
-    if (!wheel && canMove) {
+    if (!wheel) {
       setWheel(true)
 
       setTimeout(() => {
@@ -133,6 +121,8 @@ function App() {
 
   // changig the slide by clicking on the slide wanted
   const handleClick = (e) => {
+    console.log('click', e.target, e.target.dataset.index)
+    console.log(e.target.dataset.index - mySlide)
     slideAnim(e.target.dataset.index - mySlide)
   }
 
@@ -160,7 +150,7 @@ function App() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'}</title>
+        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'}</title>
         <base target="_blank" href="https://www.maxime-malfilatre.com/" />
 
         <link rel="canonical" href="https://www.maxime-malfilatre.com/" />
@@ -177,28 +167,16 @@ function App() {
           sizes="32x32"
         />
 
-        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
-
-        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, front-end developer'} />
+        <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french frontend developper'} />
+        
+        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, frontend developper'} />
         <meta name="author" content="Maxime Malfilâtre" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://metatags.io/"> */}
-        <meta property="og:title" content={language === 'FR' ? 'Portfolio de Maxime Malfilatre' : 'Maxime Malfilâtre\'s portfolio'} />
-        <meta property="og:description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
-        <meta property="og:image" content="/avatar-meta-og.png" />
-
-        {/* <!-- Twitter --> */}
-        <meta property="twitter:card" content="summary_large_image" />
-        {/* <meta property="twitter:url" content="https://metatags.io/" /> */}
-        <meta property="twitter:title" content={language === 'FR' ? 'Portfolio de Maxime Malfilatre' : 'Maxime Malfilâtre\'s portfolio'} />
-        <meta property="twitter:description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
-
-        <meta property="twitter:image" content="/avatar-meta-og.png.png" ></meta>
+        <meta property="og:type" content="article" />
 
       </Helmet>
-      <div className="App" onWheel={handleWheel} {...handlers}>
+      <div className="App"  {...handlers}>
 
         {orientation === 'landscape' && <>
           {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
@@ -250,7 +228,7 @@ function App() {
               </section>
             )
           })}
-          <div className="overlay"></div>
+          <div className="overlay" onWheel={handleWheel}></div>
         </div>
 
       </div >

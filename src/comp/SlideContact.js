@@ -24,6 +24,7 @@ export default function SlideContact() {
             form.current,
             process.env.REACT_APP_EMAILKEY_USER_ID)
             .then(result => {
+                console.log(result.text)
                 const postcard = document.querySelector('.postcard-container'),
                     animationContainer = document.querySelector('.animation-container')
 

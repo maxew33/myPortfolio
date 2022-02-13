@@ -55,8 +55,7 @@
 .status-container .reload-status {
   position: absolute;
   bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
   font-size: 1.5rem;
   text-align: center;
   color: var(--ctacol);
@@ -116,7 +115,7 @@
   width: inherit;
   height: auto;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 .my-avatar .avatar-head {
   position: absolute;
@@ -215,58 +214,58 @@
 }
 
 .accessory-container1 {
-  right: 27rem;
-  bottom: 37%;
+  right: 28rem;
+  bottom: 38%;
 }
 
 .accessory-container2 {
-  right: 28rem;
-  bottom: 40%;
+  right: 25rem;
+  bottom: 36%;
 }
 
 .accessory-container3 {
-  right: 26rem;
-  bottom: 45%;
+  right: 25rem;
+  bottom: 50%;
 }
 
 .accessory-container4 {
-  right: 25rem;
+  right: 29rem;
   bottom: 39%;
 }
 
 .accessory-container5 {
   right: 27rem;
-  bottom: 47%;
+  bottom: 42%;
 }
 
 .accessory-container6 {
-  right: 25rem;
-  bottom: 39%;
+  right: 29rem;
+  bottom: 37%;
 }
 
 .accessory-container7 {
-  right: 25rem;
-  bottom: 49%;
+  right: 28rem;
+  bottom: 40%;
 }
 
 .accessory-container8 {
-  right: 25rem;
-  bottom: 45%;
+  right: 28rem;
+  bottom: 38%;
 }
 
 .accessory-container9 {
-  right: 25rem;
-  bottom: 48%;
+  right: 29rem;
+  bottom: 37%;
 }
 
 .accessory-container10 {
-  right: 25rem;
-  bottom: 38%;
+  right: 27rem;
+  bottom: 43%;
 }
 
 .accessory-container11 {
-  right: 28rem;
-  bottom: 38%;
+  right: 27rem;
+  bottom: 50%;
 }
 
 .accessory-hidden {
@@ -292,23 +291,23 @@
   border: 0.5rem solid white;
   opacity: 0;
   -webkit-animation: 3s linear infinite remind-cta;
-  animation: 3s linear infinite remind-cta;
+          animation: 3s linear infinite remind-cta;
 }
 .remind-cta .circle:nth-child(0) {
   -webkit-animation-delay: 0s;
-  animation-delay: 0s;
+          animation-delay: 0s;
 }
 .remind-cta .circle:nth-child(1) {
   -webkit-animation-delay: 0.25s;
-  animation-delay: 0.25s;
+          animation-delay: 0.25s;
 }
 .remind-cta .circle:nth-child(2) {
   -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 .remind-cta .circle:nth-child(3) {
   -webkit-animation-delay: 0.75s;
-  animation-delay: 0.75s;
+          animation-delay: 0.75s;
 }
 
 @-webkit-keyframes remind-cta {
@@ -327,6 +326,7 @@
     opacity: 0;
   }
 }
+
 @keyframes remind-cta {
   0%, 50% {
     opacity: 0;
