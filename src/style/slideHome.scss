@@ -66,7 +66,8 @@
     .reload-status {
         position: absolute;
         bottom: 15%;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 1.5rem;
         text-align: center;
         color: var(--ctacol);
@@ -132,7 +133,8 @@
     .avatar-body {
         width: inherit;
         height: auto;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
 
     .avatar-head {
@@ -361,13 +363,33 @@
         width: inherit;
         border: .5rem solid white;
         opacity: 0;
-        animation: 3s linear infinite remind-cta;
+        -webkit-animation: 3s linear infinite remind-cta;
+                animation: 3s linear infinite remind-cta;
     }
 
     @for $i from 0 through 3 {
         .circle:nth-child(#{$i}) {
-            animation-delay: 0.25s * $i;
+            -webkit-animation-delay: 0.25s * $i;
+                    animation-delay: 0.25s * $i;
         }
+    }
+}
+
+@-webkit-keyframes remind-cta {
+    0%,
+    50% {
+        opacity: 0;
+        transform: scale(1);
+        background: transparent;
+    }
+    70% {
+        transform: scale(0.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.2);
+        background: white;
+        opacity: 0;
     }
 }
 
@@ -390,6 +412,7 @@
 }
 
 .react-draggable-dragged {
+    cursor: -webkit-grab;
     cursor: grab;
 }
 .react-draggable-dragging {

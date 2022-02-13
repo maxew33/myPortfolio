@@ -103,11 +103,9 @@ export default function SlideHome() {
             const statusHeight = document.querySelector('.status').getBoundingClientRect().height
             document.querySelector('.status').style.height = 0
 
-            console.log(statusHeight)
-
             setReloadButtonRotation(reloadButtonRotation + 360)
 
-            document.querySelector('.reload-status').style.transform = 'rotate(' + reloadButtonRotation + 'deg)'
+            document.querySelector('.reload-status').style.transform = 'translateX(-50%) rotate(' + reloadButtonRotation + 'deg)'
 
             setMyStatusIdx({ index: myStatusIdx.index, preventSpam: true })
 
