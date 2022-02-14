@@ -113,7 +113,6 @@ font-family: 'Ephesis', cursive;*/
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 100;
   height: 3rem;
   width: 3rem;
   display: flex;
@@ -165,13 +164,6 @@ font-family: 'Ephesis', cursive;*/
   display: flex;
   transition: transform 0.5s ease-in-out;
   background: linear-gradient(var(--bg-gradient-angle), var(--bg-color1), var(--bg-color2), var(--bg-color3), var(--bg-color4), var(--bg-color5));
-}
-.slide-container .overlay {
-  position: absolute;
-  width: 400vw;
-  height: 90vh;
-  bottom: 0;
-  z-index: 5;
 }
 
 .slide-wrapper {

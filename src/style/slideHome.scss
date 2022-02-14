@@ -51,7 +51,6 @@
     top: 20%;
     grid-area: links;
     height: 33%;
-    z-index: 10;
 
     .status {
         position: relative;
@@ -99,7 +98,6 @@
         justify-self: center;
         align-self: center;
         transition: 0.05s font-size ease-in-out;
-        z-index: 10;
     }
 
     a:hover {
@@ -245,6 +243,7 @@
         // height: 11.25vmin;
         height: 6rem;
         // border: 2px solid red;
+        cursor: grab;
     }
 
     .pull-me {
@@ -260,7 +259,6 @@
         border-radius: 0 0 25px 25px;
         // cursor: -webkit-grab;
         // cursor: grab;
-        z-index: 10;
     }
 }
 
@@ -274,7 +272,6 @@
     align-self: flex-end;
     right: 30rem;
     transition: 0.5s transform 0.5s cubic-bezier(0.2, -0.1, 1, -0.5);
-    z-index: 10;
 
     .chest-top {
         position: relative;

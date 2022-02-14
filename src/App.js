@@ -182,7 +182,7 @@ function App() {
         <meta property="og:type" content="article" /> */}
 
       </Helmet>
-      <div className="App"  onWheel={handleWheel} {...handlers}>
+      <div className="App" onWheel={handleWheel} {...handlers}>
 
         {orientation === 'landscape' && <>
           {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>

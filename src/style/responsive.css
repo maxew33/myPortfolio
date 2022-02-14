@@ -69,7 +69,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     padding: 1vw 0;
-    background: linear-gradient(90deg, rgba(153, 255, 255, 0.15) 50%, rgba(153, 255, 255, 0.1) 95%, rgba(153, 255, 255, 0.25));
+    background: linear-gradient(90deg, rgba(51, 51, 51, 0.75) 50%, rgba(51, 51, 51, 0.65) 95%, rgba(51, 51, 51, 0.95));
     transition: width 0.25s ease-in-out;
   }
   .banner .navbar {
@@ -127,10 +127,6 @@
     transition: transform 0.5s ease-in-out;
     --bg-gradient-angle: 180deg;
   }
-  .slide-container .overlay {
-    width: 100vw;
-    height: 400vh;
-  }
 
   .slide-wrapper {
     top: 0;
@@ -181,48 +177,48 @@
     bottom: 7.5rem;
   }
   .home-wrapper .accessory-container1 {
-    left: 20%;
-    bottom: 39%;
-  }
-  .home-wrapper .accessory-container2 {
-    left: 24%;
-    bottom: 35%;
-  }
-  .home-wrapper .accessory-container3 {
-    left: 34%;
-    bottom: 36%;
-  }
-  .home-wrapper .accessory-container4 {
-    left: 21%;
-    bottom: 43%;
-  }
-  .home-wrapper .accessory-container5 {
-    left: 26%;
-    bottom: 42%;
-  }
-  .home-wrapper .accessory-container6 {
-    left: 34%;
+    left: 31%;
     bottom: 41%;
   }
-  .home-wrapper .accessory-container7 {
-    left: 30%;
-    bottom: 44%;
+  .home-wrapper .accessory-container2 {
+    left: 21%;
+    bottom: 36%;
   }
-  .home-wrapper .accessory-container8 {
-    left: 33%;
+  .home-wrapper .accessory-container3 {
+    left: 16%;
+    bottom: 39%;
+  }
+  .home-wrapper .accessory-container4 {
+    left: 24%;
     bottom: 40%;
   }
-  .home-wrapper .accessory-container9 {
-    left: 25%;
-    bottom: 42%;
+  .home-wrapper .accessory-container5 {
+    left: 30%;
+    bottom: 45%;
   }
-  .home-wrapper .accessory-container10 {
-    left: 24%;
+  .home-wrapper .accessory-container6 {
+    left: 32%;
+    bottom: 35%;
+  }
+  .home-wrapper .accessory-container7 {
+    left: 21%;
+    bottom: 33%;
+  }
+  .home-wrapper .accessory-container8 {
+    left: 17%;
     bottom: 31%;
   }
+  .home-wrapper .accessory-container9 {
+    left: 32%;
+    bottom: 33%;
+  }
+  .home-wrapper .accessory-container10 {
+    left: 21%;
+    bottom: 39%;
+  }
   .home-wrapper .accessory-container11 {
-    left: 23%;
-    bottom: 42%;
+    left: 29%;
+    bottom: 33%;
   }
   .home-wrapper .accessory-hidden {
     left: calc(25% - 7.5vh);
@@ -330,27 +326,16 @@
 
   /* SKILLS SLIDE */
   .skills-wrapper {
-    grid-template: repeat(7, 1fr)/1fr;
-    grid-template-areas: "bubble" "bubble" "skills" "skills" "avatar" "avatar" "avatar";
+    grid-template: 1fr 1.5fr/1fr;
+    grid-template-areas: "bubble" "avatar";
   }
   .skills-wrapper .section-title {
     position: absolute;
   }
 
-  .intro-of-myself {
-    margin-top: 7rem;
-    align-self: flex-start;
-    max-height: calc(100% - 7rem);
-    overflow: hidden;
-    font-size: 2.5rem;
-  }
-  .intro-of-myself .resume-download {
-    font-size: 2.5rem;
-  }
-
   .avatar-at-work {
-    height: 100%;
-    width: auto;
+    height: auto;
+    max-width: 60vw;
     pointer-events: none;
     align-self: flex-end;
     justify-self: flex-end;
@@ -361,11 +346,40 @@
   }
 
   .skills-container {
-    grid-area: skills;
+    grid-area: avatar;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin: 0;
-    padding: 0 1rem;
-    width: 100vw;
-    font-size: 2.25rem;
+    padding: 0 1.5rem;
+    font-size: 3rem;
+  }
+  .skills-container .my-skill {
+    align-self: flex-start;
+  }
+
+  .video-modal {
+    height: 100vh;
+    --my-video-width: 100vw;
+    --my-video-height: 55vw;
+  }
+  .video-modal .video-modal-player {
+    height: var(--my-video-height);
+    width: var(--my-video-width);
+    top: 50vh;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0;
+  }
+  .video-modal .my-video-modal {
+    height: var(--my-video-height);
+    width: var(--my-video-width);
+  }
+  .video-modal .exit-modal {
+    font-size: 3.5rem;
+    right: 2rem;
+    top: 2rem;
   }
 
   /* CONTACT SLIDE */
@@ -468,7 +482,7 @@ textarea:valid ~ label {
     height: 8vw;
     width: 65vw;
     font-family: var(--font-2);
-    color: var(--font-color-1);
+    color: var(--fontcol1);
     font-size: 7.5vw;
   }
 }

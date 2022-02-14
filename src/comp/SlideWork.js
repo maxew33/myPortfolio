@@ -117,7 +117,6 @@ export default function SlideWork(props) {
                 Portfolio
             </div>
 
-
             <div className="video-player-container">
                 <div className="video-loader-container">
                     <div className="link">
@@ -152,45 +151,47 @@ export default function SlideWork(props) {
                     Sorry, your browser doesn't support embedded videos.
                 </video>
 
+                <div className="video-controls">
+                    <button className="video-play"
+                        aria-label={language === 'FR' ? 'lecture' : 'play'}
+                        onClick={handlePlay}>
+                        {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
+                    </button>
+                    <button className="video-prev"
+                        aria-label={language === 'FR' ? 'précédente' : 'previous'}
+                        onClick={() => handleNav(-1)}>
+                        <FontAwesomeIcon icon={faStepBackward} />
+                    </button>
+                    <button className="video-stop"
+                        aria-label={language === 'FR' ? 'stop' : 'stop'}
+                        onClick={handleStop}>
+                        <FontAwesomeIcon icon={faStop} />
+                    </button>
+                    <button className="video-next"
+                        aria-label={language === 'FR' ? 'suivante' : 'next'}
+                        onClick={() => handleNav(1)}>
+                        <FontAwesomeIcon icon={faStepForward} />
+                    </button>
+                    <button className="video-volume"
+                        aria-label={language === 'FR' ? 'muet' : 'mute'}
+                        onClick={() => handleVolume(0)}>
+                        <FontAwesomeIcon icon={faVolumeMute} />
+                    </button>
+                    <button className="video-volume"
+                        aria-label={language === 'FR' ? 'baisser le volume' : 'volume down'}
+                        onClick={() => handleVolume(-.1)}>
+                        <FontAwesomeIcon icon={faVolumeDown} />
+                    </button>
+                    <button className="video-volume"
+                        aria-label={language === 'FR' ? 'augmenter le volume' : 'volume up'}
+                        onClick={() => handleVolume(.1)}>
+                        <FontAwesomeIcon icon={faVolumeUp} />
+                    </button>
+                </div>
+
             </div>
 
-            <div className="video-controls">
-                <button className="video-play"
-                    aria-label={language === 'FR' ? 'lecture' : 'play'}
-                    onClick={handlePlay}>
-                    {videoIsPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
-                </button>
-                <button className="video-prev"
-                    aria-label={language === 'FR' ? 'précédente' : 'previous'}
-                    onClick={() => handleNav(-1)}>
-                    <FontAwesomeIcon icon={faStepBackward} />
-                </button>
-                <button className="video-stop"
-                    aria-label={language === 'FR' ? 'stop' : 'stop'}
-                    onClick={handleStop}>
-                    <FontAwesomeIcon icon={faStop} />
-                </button>
-                <button className="video-next"
-                    aria-label={language === 'FR' ? 'suivante' : 'next'}
-                    onClick={() => handleNav(1)}>
-                    <FontAwesomeIcon icon={faStepForward} />
-                </button>
-                <button className="video-volume"
-                    aria-label={language === 'FR' ? 'muet' : 'mute'}
-                    onClick={() => handleVolume(0)}>
-                    <FontAwesomeIcon icon={faVolumeMute} />
-                </button>
-                <button className="video-volume"
-                    aria-label={language === 'FR' ? 'baisser le volume' : 'volume down'}
-                    onClick={() => handleVolume(-.1)}>
-                    <FontAwesomeIcon icon={faVolumeDown} />
-                </button>
-                <button className="video-volume"
-                    aria-label={language === 'FR' ? 'augmenter le volume' : 'volume up'}
-                    onClick={() => handleVolume(.1)}>
-                    <FontAwesomeIcon icon={faVolumeUp} />
-                </button>
-            </div>
+
 
             <div className="video-thumb-container">
                 {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}

@@ -1,49 +1,17 @@
 .skills-wrapper {
   grid-template: repeat(4, 1fr)/repeat(2, 1fr);
-  grid-template-areas: "bubble bubble" "skills avatar" "skills avatar" "skills avatar";
+  grid-template-areas: "bubble avatar" "bubble avatar" "skills avatar" "skills avatar";
 }
 
 .intro-of-myself {
   grid-area: bubble;
-  position: relative;
-  max-width: 75vw;
+  text-align: center;
   font-family: var(--fontfam2);
-  line-height: 1.15;
-  font-size: 1.75rem;
-  font-style: italic;
+  line-height: 1.5;
+  font-size: 3rem;
   align-self: center;
   justify-self: center;
-  border-radius: 25px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.15);
-  z-index: 10;
-}
-.intro-of-myself > p:first-of-type {
-  padding-bottom: 0.5vmax;
-}
-.intro-of-myself .resume-download {
-  display: inline-block;
-  font-size: 1.5rem;
-  -webkit-animation: 3s linear infinite remind-click;
-  animation: 3s linear infinite remind-click;
-}
-.intro-of-myself a:link,
-.intro-of-myself a:visited,
-.intro-of-myself a:hover,
-.intro-of-myself a:active {
-  color: var(--font-color-1);
-}
-.intro-of-myself::after {
-  content: "";
-  bottom: -2rem;
-  right: 10vw;
-  position: absolute;
-  display: inline-block;
-  height: 0;
-  width: 0;
-  border-top: 2rem solid rgba(255, 255, 255, 0.15);
-  border-right: 1.5rem solid transparent;
-  border-left: 0.75rem solid transparent;
 }
 
 @-webkit-keyframes remind-click {
@@ -77,8 +45,9 @@
 }
 .avatar-at-work {
   grid-area: avatar;
-  max-height: 67.5vh;
+  max-height: 75vh;
   pointer-events: none;
+  align-self: flex-end;
 }
 
 .hit-zone {
@@ -87,7 +56,6 @@
   width: 50%;
   height: 40%;
   cursor: pointer;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,13 +67,14 @@
   padding: 1.5rem;
   margin-left: 15%;
   font-size: 1.25rem;
-  grid-template: repeat(5, 1fr)/auto;
+  grid-template: repeat(3, 1fr)/repeat(2, 1fr);
 }
 
 .my-skill {
   height: 5rem;
   display: flex;
   align-items: center;
+  align-self: center;
 }
 .my-skill .skill-img {
   height: 4.5rem;
@@ -114,6 +83,9 @@
      object-fit: contain;
   padding-right: 0.5rem;
   transition: transform 0.5s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .my-skill .skill-name {
   font-family: var(--fontfam2);
@@ -123,142 +95,55 @@
   opacity: 0;
 }
 
-.my-skill1 {
-  grid-column: 2;
-  grid-row: 1;
-}
-.my-skill1 .skill-img {
-  transition-delay: 0.125s;
-}
-.my-skill1 .skill-name {
-  transition-delay: 0.625s;
-}
-.my-skill1 .hidden-img {
-  transform: translate(37.5vw, 47.25vh) scale(0);
+.resume-download {
+  display: inline-block;
+  font-size: 4.5rem;
+  -webkit-animation: 3s linear infinite remind-click;
+  animation: 3s linear infinite remind-click;
 }
 
-.my-skill2 {
-  grid-column: 2;
-  grid-row: 2;
-}
-.my-skill2 .skill-img {
-  transition-delay: 0.25s;
-}
-.my-skill2 .skill-name {
-  transition-delay: 0.75s;
-}
-.my-skill2 .hidden-img {
-  transform: translate(37.5vw, 33.75vh) scale(0);
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--ctacol);
 }
 
-.my-skill3 {
-  grid-column: 2;
-  grid-row: 3;
+.video-modal {
+  display: none;
+  position: absolute;
+  height: 90vh;
+  width: 100vw;
+  --my-video-width: min(80vw, 125vh);
+  --my-video-height: min(44vw, 68.75vh);
 }
-.my-skill3 .skill-img {
-  transition-delay: 0.375s;
+.video-modal .overlay {
+  height: inherit;
+  width: inherit;
+  background: linear-gradient(var(--bg-gradient-angle), var(--bg-color3), var(--bg-color4));
+  opacity: 0.75;
 }
-.my-skill3 .skill-name {
-  transition-delay: 0.875s;
+.video-modal .video-modal-player {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  height: calc(var(--my-video-height) + 2rem);
+  width: calc(var(--my-video-width) + 2rem);
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fontcol1);
+  border-radius: 5px;
 }
-.my-skill3 .hidden-img {
-  transform: translate(37.5vw, 20.25vh) scale(0);
+.video-modal .my-video-modal {
+  height: var(--my-video-height);
+  width: var(--my-video-width);
 }
-
-.my-skill4 {
-  grid-column: 2;
-  grid-row: 4;
-}
-.my-skill4 .skill-img {
-  transition-delay: 0.5s;
-}
-.my-skill4 .skill-name {
-  transition-delay: 1s;
-}
-.my-skill4 .hidden-img {
-  transform: translate(37.5vw, 6.75vh) scale(0);
-}
-
-.my-skill5 {
-  grid-column: 2;
-  grid-row: 5;
-}
-.my-skill5 .skill-img {
-  transition-delay: 0.625s;
-}
-.my-skill5 .skill-name {
-  transition-delay: 1.125s;
-}
-.my-skill5 .hidden-img {
-  transform: translate(37.5vw, -6.75vh) scale(0);
-}
-
-.my-skill6 {
-  grid-column: 1;
-  grid-row: 1;
-}
-.my-skill6 .skill-img {
-  transition-delay: 0.75s;
-}
-.my-skill6 .skill-name {
-  transition-delay: 1.25s;
-}
-.my-skill6 .hidden-img {
-  transform: translate(62.5vw, 47.25vh) scale(0);
-}
-
-.my-skill7 {
-  grid-column: 1;
-  grid-row: 2;
-}
-.my-skill7 .skill-img {
-  transition-delay: 0.875s;
-}
-.my-skill7 .skill-name {
-  transition-delay: 1.375s;
-}
-.my-skill7 .hidden-img {
-  transform: translate(62.5vw, 33.75vh) scale(0);
-}
-
-.my-skill8 {
-  grid-column: 1;
-  grid-row: 3;
-}
-.my-skill8 .skill-img {
-  transition-delay: 1s;
-}
-.my-skill8 .skill-name {
-  transition-delay: 1.5s;
-}
-.my-skill8 .hidden-img {
-  transform: translate(62.5vw, 20.25vh) scale(0);
-}
-
-.my-skill9 {
-  grid-column: 1;
-  grid-row: 4;
-}
-.my-skill9 .skill-img {
-  transition-delay: 1.125s;
-}
-.my-skill9 .skill-name {
-  transition-delay: 1.625s;
-}
-.my-skill9 .hidden-img {
-  transform: translate(62.5vw, 6.75vh) scale(0);
-}
-
-.my-skill10 {
-  grid-column: 1;
-  grid-row: 5;
-}
-.my-skill10 .skill-img {
-  transition-delay: 1.25s;
-}
-.my-skill10 .skill-name {
-  transition-delay: 1.75s;
-}
-.my-skill10 .hidden-img {
-  transform: translate(62.5vw, -6.75vh) scale(0);
+.video-modal .exit-modal {
+  position: absolute;
+  font-size: 2.5rem;
+  right: 3vh;
+  top: 3vh;
+  color: var(--fontcol1);
+  cursor: pointer;
 }/*# sourceMappingURL=slideSkills.css.map */

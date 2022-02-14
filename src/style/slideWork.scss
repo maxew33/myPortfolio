@@ -175,22 +175,38 @@
     }
 }
 
-.video-controls {
-    position: relative;
-    height: 48px;
-    justify-self: center;
-    align-self: flex-end;
-    margin-left: 4rem;
-    grid-area: video;
-    bottom: 0.25rem;
-    width: 336px;
+.my-video:hover + .video-controls,
+.video-controls:hover{
+    opacity: 1;
     display: flex;
+}
+
+.video-controls {
+    // position: relative;
+    position: absolute;
+    height: 48px;   
+    display: none; 
+
+    //modifs
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .25s opacity ease-in;
+    //end
+
+    // justify-self: center;
+    // align-self: flex-end;
+    // margin-left: 4rem;
+    // grid-area: video;
+    // bottom: 0.25rem;
+    width: 336px;
     justify-content: space-around;
     padding: 0.5rem;
     background: hsl(0deg, 0%, 0%, 0.25);
     border: 2px solid hsl(0deg, 0%, 100%, 0.15);
     border-radius: 5px;
-    z-index: 10;
+    // z-index: 10;
 
     button {
         border: none;
@@ -198,6 +214,10 @@
         color: var(--fontcol1);
         font-size: 24px;
         cursor: pointer;
+    }
+
+    button:hover {
+        color: var(--ctacol);
     }
 }
 
@@ -226,7 +246,6 @@
     background: hsl(180deg, 100%, 80%, 0.15);
     margin: 2rem 4.5rem 2rem 2rem;
     border-radius: 0.5rem;
-    z-index: 10;
     overflow-y: scroll;
 
     .video-thumb {
@@ -276,7 +295,6 @@
     background: hsl(180deg, 100%, 80%, 0.15);
     font-family: var(--fontfam2);
     line-height: 1.5;
-    z-index: 10;
 
     > div {
         margin: 1rem 1rem -0.5rem 1rem;

@@ -41,7 +41,6 @@
   top: 20%;
   grid-area: links;
   height: 33%;
-  z-index: 10;
 }
 .status-container .status {
   position: relative;
@@ -86,7 +85,6 @@
   justify-self: center;
   align-self: center;
   transition: 0.05s font-size ease-in-out;
-  z-index: 10;
 }
 .social-network a:hover {
   font-size: 3.75rem;
@@ -136,6 +134,8 @@
   top: 55%;
   left: 50%;
   height: 6rem;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .my-avatar .pull-me {
   position: absolute;
@@ -148,7 +148,6 @@
   place-content: center;
   border: none;
   border-radius: 0 0 25px 25px;
-  z-index: 10;
 }
 
 .chest-container {
@@ -161,7 +160,6 @@
   align-self: flex-end;
   right: 30rem;
   transition: 0.5s transform 0.5s cubic-bezier(0.2, -0.1, 1, -0.5);
-  z-index: 10;
 }
 .chest-container .chest-top {
   position: relative;
@@ -214,58 +212,58 @@
 }
 
 .accessory-container1 {
-  right: 28rem;
-  bottom: 38%;
-}
-
-.accessory-container2 {
-  right: 25rem;
-  bottom: 36%;
-}
-
-.accessory-container3 {
-  right: 25rem;
-  bottom: 50%;
-}
-
-.accessory-container4 {
   right: 29rem;
   bottom: 39%;
 }
 
-.accessory-container5 {
+.accessory-container2 {
+  right: 25rem;
+  bottom: 48%;
+}
+
+.accessory-container3 {
   right: 27rem;
-  bottom: 42%;
+  bottom: 36%;
 }
 
-.accessory-container6 {
-  right: 29rem;
-  bottom: 37%;
-}
-
-.accessory-container7 {
+.accessory-container4 {
   right: 28rem;
   bottom: 40%;
 }
 
+.accessory-container5 {
+  right: 25rem;
+  bottom: 36%;
+}
+
+.accessory-container6 {
+  right: 25rem;
+  bottom: 36%;
+}
+
+.accessory-container7 {
+  right: 29rem;
+  bottom: 41%;
+}
+
 .accessory-container8 {
   right: 28rem;
-  bottom: 38%;
+  bottom: 39%;
 }
 
 .accessory-container9 {
   right: 29rem;
-  bottom: 37%;
-}
-
-.accessory-container10 {
-  right: 27rem;
   bottom: 43%;
 }
 
+.accessory-container10 {
+  right: 29rem;
+  bottom: 49%;
+}
+
 .accessory-container11 {
-  right: 27rem;
-  bottom: 50%;
+  right: 26rem;
+  bottom: 47%;
 }
 
 .accessory-hidden {

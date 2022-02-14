@@ -41,37 +41,38 @@ const dataSkills = [
         nameFR: 'REACT',
         nameEN: 'REACT',
         src: react
-    },
-    {
-        id: uuidv4(),
-        nameFR: 'github',
-        nameEN: 'github',
-        src: github
-    },
-    {
-        id: uuidv4(),
-        nameFR: 'firebase',
-        nameEN: 'firebase',
-        src: firebase
-    },
-    {
-        id: uuidv4(),
-        nameFR: 'emailing',
-        nameEN: 'emailing',
-        src: email
-    },
-    {
-        id: uuidv4(),
-        nameFR: 'anglais: professionnel',
-        nameEN: 'English spoken (with a French accent)',
-        src: anglais
-    },
-    {
-        id: uuidv4(),
-        nameFR: 'maîtrise de l\'orthographe',
-        nameEN: 'French spelling and grammar skills',
-        src: francais
     }
+    // ,
+    // {
+    //     id: uuidv4(),
+    //     nameFR: 'github',
+    //     nameEN: 'github',
+    //     src: github
+    // },
+    // {
+    //     id: uuidv4(),
+    //     nameFR: 'firebase',
+    //     nameEN: 'firebase',
+    //     src: firebase
+    // },
+    // {
+    //     id: uuidv4(),
+    //     nameFR: 'emailing',
+    //     nameEN: 'emailing',
+    //     src: email
+    // },
+    // {
+    //     id: uuidv4(),
+    //     nameFR: 'anglais: professionnel',
+    //     nameEN: 'English spoken (with a French accent)',
+    //     src: anglais
+    // },
+    // {
+    //     id: uuidv4(),
+    //     nameFR: 'maîtrise de l\'orthographe',
+    //     nameEN: 'French spelling and grammar skills',
+    //     src: francais
+    // }
 ]
 
 export default dataSkills
