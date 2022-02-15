@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: repeating-linear-gradient(315deg, var(--fontcol2), var(--fontcol2) 2%, whitesmoke 2%, whitesmoke 3%, rgba(255, 0, 0, 0.75) 3%, rgba(255, 0, 0, 0.75) 5%, whitesmoke 5%, whitesmoke 6%);
+  background: repeating-linear-gradient(315deg, var(--fontcol2), var(--fontcol2) 2%, var(--fontcol1) 2%, var(--fontcol1) 3%, rgba(255, 0, 0, 0.75) 3%, rgba(255, 0, 0, 0.75) 5%, var(--fontcol1) 5%, var(--fontcol1) 6%);
   border: 1px solid #404040;
   border-radius: 5px;
   transition: opacity 0.5s ease-in-out;
@@ -66,7 +66,7 @@
   margin: 1% 0;
   position: relative;
   border: 1px solid #bfbfbf;
-  background: whitesmoke;
+  background: var(--fontcol1);
   border-radius: 5px;
 }
 
@@ -113,8 +113,8 @@ textarea {
   width: max(15rem, 40%);
   align-self: end;
   border-radius: 5px;
-  border: 2px solid #0c00b3;
-  background-color: #0c00b3;
+  border: 2px solid var(--ctacol);
+  background-color: var(--ctacol);
   font-size: 1.5rem;
   color: whitesmoke;
   cursor: pointer;
@@ -123,7 +123,7 @@ textarea {
 
 .postcard-left-submit-btn:hover {
   background-color: whitesmoke;
-  color: #0c00b3;
+  color: var(--ctacol);
 }
 
 .postcard-right {

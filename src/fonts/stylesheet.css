@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('FiraSansExtraCondensed-MediumItalic.eot');
+    src: url('FiraSansExtraCondensed-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('FiraSansExtraCondensed-MediumItalic.woff2') format('woff2'),
+        url('FiraSansExtraCondensed-MediumItalic.woff') format('woff'),
+        url('FiraSansExtraCondensed-MediumItalic.ttf') format('truetype'),
+        url('FiraSansExtraCondensed-MediumItalic.svg#FiraSansExtraCondensed-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+

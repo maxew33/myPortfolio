@@ -140,22 +140,10 @@ export default function SlideHome() {
             {/* My presentation : firstname / lastname / job */}
             <div className='introducing-myself'>
                 <h1 className="my-name">
-                    <span className="my-firstname">
-                        <span className="custom-text-color">max</span>ime
-                    </span>
-                    <span className="my-lastname">
-                        malfilâtre
-                    </span>
+                    Maxime Malfilâtre
                 </h1>
 
-                {/* <div className="my-name-line"></div> */}
-
-                {language === 'FR' ?
-                    <h2 className='my-role'><span className="custom-text-color">dév</span>eloppeur <span className="custom-text-color">front</span>-end</h2>
-                    :
-
-                    <h2 className='my-role'> <span className="custom-text-color">front</span>-end<span className="custom-text-color"> dev</span>eloper</h2>
-                }
+                <h2 className='my-role'>{language === 'FR' ? 'Développeur front-end' : 'Front-end developer'}</h2>
             </div>
 
             {/* My current status + cta */}

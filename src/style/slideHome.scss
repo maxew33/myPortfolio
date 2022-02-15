@@ -1,10 +1,10 @@
 :root {
-    --avatar-length-unit: .25rem;
+    --avatar-length-unit: 0.25rem;
     --avatar-clip-value: 0%;
 }
 
 .home-wrapper {
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(2, auto);
     grid-template-areas:
         "name avatar"
         "links avatar";
@@ -13,43 +13,32 @@
 .introducing-myself {
     position: relative;
     grid-area: name;
-    padding: 2.5rem;
+    justify-self: center;
+    align-self: center;
+    margin-left: 2rem;
 
     .my-name {
         font-family: var(--fontfam1);
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-
-        .my-firstname {
-            // font-size: clamp(5rem, 9vw, 10rem);
-            
-            font-size: 10rem;
-        }
-
-        .my-lastname {
-            // font-size: clamp(3.2rem, 5.75vw, 6.4rem);
-            font-size: 6.4rem;
-        }
+        font-size: 7.5rem;
     }
 
     .my-role {
         // font-size: clamp(2rem, 3.6vw, 4rem);
-        font-size: 4rem;
-        text-align: right;
-        margin-right: 0.5rem;
-        font-style: italic;
+        font-size: 3.75rem;
+        text-align: center;
         font-family: var(--fontfam2);
-        padding: 0.25rem 0.5rem 0 0;
-        margin-top: 0.75rem;
+        margin-top: -0.75rem;
         border-top: 0.25rem solid var(--fontcol2);
+        color: var(--fontcol2);
     }
 }
 
 .status-container {
     position: relative;
-    top: 20%;
     grid-area: links;
+    align-self: flex-start;
+    justify-self: center;
+    margin-left: 2rem;
     height: 33%;
 
     .status {
@@ -58,16 +47,15 @@
         height: 4.5rem;
         font-family: var(--fontfam2);
         font-size: 2.75rem;
-        text-align: center;
         transition: height 0.25s ease-in-out;
     }
 
     .reload-status {
         position: absolute;
         bottom: 15%;
-        width: 100%;
+        left: calc(50% - 1.5rem);
+        width: 3rem;
         font-size: 1.5rem;
-        text-align: center;
         color: var(--ctacol);
         border: none;
         background: none;
@@ -78,10 +66,6 @@
             font-size: 1.75rem;
         }
     }
-}
-
-.custom-text-color {
-    color: var(--fontcol2);
 }
 
 .social-network {
@@ -100,15 +84,15 @@
         transition: 0.05s font-size ease-in-out;
     }
 
-    a:hover {
-        font-size: 3.75rem;
-    }
-
     a:link,
     a:visited,
-    a:hover,
     a:active {
         color: var(--fontcol1);
+    }
+
+    a:hover {
+        font-size: 3.75rem;
+        color: var(--ctacol);
     }
 }
 
@@ -121,7 +105,7 @@
     width: 30rem;
     height: auto;
     align-self: flex-end;
-    justify-self: flex-end;
+    justify-self: center;
 
     img {
         pointer-events: none;
@@ -250,9 +234,9 @@
         position: absolute;
         height: 2.5rem;
         width: 2.75rem;
-        background: var(--bg-color4);
+        background: var(--ctacol);
         font-size: 1.5rem;
-        color: var(--ctacol);
+        color: var(--fontcol1);
         display: grid;
         place-content: center;
         border: none;
@@ -270,7 +254,7 @@
     grid-area: avatar;
     justify-self: flex-end;
     align-self: flex-end;
-    right: 30rem;
+    right: calc(50% + 15rem);
     transition: 0.5s transform 0.5s cubic-bezier(0.2, -0.1, 1, -0.5);
 
     .chest-top {
@@ -283,7 +267,7 @@
             bottom: 0;
             height: 90%;
             width: 100%;
-            background: var(--chest-color);
+            background: var(--ctacol);
             border-radius: 100rem 100rem 0 0;
             transition: transform 0.25s ease-in-out;
             transform-origin: bottom left;
@@ -297,8 +281,8 @@
     .chest-bottom {
         height: 40%;
         width: 100%;
-        background: var(--chest-color);
-        border-radius: 0% 0% 2rem 2rem;
+        background: var(--ctacol);
+        border-radius: 0% 0% 100rem 100rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -338,12 +322,12 @@
 
 .accessory-hidden {
     pointer-events: none;
-    bottom: .5rem;
+    bottom: 0.5rem;
 }
 
 .remind-cta {
     position: relative;
-    bottom: .5rem;
+    bottom: 0.5rem;
     height: 4.5rem;
     width: 4.5rem;
     pointer-events: none;
@@ -356,7 +340,7 @@
         border-radius: 100%;
         height: inherit;
         width: inherit;
-        border: .5rem solid white;
+        border: 0.5rem solid var(--fontcol2);
         opacity: 0;
         animation: 3s linear infinite remind-cta;
     }
@@ -373,7 +357,6 @@
     50% {
         opacity: 0;
         transform: scale(1);
-        background: transparent;
     }
     70% {
         transform: scale(0.2);
@@ -381,7 +364,6 @@
     }
     100% {
         transform: scale(0.2);
-        background: white;
         opacity: 0;
     }
 }

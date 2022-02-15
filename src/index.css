@@ -37,6 +37,19 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('./fonts/FiraSansExtraCondensed-MediumItalic.eot');
+    src: url('./fonts/FiraSansExtraCondensed-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/FiraSansExtraCondensed-MediumItalic.woff2') format('woff2'),
+        url('./fonts/FiraSansExtraCondensed-MediumItalic.woff') format('woff'),
+        url('./fonts/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+
 
 /* loader */
 

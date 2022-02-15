@@ -105,7 +105,6 @@ export default function SlideWork(props) {
     }
 
     const handleLoad = () => {
-        console.log('loaded')
         setVideoIsLoaded(true)
         document.querySelector('.video-loader-container').classList.remove('loader-apparition')
     }
@@ -203,7 +202,7 @@ export default function SlideWork(props) {
                                 alt={language === 'FR' ? item.nameFR : item.nameEN}
                                 onClick={() => handleChooseVideo(index)} />
                             <div className="video-thumb-rank">
-                                {channel === index ? <FontAwesomeIcon icon={faPlay} /> : index + 1}
+                                {channel === index && <FontAwesomeIcon icon={faPlay} />}
                             </div>
                             <div className="video-thumb-name">
                                 {language === 'FR' ? item.nameFR : item.nameEN}

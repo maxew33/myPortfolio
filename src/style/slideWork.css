@@ -202,19 +202,23 @@
   overflow-y: scroll;
 }
 .video-thumb-container .video-thumb {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: "rank video video video video video" "rank video video video video video" "rank video video video video video" "none title title title title title";
+  /* new CSS*/
+  display: flex;
+  position: relative;
   align-items: center;
-  justify-items: center;
-  margin: 5% 0;
-  padding: 2%;
-  font-family: var(--fontfam2);
+  justify-content: center;
+  /*end */
+  padding: 1rem 0.5rem;
 }
 .video-thumb-container .video-thumb .video-thumb-rank {
-  font-family: var(--fontfam2);
-  font-size: 1.5rem;
-  grid-area: rank;
+  /* new CSS */
+  position: absolute;
+  font-size: 6rem;
+  color: transparent;
+  color: var(--ctacol);
+  opacity: 0.75;
+  pointer-events: none;
+  /* end */
 }
 .video-thumb-container .video-thumb .video-thumb-img {
   width: 95%;
@@ -226,6 +230,7 @@
   grid-area: video;
 }
 .video-thumb-container .video-thumb .video-thumb-name {
+  display: none;
   grid-area: title;
   font-size: 1.15rem;
 }

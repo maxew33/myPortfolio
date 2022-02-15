@@ -31,14 +31,13 @@
     /* HOME SLIDE */
 }
 
-@media (orientation: landscape) and (max-width: 812px) {    
+@media (orientation: landscape) and (max-width: 812px) {
     :root {
-    font-size: 7px;
-}
+        font-size: 7px;
+    }
     /* GLOBAL */
     /* HOME SLIDE */
 }
-
 
 /* WORK SLIDE  */
 
@@ -72,9 +71,7 @@
         overflow: hidden;
         height: 100vh;
         flex-direction: column-reverse;
-        align-items: flex-start;
         justify-content: space-evenly;
-        padding: 1vw 0;
         background: linear-gradient(
             90deg,
             hsl(180deg, 0%, 20%, 0.75) 50%,
@@ -84,9 +81,10 @@
         transition: width 0.25s ease-in-out;
 
         .navbar {
-            padding-left: 2rem;
+            width: 50vw;
             height: 40vh;
             flex-direction: column;
+            align-items: center;
 
             .nav-items {
                 width: fit-content;
@@ -97,8 +95,6 @@
             width: calc(50vw - 4rem);
             font-size: 5rem;
             padding: 0;
-            padding-left: 2rem;
-            align-self: flex-start;
             height: 20vh;
             display: grid;
             grid-template: repeat(2, 1fr) / repeat(2, 1fr);
@@ -108,12 +104,10 @@
         }
 
         .logo {
-            padding-left: 2rem;
             font-size: 5rem;
         }
 
         .language-toggle {
-            padding-left: 2rem;
             width: auto;
             font-size: 2rem;
 
@@ -162,16 +156,26 @@
         }
 
         .introducing-myself {
-            padding: 2rem 1rem 0 7.5rem;
+            margin: 0;
+            align-self: flex-start;
+            margin-top: 10vh;
+
+            .my-name {
+                font-size: 5.5rem;
+            }
+            .my-role {
+                font-size: 3rem;
+            }
         }
 
         .status-container {
-            top: 30rem;
             grid-area: name;
-            height: 20%;
+            height: 25%;
+            margin-top: 20vh;
+
 
             .status {
-                font-size: 4rem;
+                font-size: 3.25rem;
             }
 
             .reload-status {
@@ -186,7 +190,7 @@
         .my-avatar {
             bottom: 0;
             right: 0;
-            width: 40rem;
+            width: 80vw;
 
             .pull-me-container {
                 height: 12rem;
@@ -200,10 +204,9 @@
         }
 
         .chest-container {
-            height: 15rem;
-            width: 12.5rem;
-            right: 42.5rem;
-            bottom: 7.5rem;
+            height: 21rem;
+            width: 17.5rem;
+            right: calc(30vw - 7.5rem);
         }
 
         @for $i from 1 through 11 {
@@ -262,16 +265,15 @@
     }
 
     .video-controls {
+        display: flex;
         position: relative;
-        height: 75%;
         justify-self: center;
         align-self: center;
         grid-area: controls;
         width: calc(100% - 4rem);
         background: rgba(153, 255, 255, 0.15);
         border: none;
-        bottom: 0;
-        padding: 0;
+        opacity: 1;
     }
 
     .video-thumb-container {
@@ -352,7 +354,7 @@
 
     .avatar-at-work {
         height: auto;
-        max-width: 60vw;
+        max-width: 80vw;
         pointer-events: none;
         align-self: flex-end;
         justify-self: flex-end;
@@ -364,6 +366,7 @@
 
     .skills-container {
         grid-area: avatar;
+        position: relative;
         width: 40vw;
         display: flex;
         flex-direction: column;
@@ -372,18 +375,25 @@
         padding: 0 1.5rem;
         font-size: 3rem;
 
-        .my-skill{
+        .my-skill {
             align-self: flex-start;
         }
     }
 
+    .my-resume {
+        position: absolute;
+        top: -12.5%;
+        height: 7.5rem;
+        width: calc(100vw - 3rem);
+    }
+
     .video-modal {
         height: 100vh;
-    
+
         --my-video-width: 100vw;
         --my-video-height: 55vw;
-    
-        .video-modal-player{
+
+        .video-modal-player {
             height: var(--my-video-height);
             width: var(--my-video-width);
             top: 50vh;
@@ -391,20 +401,18 @@
             transform: translateY(-50%);
             border-radius: 0;
         }
-    
-        .my-video-modal{
+
+        .my-video-modal {
             height: var(--my-video-height);
             width: var(--my-video-width);
         }
-    
-        .exit-modal{
+
+        .exit-modal {
             font-size: 3.5rem;
             right: 2rem;
             top: 2rem;
         }
     }
-    
-
 
     /* CONTACT SLIDE */
 

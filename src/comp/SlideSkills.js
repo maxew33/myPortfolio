@@ -104,7 +104,10 @@ export default function SlideSkills() {
                     )
                 })}
 
-                <div className='my-skill'>
+                <div className='my-skill my-resume'>
+                    <div className='skill-name'>
+                        {language === 'FR' ? 'Télécharger le CV' : 'Resume download'}
+                    </div>
                     <div className="skill-img">
                         <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_CV.pdf'}
                             className="resume-download"
@@ -113,10 +116,6 @@ export default function SlideSkills() {
                             <FontAwesomeIcon icon={faFileAlt} />
                         </a>
                     </div>
-                    <div className='skill-name'>
-                        {language === 'FR' ? 'Télécharger le CV' : 'Resume download'}
-                    </div>
-
                 </div>
 
             </div>

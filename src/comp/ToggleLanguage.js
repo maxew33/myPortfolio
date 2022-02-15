@@ -69,7 +69,7 @@ export default function ToggleLanguage() {
 
   return (
     <div className="language-toggle">
-      FR&nbsp;
+      FR&nbsp;&nbsp;
       <img
         className='language-toggle-img'
         alt={language === 'FR' ? 'français' : 'french'}
@@ -84,7 +84,7 @@ export default function ToggleLanguage() {
         alt={language === 'FR' ? 'anglais' : 'english'}
         onClick={() => handleClickToggleLang('EN')}
         src={english} />
-      &nbsp;EN
+      &nbsp;&nbsp;EN
     </div>
   )
 }

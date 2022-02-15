@@ -43,6 +43,10 @@
     // }
 }
 
+.custom-text-color {
+    color: var(--fontcol2);
+}
+
 @keyframes remind-click {
     0%,
     45% {
@@ -77,22 +81,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .circle{        
+        border: 0.5rem solid var(--ctacol);
+    }
 }
 
 .skills-container {
     grid-area: skills;
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
     display: grid;
     padding: 1.5rem;
-    margin-left: 15%;
+    margin: 0 1.5rem 1.5rem 1.5rem;
     font-size: 1.25rem;
-    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
 }
 
 .my-skill {
     height: 5rem;
     display: flex;
     align-items: center;
-    align-self: center;
 
     .skill-img {
         height: 4.5rem;
@@ -115,18 +124,36 @@
     }
 }
 
-.resume-download {
-    display: inline-block;
-    font-size: 4.5rem;
-    -webkit-animation: 3s linear infinite remind-click;
-    animation: 3s linear infinite remind-click;
+.my-skill:nth-child(5),
+.my-skill:nth-child(6) {
+    grid-column: 1/3;
+    align-self: center;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-    color: var(--ctacol);
+.my-resume {
+    background: hsl(180deg, 100%, 80%, 0.15);
+    border-radius: 1.5rem;
+    padding: 0 2.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+
+    .skill-img{        
+        padding-right: 0;
+    }
+
+    .resume-download {
+        display: inline-block;
+        font-size: 3.75rem;
+        -webkit-animation: 3s linear infinite remind-click;
+        animation: 3s linear infinite remind-click;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: var(--ctacol);
+    }
 }
 
 // .my-skill:nth-child(1) {
@@ -167,10 +194,10 @@ a:active {
         height: inherit;
         width: inherit;
         background: linear-gradient(var(--bg-gradient-angle), var(--bg-color3), var(--bg-color4));
-        opacity: .75;
+        opacity: 0.75;
     }
 
-    .video-modal-player{
+    .video-modal-player {
         position: absolute;
         display: grid;
         place-content: center;
@@ -183,12 +210,12 @@ a:active {
         border-radius: 5px;
     }
 
-    .my-video-modal{
+    .my-video-modal {
         height: var(--my-video-height);
         width: var(--my-video-width);
     }
 
-    .exit-modal{
+    .exit-modal {
         position: absolute;
         font-size: 2.5rem;
         right: 3vh;

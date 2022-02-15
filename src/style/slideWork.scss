@@ -249,24 +249,46 @@
     overflow-y: scroll;
 
     .video-thumb {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-areas:
-            "rank video video video video video"
-            "rank video video video video video"
-            "rank video video video video video"
-            "none title title title title title";
+        // display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        // grid-template-areas:
+        //     "rank video video video video video"
+        //     "rank video video video video video"
+        //     "rank video video video video video"
+        //     "none title title title title title";
+        // align-items: center;
+        // justify-items: center;
+
+
+        /* new CSS*/
+        
+        display: flex;
+        position: relative;
         align-items: center;
-        justify-items: center;
-        margin: 5% 0;
-        padding: 2%;
-        font-family: var(--fontfam2);
+        justify-content: center;
+
+        /*end */
+
+        padding: 1rem .5rem;
+        // font-family: var(--fontfam2);
         // border: 2px solid white;
 
         .video-thumb-rank {
-            font-family: var(--fontfam2);
-            font-size: 1.5rem;
-            grid-area: rank;
+
+            /* new CSS */
+                position: absolute;
+                font-size: 6rem;
+                color: transparent;
+                color: var(--ctacol);
+                opacity: .75;
+                pointer-events: none;
+
+            /* end */
+
+
+            // font-family: var(--fontfam2);
+            // font-size: 1.5rem;
+            // grid-area: rank;
         }
 
         .video-thumb-img {
@@ -280,6 +302,7 @@
         }
 
         .video-thumb-name {
+            display: none;
             grid-area: title;
             font-size: 1.15rem;
         }

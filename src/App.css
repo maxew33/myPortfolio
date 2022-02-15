@@ -5,13 +5,12 @@
   --bg-color4: #02006c;
   --bg-color5: #090088;
   --bg-gradient-angle: 90deg;
-  --fontfam1: "arial black", Arial, Helvetica, sans-serif;
+  --fontfam1: "Fira Sans Extra Condensed", Arial, Helvetica, sans-serif;
   --fontfam2: "Ubuntu", sans-serif;
   --fontfam3: "Ephesis", cursive;
   --fontcol1: hsl(0deg, 0%, 85%);
   --fontcol2: #4896ef;
-  --ctacol: orangered;
-  --chest-color: #4896ef;
+  --ctacol: hsl(47, 100%, 45%);
 }
 
 /* hsl(258, 86%, 34%) 
@@ -37,12 +36,13 @@ font-family: 'Ephesis', cursive;*/
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   z-index: 20;
-  font-family: "Ubuntu", sans-serif;
+  font-family: var(--fontfam1);
 }
 
 .logo {
   pointer-events: none;
   font-size: 2.5rem;
+  font-family: var(--fontfam2);
 }
 
 .navbar {
@@ -84,14 +84,14 @@ font-family: 'Ephesis', cursive;*/
   justify-content: space-between;
 }
 .language-toggle .language-toggle-img {
-  height: 2.5rem;
+  height: 2rem;
   cursor: pointer;
 }
 .language-toggle .language-toggle-selector-container {
   position: relative;
   cursor: pointer;
-  width: 3rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 1.25rem;
   border-radius: 999px;
   border: 2px solid var(--fontcol1);
   margin: 0 1vmin;
@@ -99,8 +99,8 @@ font-family: 'Ephesis', cursive;*/
 .language-toggle .language-toggle-selector-container .language-toggle-selector {
   pointer-events: none;
   position: absolute;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
   background: var(--fontcol1);
   transition: transform 0.25s ease-in-out;
   border-radius: 999px;
