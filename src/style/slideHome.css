@@ -48,7 +48,7 @@
   position: absolute;
   bottom: 15%;
   left: calc(50% - 1.5rem);
-  width: 3rem;
+  width: auto;
   font-size: 1.5rem;
   color: var(--ctacol);
   border: none;
@@ -201,58 +201,58 @@
 }
 
 .accessory-container1 {
-  right: 29rem;
-  bottom: 47%;
+  right: 33vw;
+  bottom: 46%;
 }
 
 .accessory-container2 {
-  right: 26rem;
+  right: 34vw;
   bottom: 38%;
 }
 
 .accessory-container3 {
-  right: 27rem;
-  bottom: 39%;
+  right: 33vw;
+  bottom: 40%;
 }
 
 .accessory-container4 {
-  right: 28rem;
-  bottom: 43%;
+  right: 32vw;
+  bottom: 40%;
 }
 
 .accessory-container5 {
-  right: 27rem;
-  bottom: 42%;
+  right: 31vw;
+  bottom: 40%;
 }
 
 .accessory-container6 {
-  right: 25rem;
-  bottom: 38%;
-}
-
-.accessory-container7 {
-  right: 27rem;
-  bottom: 40%;
-}
-
-.accessory-container8 {
-  right: 27rem;
+  right: 31vw;
   bottom: 44%;
 }
 
+.accessory-container7 {
+  right: 34vw;
+  bottom: 49%;
+}
+
+.accessory-container8 {
+  right: 32vw;
+  bottom: 37%;
+}
+
 .accessory-container9 {
-  right: 26rem;
-  bottom: 40%;
+  right: 32vw;
+  bottom: 43%;
 }
 
 .accessory-container10 {
-  right: 25rem;
-  bottom: 39%;
+  right: 32vw;
+  bottom: 48%;
 }
 
 .accessory-container11 {
-  right: 27rem;
-  bottom: 48%;
+  right: 35vw;
+  bottom: 36%;
 }
 
 .accessory-hidden {
@@ -262,7 +262,7 @@
 
 .remind-cta {
   position: relative;
-  bottom: 0.5rem;
+  top: -4.5rem;
   height: 4.5rem;
   width: 4.5rem;
   pointer-events: none;

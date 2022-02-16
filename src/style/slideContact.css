@@ -111,19 +111,19 @@ textarea {
 .postcard-left-submit-btn {
   height: 5vh;
   width: max(15rem, 40%);
-  align-self: end;
+  align-self: center;
   border-radius: 5px;
-  border: 2px solid var(--ctacol);
-  background-color: var(--ctacol);
+  border: none;
+  background: rgba(230, 180, 0, 0.5);
   font-size: 1.5rem;
-  color: whitesmoke;
+  color: #404040;
   cursor: pointer;
+  margin-top: 1vh;
   transition: background-color 0.25s ease;
 }
 
 .postcard-left-submit-btn:hover {
-  background-color: whitesmoke;
-  color: var(--ctacol);
+  background-color: var(--ctacol);
 }
 
 .postcard-right {
