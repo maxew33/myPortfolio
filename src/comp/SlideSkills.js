@@ -142,7 +142,7 @@ export default function SlideSkills() {
             </div>
 
             <div className="video-modal">
-                <div className="overlay">
+                <div className="overlay"  onClick={exitModal}>
                 </div>
                 <div className="video-modal-player">
                     <video

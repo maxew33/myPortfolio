@@ -54,7 +54,7 @@
         position: absolute;
         bottom: 15%;
         left: calc(50% - 1.5rem);
-        width: 3rem;
+        width: auto;
         font-size: 1.5rem;
         color: var(--ctacol);
         border: none;
@@ -315,7 +315,7 @@
 
 @for $i from 1 through 11 {
     .accessory-container#{$i} {
-        right: 30rem - random(5);
+        right: 30vw + random(5);
         bottom: 35% + random(15);
     }
 }
@@ -327,6 +327,7 @@
 
 .remind-cta {
     position: relative;
+    top: -4.5rem;
     bottom: 0.5rem;
     height: 4.5rem;
     width: 4.5rem;

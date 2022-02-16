@@ -56,7 +56,7 @@
 @media (orientation: portrait) {
   :root {
     font-size: 6px;
-    --avatar-length-unit: 0.33rem;
+    --avatar-length-unit: min(0.29vh, 0.67vw);
   }
 
   /* GLOBAL */
@@ -93,7 +93,7 @@
     justify-self: flex-start;
   }
   .banner .logo {
-    font-size: 5rem;
+    font-size: 10vw;
   }
   .banner .language-toggle {
     width: auto;
@@ -141,29 +141,30 @@
     margin-top: 10vh;
   }
   .home-wrapper .introducing-myself .my-name {
-    font-size: 5.5rem;
+    font-size: min(10vh, 12.5vw);
   }
   .home-wrapper .introducing-myself .my-role {
-    font-size: 3rem;
+    font-size: min(5vh, 7vw);
   }
   .home-wrapper .status-container {
     grid-area: name;
-    height: 25%;
-    margin-top: 20vh;
+    height: max(12.5vh, 17.5vw);
+    margin-top: max(25vh, 35vw);
+    margin-left: 0;
   }
   .home-wrapper .status-container .status {
-    font-size: 3.25rem;
+    font-size: min(4.75vh, 6.5vw);
   }
   .home-wrapper .status-container .reload-status {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   .home-wrapper .status-container .reload-status:hover {
-    font-size: 2.75rem;
+    font-size: 3.25rem;
   }
   .home-wrapper .my-avatar {
     bottom: 0;
     right: 0;
-    width: 80vw;
+    width: min(35vh, 80vw);
   }
   .home-wrapper .my-avatar .pull-me-container {
     height: 12rem;
@@ -174,52 +175,54 @@
     font-size: 3rem;
   }
   .home-wrapper .chest-container {
-    height: 21rem;
-    width: 17.5rem;
-    right: calc(30vw - 7.5rem);
+    height: min(13.4vh, 18vw);
+    width: min(11vh, 15vw);
+    justify-self: flex-start;
+    left: calc(25% - 7.5vh);
+    bottom: 2rem;
   }
   .home-wrapper .accessory-container1 {
-    left: 16%;
-    bottom: 39%;
+    left: 33%;
+    bottom: 35%;
   }
   .home-wrapper .accessory-container2 {
-    left: 35%;
-    bottom: 39%;
+    left: 33%;
+    bottom: 34%;
   }
   .home-wrapper .accessory-container3 {
     left: 26%;
-    bottom: 41%;
+    bottom: 32%;
   }
   .home-wrapper .accessory-container4 {
-    left: 34%;
+    left: 19%;
     bottom: 39%;
   }
   .home-wrapper .accessory-container5 {
-    left: 30%;
-    bottom: 45%;
+    left: 32%;
+    bottom: 41%;
   }
   .home-wrapper .accessory-container6 {
-    left: 30%;
-    bottom: 32%;
+    left: 22%;
+    bottom: 43%;
   }
   .home-wrapper .accessory-container7 {
-    left: 19%;
-    bottom: 33%;
+    left: 16%;
+    bottom: 36%;
   }
   .home-wrapper .accessory-container8 {
-    left: 28%;
-    bottom: 33%;
+    left: 22%;
+    bottom: 41%;
   }
   .home-wrapper .accessory-container9 {
-    left: 17%;
-    bottom: 40%;
+    left: 32%;
+    bottom: 39%;
   }
   .home-wrapper .accessory-container10 {
-    left: 27%;
-    bottom: 42%;
+    left: 17%;
+    bottom: 33%;
   }
   .home-wrapper .accessory-container11 {
-    left: 34%;
+    left: 27%;
     bottom: 40%;
   }
   .home-wrapper .accessory-hidden {
@@ -228,6 +231,7 @@
   }
 
   .remind-cta {
+    top: -5vh;
     height: 5vh;
     width: 5vh;
   }
@@ -248,7 +252,7 @@
     width: 100vw;
     display: grid;
     place-content: center;
-    font-size: 5rem;
+    font-size: 10vw;
     height: 7rem;
   }
 
@@ -332,6 +336,10 @@
   }
   .skills-wrapper .section-title {
     position: absolute;
+  }
+
+  .intro-of-myself {
+    font-size: 6vw;
   }
 
   .avatar-at-work {
