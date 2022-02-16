@@ -62,7 +62,7 @@
 @media (orientation: portrait) {
     :root {
         font-size: 6px;
-        --avatar-length-unit: min(0.29vh, 0.67vw);
+        --avatar-length-unit: 0.33rem;
     }
     /* GLOBAL */
     .banner {
@@ -104,7 +104,7 @@
         }
 
         .logo {
-            font-size: 10vw;
+            font-size: 5rem;
         }
 
         .language-toggle {
@@ -161,36 +161,36 @@
             margin-top: 10vh;
 
             .my-name {
-                font-size: min(10vh, 12.5vw);
+                font-size: 5.5rem;
             }
             .my-role {
-                font-size: min(5vh, 7vw);
+                font-size: 3rem;
             }
         }
 
         .status-container {
             grid-area: name;
-            height: max(12.5vh, 17.5vw);
-            margin-top: max(25vh, 35vw);
-            margin-left: 0;
+            height: 25%;
+            margin-top: 20vh;
+
 
             .status {
-                font-size: min(4.75vh, 6.5vw);
+                font-size: 3.25rem;
             }
 
             .reload-status {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .reload-status:hover {
-                font-size: 3.25rem;
+                font-size: 2.75rem;
             }
         }
 
         .my-avatar {
             bottom: 0;
             right: 0;
-            width: min(35vh, 80vw);
+            width: 80vw;
 
             .pull-me-container {
                 height: 12rem;
@@ -204,11 +204,9 @@
         }
 
         .chest-container {
-            height: min(13.4vh, 18vw);
-            width: min(11vh, 15vw);
-            justify-self: flex-start;
-            left: calc(25% - 7.5vh);
-            bottom: 2rem;
+            height: 21rem;
+            width: 17.5rem;
+            right: calc(30vw - 7.5rem);
         }
 
         @for $i from 1 through 11 {
@@ -225,7 +223,6 @@
     }
 
     .remind-cta {
-        top: -5vh;
         height: 5vh;
         width: 5vh;
     }
@@ -258,7 +255,7 @@
         width: 100vw;
         display: grid;
         place-content: center;
-        font-size: 10vw;
+        font-size: 5rem;
         height: 7rem;
     }
 
@@ -353,10 +350,6 @@
         .section-title {
             position: absolute;
         }
-    }
-
-    .intro-of-myself {
-        font-size: 6vw;
     }
 
     .avatar-at-work {

@@ -9,7 +9,7 @@
   --fontfam2: "Ubuntu", sans-serif;
   --fontfam3: "Ephesis", cursive;
   --fontcol1: hsl(0deg, 0%, 85%);
-  --fontcol2: hsl(212deg, 84%, 61%);
+  --fontcol2: #4896ef;
   --ctacol: hsl(47, 100%, 45%);
 }
 
@@ -52,7 +52,7 @@ font-family: 'Ephesis', cursive;*/
 }
 .navbar .nav-items {
   position: relative;
-  font-size: max(20px, 2rem);
+  font-size: 24px;
   cursor: pointer;
   transition: color 0.25s ease-in-out;
 }
