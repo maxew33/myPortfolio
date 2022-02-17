@@ -11,25 +11,6 @@ export default function ToggleLanguage() {
 
   const { language, toggleLanguage } = useContext(Context)
 
-  // language toggle
-  /* const handleClickToggle = () => {
-     if (toggle) {
- 
-         let newLanguage = language
- 
-         console.log(language)
- 
-         newLanguage === 'FR' ? toggleLanguage('EN') : toggleLanguage('FR')
-         
-       document.querySelector('.language-toggle-selector').classList.toggle('english-selected')
- 
-       setToggle(false)
- 
-       setTimeout(() => {
-         setToggle(true)
-       }, 350);
-     }
-   }*/
   const handleClickToggle = () => {
     if (toggle) {
 

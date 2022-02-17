@@ -205,11 +205,11 @@
         }
 
         .chest-container {
-            height: min(13.4vh, 18vw);
-            width: min(11vh, 15vw);
+            height: min(20.1vh, 27vw);
+            width: min(16.5vh, 22.5vw);
             justify-self: flex-start;
             left: calc(25% - 7.5vh);
-            bottom: 2rem;
+            bottom: 20%;
         }
 
         @for $i from 1 through 11 {
@@ -221,12 +221,12 @@
 
         .accessory-hidden {
             left: calc(25% - 7.5vh);
-            bottom: 2vh;
+            bottom: 20%;
         }
     }
 
     .remind-cta {
-        top: -5vh;
+        top: -2.5vh;
         width: 5vh;
     }
 

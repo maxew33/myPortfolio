@@ -29,7 +29,6 @@ export default function SlideWork(props) {
             setVideoOnPause(false)
             setVideoIsPlaying(true)
             !videoIsLoaded && document.querySelector('.video-loader-container').classList.add('loader-apparition')
-            console.log(123)
         }
         else {
             document.querySelector('.my-video').pause()
@@ -193,7 +192,6 @@ export default function SlideWork(props) {
 
 
             <div className="video-thumb-container">
-                {/* Ajouter ici un btn permettant de remonter et sur les items un dan s le useEffect, une verif de la place de l'item dans le container, si l'item n'est pas visible, faire une translation sur y du container */}
                 {dataVideos.map((item, index) => {
                     return (
                         <div className={channel === index ? "video-thumb video-thumb-played" : "video-thumb"} data-id='thumb' key={index}>
@@ -222,7 +220,7 @@ export default function SlideWork(props) {
                         {dataVideos[channel].youtubeLink &&
                             <a href={dataVideos[channel].youtubeLink}
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 aria-label="link to the youtube video">
                                 <FontAwesomeIcon icon={faYoutube} />
                             </a>
@@ -230,7 +228,7 @@ export default function SlideWork(props) {
                         {dataVideos[channel].gitHubLink &&
                             <a href={dataVideos[channel].gitHubLink}
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 aria-label="link to the github page">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
@@ -238,17 +236,13 @@ export default function SlideWork(props) {
                         {dataVideos[channel].codePenLink &&
                             <a href={dataVideos[channel].codePenLink}
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                                 aria-label="link to the codepen page">
                                 <FontAwesomeIcon icon={faCodepen} />
                             </a>
                         }
                     </div>
                 </div>
-
-                {/* <div className="video-prez">
-                    {language === 'FR' ? dataVideos[channel].prezFR : dataVideos[channel].prezEN}
-                </div> */}
 
                 <div className="video-descr">
                     {language === 'FR' ? dataVideos[channel].txtFR : dataVideos[channel].txtEN}

@@ -1,11 +1,17 @@
 RewriteEngine on
 
 #  Force HTTPS
-RewriteCond %{HTTPS} !=on
+RewriteCond %{SERVER_PORT} !=443
 RewriteRule ^(.*)$ https://maxime-malfilatre.com/$1 [R=301,L]
 
 # Force no-www with HTTPS
 RewriteCond %{HTTP_HOST} ^www\.maxime-malfilatre\.com [NC]
 RewriteRule ^(.*)$ https://maxime-malfilatre.com/$1 [R=301,L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.maxime-malfilatre.com/$1 [R,L]
+</IfModule>
 
 ErrorDocument 404 /error404.html

@@ -10,7 +10,6 @@ import hat2 from '../assets/hat2.svg'
 import helmet from '../assets/helmet.svg'
 import mustache from '../assets/mustache.svg'
 import mustache2 from '../assets/mustache2.svg'
-// import tie from '../assets/tie.svg'
 
 const dataObjects = [
     {
@@ -69,13 +68,6 @@ const dataObjects = [
         zIndex: 10,
         id: uuidv4()
     },
-    // {
-    //     src: tie,
-    //     alt: "tie",
-    //     width: 'calc(25 * var(--avatar-length-unit))',
-    //     zIndex: 10,
-    //     id: uuidv4()
-    // },
     {
         src: helmet,
         alt: "helmet",

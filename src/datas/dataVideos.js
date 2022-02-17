@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import theOffice from '../assets/the-office.webp'
 import Ben from '../assets/Ben.webp'
 import maxamp from '../assets/maxamp.webp'
 import infernalForm from '../assets/infernal-form.webp'
@@ -12,7 +11,6 @@ import RickAndMorty from '../assets/rick-n-morty.webp'
 import letSParty from '../assets/let-s-party.webp'
 import routourne from '../assets/routourne.webp'
 import bat from '../assets/bat.webp'
-import halloween from '../assets/halloween.webp'
 import ticTacGhost from '../assets/tic-tac-ghost.webp'
 import it from '../assets/it.webp'
 import xFiles from '../assets/x-files.webp'
@@ -22,21 +20,6 @@ import cocktail from '../assets/cocktail.webp'
 import landingPage from '../assets/landing-page.webp'
 
 const dataTvShow = [
-    // {
-    //     id: uuidv4(),
-    //     nameFR: 'The office',
-    //     nameEN: 'The office',
-    //     src: process.env.PUBLIC_URL + ' /video/ben-video.mp4',
-    //     sound: true,
-    //     prezFR: 'Mon environnement de travail',
-    //     prezEN: 'My working environment',
-    //     txtFR: 'Une présentation de mon environnement de travail actuel : un PC portable HP OMEN 17\'\' (windows10, processeur intel I5, 8.0GB de RAM et une carte graphique intel hd graphics 630) avec un second écran samsung de 21\'\'.',
-    //     txtEN: 'Here I am, working on my laptop : a HP OMEN 17\'\' (windows10, intel core i5, cpu@ 2.50GHz, 8.0GB RAM, intel hd graphics 630) with my second screen ( samsung, 21\'\'.)',
-    //     thumb: theOffice,
-    //     youtubeLink: false,
-    //     gitHubLink: false,
-    //     codePenLink: false
-    // },
     {
         id: uuidv4(),
         nameFR: 'Ben',
@@ -277,21 +260,6 @@ const dataTvShow = [
         gitHubLink: false,
         codePenLink: 'https://codepen.io/maxew33/full/eYEgzLo'
     },
-    // {
-    //     id: uuidv4(),
-    //     nameFR: 'Halloween',
-    //     nameEN: 'Halloween',
-    //     src: process.env.PUBLIC_URL + ' /video/happy-halloween-2.mp4',
-    //     sound: false,
-    //     prezFR: 'Scary Halloween',
-    //     prezEN: 'Scary Halloween',
-    //     txtFR: 'CSS art : une tête de mort dessiné en pur css.',
-    //     txtEN: 'CSS art : a pure css skull.',
-    //     thumb: halloween,
-    //     youtubeLink: false,
-    //     gitHubLink: false,
-    //     codePenLink: 'https://codepen.io/maxew33/full/XWaeRgL'
-    // },
     {
         id: uuidv4(),
         nameFR: 'ça',

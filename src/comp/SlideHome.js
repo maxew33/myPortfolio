@@ -30,8 +30,6 @@ export default function SlideHome() {
     const { language } = useContext(Context)
 
     const handleStart = e => {
-        // setDrag(true)
-
         /* when I take an accessory, set its z index to 20 */
 
         const myId = parseInt(e.target.dataset.id)
@@ -44,15 +42,10 @@ export default function SlideHome() {
         setChestObjects(newArr)
     }
 
-    const handleStop = () => {
-        // setTimeout(() => setDrag(false), 50)
-    }
-
     useEffect(() => {
 
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
-            // chestBottom = document.querySelector('.chest-bottom'),
             accessoryContainer = [...document.querySelectorAll('.accessory-container')],
             accessory = [...document.querySelectorAll('.avatar-accessory')]
 
@@ -102,8 +95,6 @@ export default function SlideHome() {
         if (!myStatusIdx.preventSpam) {
             const statusHeight = document.querySelector('.status').getBoundingClientRect().height
             document.querySelector('.status').style.height = 0
-
-            console.log(statusHeight)
 
             setReloadButtonRotation(reloadButtonRotation + 360)
 
@@ -219,8 +210,7 @@ export default function SlideHome() {
                     <Draggable
                         bounds="parent"
                         key={dataObjects[index].id}
-                        onStart={handleStart}
-                        onStop={handleStop}>
+                        onStart={handleStart}>
                         <div className={'accessory-container accessory-container' + (index + 1)}
                             data-id={index}
                             style={{
@@ -236,7 +226,6 @@ export default function SlideHome() {
                     </Draggable>
                 )
             })}
-
         </div>
     )
 }

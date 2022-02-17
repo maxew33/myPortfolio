@@ -70,10 +70,6 @@ function App() {
 
   }, [])
 
-  useEffect(() => {
-    // effect triggered when changing slide displayed
-    console.log('chgt de slide')
-  }, [mySlide])
 
   useEffect(() => {
     // effect triggered when changing viewport size
@@ -88,8 +84,6 @@ function App() {
   function slideAnim(direction) {
 
     let oldSlide = mySlide
-
-    console.log(size.width)
 
     oldSlide += direction
 
@@ -109,9 +103,6 @@ function App() {
       canMove = false
     }
 
-    if (wheel) {
-    }
-
     if (!wheel && canMove) {
       setWheel(true)
 
@@ -127,11 +118,8 @@ function App() {
 
   // changig the slide by clicking on the slide wanted
   const handleClick = (e) => {
-    console.log('click', e.target, e.target.dataset.index)
-    console.log(e.target.dataset.index - mySlide)
     slideAnim(e.target.dataset.index - mySlide)
   }
-
 
   // changig the slide by swipe
   const handlers = useSwipeable({
