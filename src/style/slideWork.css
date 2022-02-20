@@ -237,18 +237,18 @@
 
 .video-infos-container {
   grid-area: infos;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name links" "descr descr";
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
   border-radius: 0.5rem;
   margin: 2rem 0 2rem 4.5rem;
   background: rgba(153, 255, 255, 0.15);
   font-family: var(--fontfam2);
-  line-height: 1.5;
-}
-.video-infos-container > div {
-  margin: 1rem 1rem -0.5rem 1rem;
 }
 .video-infos-container .video-name {
+  grid-area: name;
   font-family: var(--fontfam1);
   font-size: max(24px, 2rem);
   margin-left: 2rem;
@@ -256,12 +256,14 @@
   align-items: center;
 }
 .video-infos-container .video-links {
+  grid-area: links;
   font-family: var(--fontfam2);
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
 }
 .video-infos-container .video-links a {
-  margin-left: 0.5rem;
-  font-size: max(18px, 1.5rem);
+  margin-right: 24px;
+  font-size: 24px;
 }
 .video-infos-container .video-links a,
 .video-infos-container .video-links a:link,
@@ -275,6 +277,8 @@
   color: var(--ctacol);
 }
 .video-infos-container .video-descr {
+  grid-area: descr;
+  margin-left: 1rem;
   font-size: max(13.8px, 1.15rem);
   line-height: 1.25;
 }/*# sourceMappingURL=slideWork.css.map */

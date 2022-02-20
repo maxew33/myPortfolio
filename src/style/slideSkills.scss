@@ -49,8 +49,10 @@
 
 @keyframes remind-click {
     0%,
-    45% {
-        transform: rotate(0deg);
+    45%,
+    55%,
+    100% {
+        transform: none;
     }
     47%,
     53% {
@@ -58,10 +60,6 @@
     }
     50% {
         transform: rotate(-5deg);
-    }
-    55%,
-    100% {
-        transform: rotate(0deg);
     }
 }
 

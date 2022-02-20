@@ -22,8 +22,8 @@ import landingPage from '../assets/landing-page.webp'
 const dataTvShow = [
     {
         id: uuidv4(),
-        nameFR: 'Ben',
-        nameEN: 'Ben',
+        nameFR: 'Portfolio',
+        nameEN: 'Portfolio',
         src: process.env.PUBLIC_URL + ' /video/Ben.mp4',
         sound: true,
         prezFR: 'Portfolio de Benedict Priam',
@@ -32,6 +32,7 @@ const dataTvShow = [
         txtEN: 'Benedict Priam\'s Portfolio, french photograph.',
         thumb: Ben,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/BenPriam/',
         gitHubLink: 'https://github.com/maxew33/portfolio-photographer-priam',
         codePenLink: false
     },
@@ -47,8 +48,9 @@ const dataTvShow = [
         txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
         thumb: cocktail,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/cocktail/',
         gitHubLink: 'https://github.com/maxew33/cocktail',
-        codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
+        codePenLink: 'https://codepen.io/maxew33/pen/YzVrWqB'
     },
     {
         id: uuidv4(),
@@ -62,8 +64,9 @@ const dataTvShow = [
         txtEN: 'This newsletter has been coded with all the constraints related to mailing (nesting of tables, css inline).',
         thumb: newsletter,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/newsletter/',
         gitHubLink: 'https://github.com/maxew33/newsletter',
-        codePenLink: 'https://codepen.io/maxew33/full/bGYERvz'
+        codePenLink: 'https://codepen.io/maxew33/pen/bGYERvz'
     },
     {
         id: uuidv4(),
@@ -77,8 +80,9 @@ const dataTvShow = [
         txtEN: 'The goal is to create a page presents the service offered, I want it to be neat and effective. There is also a nice transition effect between light and dark mode. (Realized as part of a discord challenge).',
         thumb: landingPage,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/landingPage/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/NWgvVVa'
+        codePenLink: 'https://codepen.io/maxew33/pen/NWgvVVa'
     },
     {
         id: uuidv4(),
@@ -88,12 +92,13 @@ const dataTvShow = [
         sound: true,
         prezFR: 'Enzo Ustariz présente...',
         prezEN: 'Enzo Ustariz presents...',
-        txtFR: 'Enzo "le designer du web" Ustariz, développeur fullstack et youtubeur (25k abonnées), analyse mon code d\'une page de la société OCP introduisant son produit phare : l\'ED-209. (Réalisé dans le cadre d\'un défi discord).',
-        txtEN: 'Enzo "le designer du web" Ustariz, fullstack developer and youtuber (25k subscribers), analyzes my code of a page from the company OCP introducing its flagship product: the ED-209. (Made as part of a discord challenge).',
+        txtFR: 'Enzo "le designer du web" Ustariz, développeur penstack et youtubeur (25k abonnées), analyse mon code d\'une page de la société OCP introduisant son produit phare : l\'ED-209. (Réalisé dans le cadre d\'un défi discord).',
+        txtEN: 'Enzo "le designer du web" Ustariz, penstack developer and youtuber (25k subscribers), analyzes my code of a page from the company OCP introducing its flagship product: the ED-209. (Made as part of a discord challenge).',
         thumb: robocop,
         youtubeLink: 'https://youtu.be/CbWv29ar71c?t=683',
+        directLink: 'https://maxime-malfilatre.com/sandbox/robocop/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/zYZVdQV'
+        codePenLink: 'https://codepen.io/maxew33/pen/zYZVdQV'
     },
     {
         id: uuidv4(),
@@ -107,8 +112,9 @@ const dataTvShow = [
         txtEN: 'The goal of this challenge was to design this restaurant\'s card. By pulling the tab, you can see the description of the meal. (Realized as a part of a codepen challenge).',
         thumb: restaurant,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/restaurantMenu/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/xxLzMoY'
+        codePenLink: 'https://codepen.io/maxew33/pen/xxLzMoY'
     },
     {
         id: uuidv4(),
@@ -122,8 +128,9 @@ const dataTvShow = [
         txtEN: 'The goal of this challenge was to make this excerpt of Virginia Woolf\'s Mrs Dalloway both legible and eyecatching. So, I use the old way : put it in an old fashioned book. You can open the book and turn the pages by clicking on them. (Made as part of a discord challenge).',
         thumb: bookStyle,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/flipBook/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/LYjKNVx'
+        codePenLink: 'https://codepen.io/maxew33/pen/LYjKNVx'
     },
     {
         id: uuidv4(),
@@ -137,8 +144,9 @@ const dataTvShow = [
         txtEN: 'Clone of winamp with almost all of its features (play, pause, shuffle, volume, playlist and navigation...).',
         thumb: maxamp,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/maxamp/',
         gitHubLink: 'https://github.com/maxew33/maxamp',
-        codePenLink: 'https://codepen.io/maxew33/full/XWRvWdY'
+        codePenLink: 'https://codepen.io/maxew33/pen/XWRvWdY'
     },
     {
         id: uuidv4(),
@@ -152,8 +160,9 @@ const dataTvShow = [
         txtEN: 'Enzo "le designer du web" Ustariz analyzes my code of a 3D slider using the Rick and Morty API. (Made as part of a discord challenge).',
         thumb: RickAndMorty,
         youtubeLink: 'https://youtu.be/2ogH9PKILqY?t=339',
+        directLink: 'https://maxime-malfilatre.com/sandbox/carousel3D/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/QWpgyBQ'
+        codePenLink: 'https://codepen.io/maxew33/pen/QWpgyBQ'
     },
     {
         id: uuidv4(),
@@ -167,8 +176,9 @@ const dataTvShow = [
         txtEN: 'A Halloween-themed tic tac toe, with an almost unbeatable AI (Made as part of a codepen challenge).',
         thumb: ticTacGhost,
         youtubeLink: false,
-        gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/NWvRLPV'
+        directLink: 'https://maxime-malfilatre.com/sandbox/ticTacGhost/',
+        gitHubLink: "https://github.com/maxew33/tic-tac-ghost",
+        codePenLink: 'https://codepen.io/maxew33/pen/NWvRLPV'
     },
     {
         id: uuidv4(),
@@ -182,6 +192,7 @@ const dataTvShow = [
         txtEN: 'Pure css kaleidoscope (no javascript).',
         thumb: kaleidoscope,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/kaleidoscope/',
         gitHubLink: 'https://github.com/maxew33/kaleidoscope',
         codePenLink: 'https://codepen.io/maxew33/pen/VwWqqor'
     },
@@ -197,8 +208,9 @@ const dataTvShow = [
         txtEN: 'In order to join this awesome party, you just need to fill this tiny weenie form in less than 5 minutes. Can you fill it ? (Realized as part of a codepen challenge).',
         thumb: infernalForm,
         youtubeLink: false,
-        gitHubLink: 'https://github.com/maxew33/cocktail',
-        codePenLink: 'https://codepen.io/maxew33/full/VwzWrRJ'
+        directLink: 'https://maxime-malfilatre.com/sandbox/infernalForm/',
+        gitHubLink: false,
+        codePenLink: 'https://codepen.io/maxew33/pen/VwzWrRJ'
     },
     {
         id: uuidv4(),
@@ -212,8 +224,9 @@ const dataTvShow = [
         txtEN: 'The goal of this animation was to make the best use of the text-shadow property on the "Good morning friends" text. When I read "good morning friends", I remembered the café\'s neon sign that flickers in the US tv shows. So I made a bright text shadow in order to have the neon aspect. (Realized as part of a codepen challenge).',
         thumb: friends,
         youtubeLink: false,
-        gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/OJjOOVZ'
+        directLink: 'https://maxime-malfilatre.com/sandbox/textShadow/',
+        gitHubLink: 'https://github.com/maxew33/neon-txt',
+        codePenLink: 'https://codepen.io/maxew33/pen/OJjOOVZ'
     },
     {
         id: uuidv4(),
@@ -227,8 +240,9 @@ const dataTvShow = [
         txtEN: 'The constraint of this challenge was to make a knockout or cutout: a text that reveals a background image. (Realized as part of a codepen challenge)',
         thumb: letSParty,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/knockoutText/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/VwzqYJO'
+        codePenLink: 'https://codepen.io/maxew33/pen/VwzqYJO'
     },
     {
         id: uuidv4(),
@@ -242,8 +256,9 @@ const dataTvShow = [
         txtEN: 'Enzo "le designer du web" Ustariz talks about one of my productions: the tabbed form. (Made as part of a discord challenge)',
         thumb: routourne,
         youtubeLink: 'https://youtu.be/tBN16ReqkUw?t=1148',
+        directLink: 'https://maxime-malfilatre.com/sandbox/tabs/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/rNyBYBK'
+        codePenLink: 'https://codepen.io/maxew33/pen/rNyBYBK'
     },
     {
         id: uuidv4(),
@@ -257,8 +272,9 @@ const dataTvShow = [
         txtEN: 'An svg-based halloween animation featuring a flying bat (sorry for the spoiler).',
         thumb: bat,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/drawingBat/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/eYEgzLo'
+        codePenLink: 'https://codepen.io/maxew33/pen/eYEgzLo'
     },
     {
         id: uuidv4(),
@@ -272,8 +288,9 @@ const dataTvShow = [
         txtEN: 'A humble tribute to a story that traumatized an entire generation (Made as part of a codepen challenge).',
         thumb: it,
         youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/halloweenInput/',
         gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/bGrdxZj'
+        codePenLink: 'https://codepen.io/maxew33/pen/bGrdxZj'
     },
     {
         id: uuidv4(),
@@ -283,12 +300,13 @@ const dataTvShow = [
         sound: false,
         prezFR: 'La page est ailleurs',
         prezEN: 'The page is out there',
-        txtFR: 'Nananananana nananananana nananananana nananananana',
-        txtEN: 'Nananananana nananananana nananananana nananananana',
+        txtFR: 'La page est ailleurs',
+        txtEN: 'The page is out there.',
         thumb: xFiles,
         youtubeLink: false,
-        gitHubLink: false,
-        codePenLink: 'https://codepen.io/maxew33/full/BaZGRwy'
+        directLink: 'https://maxime-malfilatre.com/sandbox/404error/',
+        gitHubLink: 'https://github.com/maxew33/error-404-space',
+        codePenLink: 'https://codepen.io/maxew33/pen/BaZGRwy'
     }
 ]
 

@@ -24,7 +24,7 @@ export default function SlideHome() {
     })
     const [reloadButtonRotation, setReloadButtonRotation] = useState(360)
     const [remindCta, setRemindCta] = useState(true)
-    // const [drag, setDrag] = useState(false)
+    const [arrowCta, setArrowCta] = useState(true)
     const [chestObjects, setChestObjects] = useState(dataObjects)
 
     const { language } = useContext(Context)
@@ -43,6 +43,7 @@ export default function SlideHome() {
     }
 
     useEffect(() => {
+        console.log(arrowCta)
 
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
@@ -117,6 +118,8 @@ export default function SlideHome() {
     }
 
     const handlePullMeDrag = (e, ui) => {
+        arrowCta && setArrowCta(false)
+
         const heightRef = document.querySelector('.pull-me-container').getBoundingClientRect().height - document.querySelector('.pull-me').getBoundingClientRect().height
 
         let clipValue = (21 * ui.y / heightRef)
@@ -176,8 +179,8 @@ export default function SlideHome() {
                         bounds="parent"
                         onDrag={handlePullMeDrag}
                     >
-                        <div className="pull-me">
-                            <FontAwesomeIcon icon={faArrowDown} />
+                        <div className= {arrowCta ? "pull-me pull-me-anim" : "pull-me"}>
+                            <FontAwesomeIcon icon={faArrowDown}/>
                         </div>
 
                     </Draggable>

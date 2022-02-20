@@ -4,7 +4,7 @@ import { Context } from '../context/languageContext.js'
 import dataVideos from '../datas/dataVideos.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faPlay, faStepForward, faStepBackward, faStop, faPause, faVolumeMute, faVolumeUp, faVolumeDown } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faStepForward, faStepBackward, faStop, faPause, faVolumeMute, faVolumeUp, faVolumeDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faYoutube, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import '../style/slideWork.css'
@@ -215,7 +215,9 @@ export default function SlideWork(props) {
 
                 <div className="video-name">
                     {channel < 9 && 0}{channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
-                    <div className="video-links">
+                </div>
+
+                <div className="video-links">
                         &nbsp;
                         {dataVideos[channel].youtubeLink &&
                             <a href={dataVideos[channel].youtubeLink}
@@ -223,6 +225,14 @@ export default function SlideWork(props) {
                                 rel="noopener noreferrer"
                                 aria-label="link to the youtube video">
                                 <FontAwesomeIcon icon={faYoutube} />
+                            </a>
+                        }
+                        {dataVideos[channel].directLink &&
+                            <a href={dataVideos[channel].directLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="link to the website">
+                                <FontAwesomeIcon icon={faGlobe} />
                             </a>
                         }
                         {dataVideos[channel].gitHubLink &&
@@ -242,7 +252,6 @@ export default function SlideWork(props) {
                             </a>
                         }
                     </div>
-                </div>
 
                 <div className="video-descr">
                     {language === 'FR' ? dataVideos[channel].txtFR : dataVideos[channel].txtEN}
