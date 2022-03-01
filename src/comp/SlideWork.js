@@ -4,7 +4,7 @@ import { Context } from '../context/languageContext.js'
 import dataVideos from '../datas/dataVideos.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faPlay, faStepForward, faStepBackward, faStop, faPause, faVolumeMute, faVolumeUp, faVolumeDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faStepForward, faStepBackward, faStop, faPause, faVolumeMute, faVolumeUp, faVolumeDown, faLink} from '@fortawesome/free-solid-svg-icons'
 import { faYoutube, faCodepen, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import '../style/slideWork.css'
@@ -232,7 +232,7 @@ export default function SlideWork(props) {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="link to the website">
-                                <FontAwesomeIcon icon={faGlobe} />
+                                <FontAwesomeIcon icon={faLink} />
                             </a>
                         }
                         {dataVideos[channel].gitHubLink &&

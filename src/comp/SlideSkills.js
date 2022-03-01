@@ -74,13 +74,25 @@ export default function SlideSkills() {
                         {language === 'FR' ? 'Télécharger le CV' : 'Resume download'}
                     </div>
                     <div className="skill-img">
-                        <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_CV.pdf'}
-                            className="resume-download"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="téléchargement du CV de Maxime Malfilâtre">
-                            <FontAwesomeIcon icon={faFileAlt} />
-                        </a>
+                        {language === 'FR' ?
+                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_CV.pdf'}
+                                className="resume-download"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                aria-label="téléchargement du CV de Maxime Malfilâtre">
+                                <FontAwesomeIcon icon={faFileAlt} />
+                            </a>
+                            :
+                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_Resume.pdf'}
+                                className="resume-download"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                aria-label="download Maxime Malfilâtre resume">
+                                <FontAwesomeIcon icon={faFileAlt} />
+                            </a>
+                        }
+
+
                     </div>
                 </div>
 
