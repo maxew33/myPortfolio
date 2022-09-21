@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, Fragment, useContext } from 'react'
+import React, { useState, useEffect, useMemo, useContext } from 'react'
 import { Context } from './context/languageContext'
 
 import { Helmet } from 'react-helmet'
@@ -120,6 +120,10 @@ function App() {
   const handleClick = (e) => {
     slideAnim(e.target.dataset.index - mySlide)
   }
+  const handleClickLogo = () => {
+    console.log(123)
+    slideAnim(-1 * mySlide)
+  }
 
   // changig the slide by swipe
   const handlers = useSwipeable({
@@ -161,15 +165,8 @@ function App() {
           sizes="32x32"
         />
 
-        {/* <meta name="description" content={language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'} />
-        
-        <meta name="keywords" content={language === 'FR' ? 'Maxime Malfilâtre, développeur, front-end, Bordeaux' : 'Maxime Malfilâtre, front-end developer'} />
-        <meta name="author" content="Maxime Malfilâtre" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta property="og:type" content="article" /> */}
-
       </Helmet>
+      
       <div className="App" onWheel={handleWheel} {...handlers}>
 
         {orientation === 'landscape' && <>
@@ -188,7 +185,7 @@ function App() {
 
         <div className='banner'>
 
-          <div className="logo">
+          <div className="logo" onClick={handleClickLogo}>
             &#123;m&#125;
           </div>
 

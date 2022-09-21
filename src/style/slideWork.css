@@ -159,8 +159,8 @@
   width: 336px;
   justify-content: space-around;
   padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: hsla(0deg, 0%, 0%, 0.25);
+  border: 2px solid hsla(0deg, 0%, 100%, 0.15);
   border-radius: 5px;
 }
 .video-controls button {
@@ -180,23 +180,23 @@
 }
 
 .video-thumb-container::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.25);
+  background: hsla(285deg, 90%, 100%, 0.25);
   border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
+  background: hsla(285deg, 90%, 100%, 0.5);
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.75);
+  background: hsla(285deg, 90%, 100%, 0.75);
 }
 
 .video-thumb-container {
   grid-area: thumbnail;
-  background: rgba(153, 255, 255, 0.15);
+  background: hsla(180deg, 100%, 80%, 0.15);
   margin: 2rem 4.5rem 2rem 2rem;
   border-radius: 0.5rem;
   overflow-y: scroll;
@@ -244,7 +244,7 @@
   height: calc(100% - 4rem);
   border-radius: 0.5rem;
   margin: 2rem 0 2rem 4.5rem;
-  background: rgba(153, 255, 255, 0.15);
+  background: hsla(180deg, 100%, 80%, 0.15);
   font-family: var(--fontfam2);
 }
 .video-infos-container .video-name {

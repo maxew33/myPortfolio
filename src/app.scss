@@ -1,43 +1,9 @@
 :root {
-    // bleu-violet => bleu clair
-    // --bg-color1: hsl(258deg, 86%, 34%);
-    // --bg-color2: hsl(243deg, 57%, 50%);
-    // --bg-color3: hsl(229deg, 83%, 60%);
-    // --bg-color4: hsl(212deg, 84%, 61%);
-    // --bg-color5: hsl(194deg, 85%, 62%);
-
-    // violet => bleu
-    // --bg-color1: hsl(277deg, 84%, 38%);
-    // --bg-color2: hsl(263deg, 90%, 40%);
-    // --bg-color3: hsl(249deg, 78%, 41%);
-    // --bg-color4: hsl(231deg, 74%, 44%);
-    // --bg-color5: hsl(213deg, 70%, 47%);
-
-    // bleu très foncé => bleu moyen
     --bg-color1: #03002e;
     --bg-color2: #010048;
     --bg-color3: #010057;
     --bg-color4: #02006c;
     --bg-color5: #090088;
-
-    // "royal purple" => "st patrick's blue ???"
-    // --bg-color1: #7953A9;
-    // --bg-color2: #8B74BD;
-    // --bg-color3: #B9BFFF;
-    // --bg-color4: #4066E0;
-    // --bg-color5: #22277A;
-
-    // --bg-color1: hsl(300deg, 100%, 35%);
-    // --bg-color2: hsl(285deg, 100%, 24%);
-    // --bg-color3: hsl(270deg, 100%, 24%);
-    // --bg-color4: hsl(254deg, 100%, 24%);
-    // --bg-color5: hsl(240deg, 100%, 24%);
-
-    // --bg-color1: ;
-    // --bg-color2: ;
-    // --bg-color3: ;
-    // --bg-color4: ;
-    // --bg-color5: ;
 
     --bg-gradient-angle: 90deg;
 
@@ -48,16 +14,8 @@
     --fontcol1: hsl(0deg, 0%, 85%);
     --fontcol2: hsl(212deg, 84%, 61%);
 
-    // --ctacol:  hsl(47, 100%, 45%);
-
     --ctacol:  hsl(333deg, 78%, 62%);
-
-    // --chest-color: #4896ef;
 }
-
-/* hsl(258, 86%, 34%) 
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Ephesis', cursive;*/
 
 .App {
     height: 100vh;
@@ -86,7 +44,7 @@ font-family: 'Ephesis', cursive;*/
 }
 
 .logo {
-    pointer-events: none;
+    cursor: pointer;
     font-size: 2.5rem;
     font-family: var(--fontfam2);
 }
@@ -97,7 +55,6 @@ font-family: 'Ephesis', cursive;*/
     width: min(75%, 800px);
 
     .nav-items {
-        // width: fit-content;
         position: relative;
         font-size: max(20px, 2rem);
         cursor: pointer;
@@ -108,7 +65,6 @@ font-family: 'Ephesis', cursive;*/
             height: 2px;
             border-radius: 99px;
             background: var(--ctacol);
-            //transform-origin: left;
             transition: 0.25s transform ease-in-out;
             transform: scaleX(0);
             pointer-events: none;
