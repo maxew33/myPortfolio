@@ -43,8 +43,6 @@ export default function SlideHome() {
     }
 
     useEffect(() => {
-        console.log(arrowCta)
-
         const chest = document.querySelector('.chest-container'),
             chestTop = document.querySelector('.chest-top-front'),
             accessoryContainer = [...document.querySelectorAll('.accessory-container')],
