@@ -14,7 +14,7 @@ import BurgerMenu from './comp/BurgerMenu'
 import './app.css'
 import './style/responsive.css'
 import ToggleLanguage from './comp/ToggleLanguage'
-import useWindowSize from './comp/useWindowSize'
+import useWindowSize from './hook/useWindowSize'
 import SocialNetwork from './comp/SocialNetwork'
 
 function App() {
