@@ -19,6 +19,13 @@ import newsletter from '../assets/newsletter.webp'
 import cocktail from '../assets/cocktail.webp'
 import landingPage from '../assets/landing-page.webp'
 
+import capPatrimoine from '../assets/cap-patrimoine.webp'
+import evilDot from '../assets/evil-dot.webp'
+import csshoot from '../assets/csshoot.webp'
+import diceGame from '../assets/dice-game.webp'
+import jackpot from '../assets/jackpot.webp'
+import matrixLoader from '../assets/matrix-loader.webp'
+
 const dataTvShow = [
     {
         id: uuidv4(),
@@ -307,6 +314,102 @@ const dataTvShow = [
         directLink: 'https://maxime-malfilatre.com/sandbox/404error/',
         gitHubLink: 'https://github.com/maxew33/error-404-space',
         codePenLink: 'https://codepen.io/maxew33/pen/BaZGRwy'
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Cabinet Cap Patrimoine',
+        nameEN: 'Cabinet Cap Patrimoine',
+        src: process.env.PUBLIC_URL + ' /video/cap-patrimoine.mp4',
+        sound: false,
+        prezFR: 'Site du cabinet de gestion patrimoniale Cap Patrimoine',
+        prezEN: 'Website of the asset management firm Cap Patrimoine',
+        txtFR: 'Site du cabinet de gestion patrimoniale Cap Patrimoine',
+        txtEN: 'Website of the asset management firm Cap Patrimoine',
+        thumb: capPatrimoine,
+        youtubeLink: false,
+        directLink: 'https://cabinet-cap-patrimoine.fr',
+        gitHubLink: 'https://github.com/maxew33/capPatrimoine',
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Evil dot',
+        nameEN: 'Evil dot',
+        src: process.env.PUBLIC_URL + ' /video/evil-dot.mp4',
+        sound: false,
+        prezFR: 'evil dot',
+        prezEN: 'evil dot',
+        txtFR: 'evil dot',
+        txtEN: 'evil dot',
+        thumb: evilDot,
+        youtubeLink: false,
+        directLink: false,
+        gitHubLink: false,
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Csshoot',
+        nameEN: 'Csshoot',
+        src: process.env.PUBLIC_URL + ' /video/csshoot.mp4',
+        sound: false,
+        prezFR: 'jeu de tir en pur css',
+        prezEN: 'pure css shoot game',
+        txtFR: 'jeu de tir en pur css',
+        txtEN: 'pure css shoot game',
+        thumb: csshoot,
+        youtubeLink: false,
+        directLink: false,
+        gitHubLink: false,
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Jeu de dés',
+        nameEN: 'Dice game',
+        src: process.env.PUBLIC_URL + ' /video/dice-game.mp4',
+        sound: false,
+        prezFR: 'Jeu de dés',
+        prezEN: 'Dice game',
+        txtFR: 'Jeu de dés',
+        txtEN: 'Dice game',
+        thumb: diceGame,
+        youtubeLink: false,
+        directLink: false,
+        gitHubLink: false,
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Jackpot',
+        nameEN: 'Jackpot',
+        src: process.env.PUBLIC_URL + ' /video/jackpot.mp4',
+        sound: false,
+        prezFR: '',
+        prezEN: '',
+        txtFR: '',
+        txtEN: '',
+        thumb: jackpot,
+        youtubeLink: false,
+        directLink: false,
+        gitHubLink: false,
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Loader type matrix',
+        nameEN: 'Matrix loader',
+        src: process.env.PUBLIC_URL + ' /video/matrix-loader.mp4',
+        sound: false,
+        prezFR: '',
+        prezEN: '',
+        txtFR: '',
+        txtEN: '',
+        thumb: matrixLoader,
+        youtubeLink: false,
+        directLink: false,
+        gitHubLink: false,
+        codePenLink: false
     }
 ]
 
