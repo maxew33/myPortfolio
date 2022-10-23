@@ -18,7 +18,7 @@ export default function SocialNetwork() {
                 aria-label="link to my Github page">
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="https://twitter.com/m4xew"
+            <a href="https://twitter.com/DevMaxew"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="link to my twitter page">
