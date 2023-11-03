@@ -8,13 +8,13 @@
     --bg-gradient-angle: 90deg;
 
     --fontfam1: 'Fira Sans Extra Condensed', Arial, Helvetica, sans-serif;
-    --fontfam2: "Ubuntu", sans-serif;
-    --fontfam3: "Ephesis", cursive;
+    --fontfam2: 'Ubuntu', sans-serif;
+    --fontfam3: 'Ephesis', cursive;
 
-    --fontcol1: hsl(0deg, 0%, 85%);
-    --fontcol2: hsl(212deg, 84%, 61%);
+    --fontcol1: #f8f2fe;
+    --fontcol2: #7700ff;
 
-    --ctacol:  hsl(333deg, 78%, 62%);
+    --ctacol: #f500e7;
 }
 
 .App {
@@ -45,8 +45,8 @@
 
 .logo {
     cursor: pointer;
-    font-size: 2.5rem;
-    font-family: var(--fontfam2);
+    height: 7.5vh;
+    object-fit: contain;
 }
 
 .navbar {
@@ -70,19 +70,13 @@
             pointer-events: none;
         }
 
-        &:hover {
-            color: white;
-            > .underline {
-                transform: scale(1);
-            }
+        &:hover > .underline {
+            transform: scale(1);
         }
     }
 
-    .active {
-        color: white;
-        > .underline {
-            transform: scale(1);
-        }
+    .active > .underline {
+        transform: scale(1);
     }
 }
 
@@ -144,7 +138,7 @@
 
         &::after,
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             background: var(--ctacol);
             height: 2.5px;
@@ -166,12 +160,12 @@
         }
     }
 
-    &[data-direction="left"] {
+    &[data-direction='left'] {
         --arrow-transform-origin: left;
         left: 12px;
     }
 
-    &[data-direction="right"] {
+    &[data-direction='right'] {
         --arrow-transform-origin: right;
         right: 12px;
     }
@@ -183,14 +177,15 @@
     height: 100vh;
     display: flex;
     transition: transform 0.5s ease-in-out;
-    background: linear-gradient(
-        var(--bg-gradient-angle),
-        var(--bg-color1),
-        var(--bg-color2),
-        var(--bg-color3),
-        var(--bg-color4),
-        var(--bg-color5)
-    );
+    // background: linear-gradient(
+    //     var(--bg-gradient-angle),
+    //     var(--bg-color1),
+    //     var(--bg-color2),
+    //     var(--bg-color3),
+    //     var(--bg-color4),
+    //     var(--bg-color5)
+    // );
+    background: #010028;
 }
 
 .slide-wrapper {

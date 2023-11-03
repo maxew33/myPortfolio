@@ -101,8 +101,7 @@
 .my-avatar .avatar-body {
   width: inherit;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .my-avatar .avatar-head {
   position: absolute;
@@ -123,7 +122,6 @@
   top: 55%;
   left: 50%;
   height: 6rem;
-  cursor: -webkit-grab;
   cursor: grab;
 }
 .my-avatar .pull-me {
@@ -139,19 +137,7 @@
   border-radius: 0 0 25px 25px;
 }
 .my-avatar .pull-me-anim {
-  -webkit-animation: 3s linear infinite pull-me-cta;
-          animation: 3s linear infinite pull-me-cta;
-}
-@-webkit-keyframes pull-me-cta {
-  0%, 45%, 55%, 100% {
-    transform: none;
-  }
-  47%, 53% {
-    transform: translateY(20%);
-  }
-  50% {
-    transform: translateY(-5%);
-  }
+  animation: 3s linear infinite pull-me-cta;
 }
 @keyframes pull-me-cta {
   0%, 45%, 55%, 100% {
@@ -228,57 +214,57 @@
 
 .accessory-container1 {
   right: 32vw;
-  bottom: 49%;
+  bottom: 39%;
 }
 
 .accessory-container2 {
-  right: 33vw;
-  bottom: 50%;
+  right: 32vw;
+  bottom: 44%;
 }
 
 .accessory-container3 {
-  right: 33vw;
-  bottom: 46%;
+  right: 35vw;
+  bottom: 42%;
 }
 
 .accessory-container4 {
   right: 31vw;
-  bottom: 50%;
+  bottom: 39%;
 }
 
 .accessory-container5 {
   right: 34vw;
-  bottom: 39%;
+  bottom: 44%;
 }
 
 .accessory-container6 {
   right: 31vw;
-  bottom: 50%;
+  bottom: 38%;
 }
 
 .accessory-container7 {
-  right: 35vw;
+  right: 31vw;
   bottom: 37%;
 }
 
 .accessory-container8 {
+  right: 31vw;
+  bottom: 42%;
+}
+
+.accessory-container9 {
   right: 33vw;
   bottom: 46%;
 }
 
-.accessory-container9 {
-  right: 32vw;
-  bottom: 46%;
-}
-
 .accessory-container10 {
-  right: 32vw;
-  bottom: 43%;
+  right: 31vw;
+  bottom: 44%;
 }
 
 .accessory-container11 {
   right: 31vw;
-  bottom: 41%;
+  bottom: 36%;
 }
 
 .accessory-hidden {
@@ -303,39 +289,19 @@
   width: inherit;
   border: 0.5rem solid var(--fontcol2);
   opacity: 0;
-  -webkit-animation: 3s linear infinite remind-cta;
-          animation: 3s linear infinite remind-cta;
+  animation: 3s linear infinite remind-cta;
 }
 .remind-cta .circle:nth-child(0) {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-delay: 0s;
 }
 .remind-cta .circle:nth-child(1) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
+  animation-delay: 0.25s;
 }
 .remind-cta .circle:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 .remind-cta .circle:nth-child(3) {
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
-}
-
-@-webkit-keyframes remind-cta {
-  0%, 50% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  70% {
-    transform: scale(0.2);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
+  animation-delay: 0.75s;
 }
 
 @keyframes remind-cta {
@@ -353,11 +319,10 @@
   }
 }
 .react-draggable-dragged {
-  cursor: -webkit-grab;
   cursor: grab;
 }
 
 .react-draggable-dragging {
   cursor: -webkit-grabbing;
   cursor: grabbing;
-}/*# sourceMappingURL=slideHome.css.map */
+}

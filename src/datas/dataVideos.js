@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from 'uuid'
 
 import Ben from '../assets/Ben.webp'
+import Jerem from '../assets/jerem.webp'
+import OC from '../assets/oc.webp'
 import maxamp from '../assets/maxamp.webp'
 import infernalForm from '../assets/infernal-form.webp'
 import kaleidoscope from '../assets/kaleidoscope.webp'
@@ -26,11 +28,28 @@ import diceGame from '../assets/dice-game.webp'
 import jackpot from '../assets/jackpot.webp'
 import matrixLoader from '../assets/matrix-loader.webp'
 
+// eslint-disable-next-line no-sparse-arrays
 const dataTvShow = [
     {
         id: uuidv4(),
-        nameFR: 'Portfolio',
-        nameEN: 'Portfolio',
+        nameFR: 'Portfolio graphiste',
+        nameEN: 'Graphic designer portfolio',
+        src: process.env.PUBLIC_URL + ' /video/jerem.mp4',
+        sound: true,
+        prezFR: 'Portfolio de Jérémie Bonne',
+        prezEN: 'Jérémie Bonne\'s portfolio',
+        txtFR: 'Portfolio de Jérémie Bonne, graphiste et lettring artist bordelais.',
+        txtEN: 'Portfolio of Jérémie Bonne, Graphic Designer and Bordeaux-based Lettering Artist',
+        thumb: Jerem,
+        youtubeLink: false,
+        directLink: 'https://jeremie-bonne.fr/',
+        gitHubLink: 'https://github.com/maxew33/jeremieHassoun',
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Portfolio photographe',
+        nameEN: 'Photographer\'s portfolio',
         src: process.env.PUBLIC_URL + ' /video/Ben.mp4',
         sound: true,
         prezFR: 'Portfolio de Benedict Priam',
@@ -61,19 +80,19 @@ const dataTvShow = [
     },
     {
         id: uuidv4(),
-        nameFR: 'Cocktail',
-        nameEN: 'Cocktail',
-        src: process.env.PUBLIC_URL + ' /video/cocktail.mp4',
-        sound: false,
-        prezFR: '627 recettes de cocktails',
-        prezEN: '627 cocktails recipes',
-        txtFR: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
-        txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
-        thumb: cocktail,
+        nameFR: 'projets openClassrooms',
+        nameEN: 'openClassrooms\' projects',
+        src: process.env.PUBLIC_URL + ' /video/oc-projects.mp4',
+        sound: true,
+        prezFR: 'projets openClassrooms',
+        prezEN: 'openClassrooms\' projects',
+        txtFR: 'Présentation de l\'ensemble des projets de la formation développeur d\'application javascript react open classrooms',
+        txtEN: 'Presentation of all projects from the OpenClassrooms JavaScript React application developer training.',
+        thumb: OC,
         youtubeLink: false,
-        directLink: 'https://maxime-malfilatre.com/sandbox/cocktail/',
-        gitHubLink: 'https://github.com/maxew33/cocktail',
-        codePenLink: 'https://codepen.io/maxew33/pen/YzVrWqB'
+        directLink: 'https://maxime-malfilatre.com/sandbox/BenPriam/',
+        gitHubLink: 'https://github.com/maxew33/portfolio-photographer-priam',
+        codePenLink: false
     },
     {
         id: uuidv4(),
@@ -91,6 +110,55 @@ const dataTvShow = [
         gitHubLink: 'https://github.com/maxew33/newsletter',
         codePenLink: 'https://codepen.io/maxew33/pen/bGYERvz'
     },
+    {
+        id: uuidv4(),
+        nameFR: 'Ghostbusters',
+        nameEN: 'Ghostbusters',
+        src: process.env.PUBLIC_URL + ' /video/cpc-bad-buttons.mp4',
+        sound: false,
+        prezFR: 'Tic tac ghost',
+        prezEN: 'Tic tac ghost',
+        txtFR: 'Un jeu de morpion sur le thème d\'halloween, avec une IA presqu\'imbattable (Réalisé dans le cadre d\'un challenge codepen).',
+        txtEN: 'A Halloween-themed tic tac toe, with an almost unbeatable AI (Made as part of a codepen challenge).',
+        thumb: ticTacGhost,
+        youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/ticTacGhost/',
+        gitHubLink: "https://github.com/maxew33/tic-tac-ghost",
+        codePenLink: 'https://codepen.io/maxew33/pen/NWvRLPV'
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Cocktail',
+        nameEN: 'Cocktail',
+        src: process.env.PUBLIC_URL + ' /video/cocktail.mp4',
+        sound: false,
+        prezFR: '627 recettes de cocktails',
+        prezEN: '627 cocktails recipes',
+        txtFR: 'Catalogue de cocktails issus de l\'API TheCocktailDB. Une transition circulaire permet de passer de liste des cocktails à la recette du cocktail selectionné.',
+        txtEN: 'Catalog of cocktails from TheCocktailDB API. A circular transition allows you to go from the list of cocktails to the recipe of the selected cocktail.',
+        thumb: cocktail,
+        youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/cocktail/',
+        gitHubLink: 'https://github.com/maxew33/cocktail',
+        codePenLink: 'https://codepen.io/maxew33/pen/YzVrWqB'
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Maxamp',
+        nameEN: 'Maxamp',
+        src: process.env.PUBLIC_URL + ' /video/maxamp.mp4',
+        sound: false,
+        prezFR: 'musique',
+        prezEN: 'enjoy the music',
+        txtFR: 'Clone de winamp avec la plupart de ses fonctionnalités (lecture, pause, lecture aléatoire, volume, playlist et navigation dans la playlist ...).',
+        txtEN: 'Clone of winamp with almost all of its features (play, pause, shuffle, volume, playlist and navigation...).',
+        thumb: maxamp,
+        youtubeLink: false,
+        directLink: 'https://maxime-malfilatre.com/sandbox/maxamp/',
+        gitHubLink: 'https://github.com/maxew33/maxamp',
+        codePenLink: 'https://codepen.io/maxew33/pen/XWRvWdY'
+    },
+    /*
     {
         id: uuidv4(),
         nameFR: 'landing page',
@@ -157,22 +225,6 @@ const dataTvShow = [
     },
     {
         id: uuidv4(),
-        nameFR: 'Maxamp',
-        nameEN: 'Maxamp',
-        src: process.env.PUBLIC_URL + ' /video/maxamp.mp4',
-        sound: false,
-        prezFR: 'musique',
-        prezEN: 'enjoy the music',
-        txtFR: 'Clone de winamp avec la plupart de ses fonctionnalités (lecture, pause, lecture aléatoire, volume, playlist et navigation dans la playlist ...).',
-        txtEN: 'Clone of winamp with almost all of its features (play, pause, shuffle, volume, playlist and navigation...).',
-        thumb: maxamp,
-        youtubeLink: false,
-        directLink: 'https://maxime-malfilatre.com/sandbox/maxamp/',
-        gitHubLink: 'https://github.com/maxew33/maxamp',
-        codePenLink: 'https://codepen.io/maxew33/pen/XWRvWdY'
-    },
-    {
-        id: uuidv4(),
         nameFR: 'Rick et Morty',
         nameEN: 'Rick and Morty',
         src: process.env.PUBLIC_URL + ' /video/defi-5.mp4',
@@ -235,22 +287,6 @@ const dataTvShow = [
         gitHubLink: 'https://github.com/maxew33/dice-game',
         codePenLink: 'https://codepen.io/maxew33/full/abqbmJR'
     },
-    {
-        id: uuidv4(),
-        nameFR: 'Ghostbusters',
-        nameEN: 'Ghostbusters',
-        src: process.env.PUBLIC_URL + ' /video/cpc-bad-buttons.mp4',
-        sound: false,
-        prezFR: 'Tic tac ghost',
-        prezEN: 'Tic tac ghost',
-        txtFR: 'Un jeu de morpion sur le thème d\'halloween, avec une IA presqu\'imbattable (Réalisé dans le cadre d\'un challenge codepen).',
-        txtEN: 'A Halloween-themed tic tac toe, with an almost unbeatable AI (Made as part of a codepen challenge).',
-        thumb: ticTacGhost,
-        youtubeLink: false,
-        directLink: 'https://maxime-malfilatre.com/sandbox/ticTacGhost/',
-        gitHubLink: "https://github.com/maxew33/tic-tac-ghost",
-        codePenLink: 'https://codepen.io/maxew33/pen/NWvRLPV'
-    },,
     {
         id: uuidv4(),
         nameFR: 'Matrix',
@@ -411,6 +447,7 @@ const dataTvShow = [
         gitHubLink: false,
         codePenLink: 'https://codepen.io/maxew33/full/MWVVaWE'
     }
+    */
 ]
 
 export default dataTvShow

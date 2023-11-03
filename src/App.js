@@ -17,47 +17,48 @@ import ToggleLanguage from './comp/ToggleLanguage'
 import useWindowSize from './hook/useWindowSize'
 import SocialNetwork from './comp/SocialNetwork'
 
+import logo from './assets/logo.webp'
+
 function App() {
+    const [mySlide, setMySlide] = useState(0)
+    const [wheel, setWheel] = useState(false)
+    const [orientation, setOrientation] = useState('landscape')
 
-  const [mySlide, setMySlide] = useState(0)
-  const [wheel, setWheel] = useState(false)
-  const [orientation, setOrientation] = useState('landscape')
+    const size = useWindowSize()
 
-  const size = useWindowSize()
+    const { language } = useContext(Context)
 
-  const { language } = useContext(Context)
+    const mySlideContent = useMemo(() => {
+        return [
+            {
+                nameFR: 'accueil',
+                nameEN: 'home',
+                slideDisplayed: <SlideHome />,
+                id: uuidv4(),
+            },
+            {
+                nameFR: 'portfolio',
+                nameEN: 'portfolio',
+                slideDisplayed: <SlideWork />,
+                id: uuidv4(),
+            },
+            {
+                nameFR: 'compétences',
+                nameEN: 'skills',
+                slideDisplayed: <SlideSkills />,
+                id: uuidv4(),
+            },
+            {
+                nameFR: 'contact',
+                nameEN: 'contact',
+                slideDisplayed: <SlideContact />,
+                id: uuidv4(),
+            },
+        ]
+    }, [])
 
-  const mySlideContent = useMemo(() => {
-    return [
-      {
-        nameFR: 'accueil',
-        nameEN: 'home',
-        slideDisplayed: <SlideHome />,
-        id: uuidv4()
-      },
-      {
-        nameFR: 'portfolio',
-        nameEN: 'portfolio',
-        slideDisplayed: <SlideWork />,
-        id: uuidv4()
-      },
-      {
-        nameFR: 'compétences',
-        nameEN: 'skills',
-        slideDisplayed: <SlideSkills />,
-        id: uuidv4()
-      },
-      {
-        nameFR: 'contact',
-        nameEN: 'contact',
-        slideDisplayed: <SlideContact />,
-        id: uuidv4()
-      }
-    ]
-  }, [])
-
-  useEffect(() => {
-    console.log(`
+    useEffect(() => {
+        console.log(`
  _                       
 |_)  _   _  o  _       _ 
 |_) (_) | | | (_) |_| |  
@@ -66,165 +67,205 @@ function App() {
       
 `)
 
-    size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
+        size.height < size.width
+            ? setOrientation('landscape')
+            : setOrientation('portrait')
+    }, [])
 
-  }, [])
+    useEffect(() => {
+        // effect triggered when changing viewport size
+        size.height < size.width
+            ? setOrientation('landscape')
+            : setOrientation('portrait')
+    }, [size])
 
+    useEffect(() => {
+        // effect triggered when changing viewport orientation
+        slideAnim(mySlide * -1)
+    }, [orientation])
 
-  useEffect(() => {
-    // effect triggered when changing viewport size
-    size.height < size.width ? setOrientation('landscape') : setOrientation('portrait')
-  }, [size])
+    function slideAnim(direction) {
+        let oldSlide = mySlide
 
-  useEffect(() => {
-    // effect triggered when changing viewport orientation    
-    slideAnim(mySlide * -1)
-  }, [orientation])
+        oldSlide += direction
 
-  function slideAnim(direction) {
+        // check if i can move or not
+        if (oldSlide < 0 || oldSlide > 3) {
+            oldSlide = mySlide
+        }
 
-    let oldSlide = mySlide
+        setMySlide(oldSlide)
 
-    oldSlide += direction
-
-    // check if i can move or not
-    if (oldSlide < 0 || oldSlide > 3) { (oldSlide = mySlide) }
-
-    setMySlide(oldSlide)
-
-    document.querySelector('.slide-container').style.transform = orientation === 'landscape' ? "translateX(" + 100 * -oldSlide + "vw)" : "translateY(" + 100 * -oldSlide + "vh)"
-  }
-
-  // changing the slide using the wheel
-  const handleWheel = (e) => {
-    let canMove = true
-
-    if(e.target.dataset.id === 'thumb' || e.target.parentElement.dataset.id === 'thumb'){
-      canMove = false
+        document.querySelector('.slide-container').style.transform =
+            orientation === 'landscape'
+                ? 'translateX(' + 100 * -oldSlide + 'vw)'
+                : 'translateY(' + 100 * -oldSlide + 'vh)'
     }
 
-    if (!wheel && canMove) {
-      setWheel(true)
+    // changing the slide using the wheel
+    const handleWheel = (e) => {
+        let canMove = true
 
-      setTimeout(() => {
-        setWheel(false)
-      }, 500);
+        if (
+            e.target.dataset.id === 'thumb' ||
+            e.target.parentElement.dataset.id === 'thumb'
+        ) {
+            canMove = false
+        }
 
-      let direction = e.deltaY > 0 ? 1 : -1
+        if (!wheel && canMove) {
+            setWheel(true)
 
-      slideAnim(direction)
+            setTimeout(() => {
+                setWheel(false)
+            }, 500)
+
+            let direction = e.deltaY > 0 ? 1 : -1
+
+            slideAnim(direction)
+        }
     }
-  }
 
-  // changig the slide by clicking on the slide wanted
-  const handleClick = (e) => {
-    slideAnim(e.target.dataset.index - mySlide)
-  }
-  const handleClickLogo = () => {
-    console.log(123)
-    slideAnim(-1 * mySlide)
-  }
+    // changig the slide by clicking on the slide wanted
+    const handleClick = (e) => {
+        slideAnim(e.target.dataset.index - mySlide)
+    }
+    const handleClickLogo = () => {
+        console.log(123)
+        slideAnim(-1 * mySlide)
+    }
 
-  // changig the slide by swipe
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {
-      orientation === 'landscape' && slideAnim(1)
-    },
-    onSwipedRight: () => {
-      orientation === 'landscape' && slideAnim(-1)
-    },
-    onSwipedUp: () => {
-      orientation === 'portrait' && slideAnim(1)
-    },
-    onSwipedDown: () => {
-      orientation === 'portrait' && slideAnim(-1)
-    },
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: false,
-    delta: 75
-  })
+    // changig the slide by swipe
+    const handlers = useSwipeable({
+        onSwipedLeft: () => {
+            orientation === 'landscape' && slideAnim(1)
+        },
+        onSwipedRight: () => {
+            orientation === 'landscape' && slideAnim(-1)
+        },
+        onSwipedUp: () => {
+            orientation === 'portrait' && slideAnim(1)
+        },
+        onSwipedDown: () => {
+            orientation === 'portrait' && slideAnim(-1)
+        },
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: false,
+        delta: 75,
+    })
 
-  return (
-    <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{language === 'FR' ? 'Maxime Malfilâtre développeur front-end sur Bordeaux' : 'Maxime Malfilâtre french front-end developer'}</title>
-        <base target="_blank" href="https://www.maxime-malfilatre.com/" />
+    return (
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>
+                    {language === 'FR'
+                        ? 'Maxime Malfilâtre développeur front-end sur Bordeaux'
+                        : 'Maxime Malfilâtre french front-end developer'}
+                </title>
+                <base
+                    target="_blank"
+                    href="https://www.maxime-malfilatre.com/"
+                />
 
-        <link rel="canonical" href="https://www.maxime-malfilatre.com/" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon-16x16"
-          sizes="16x16"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon-32x32"
-          sizes="32x32"
-        />
+                <link
+                    rel="canonical"
+                    href="https://www.maxime-malfilatre.com/"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-16x16"
+                    sizes="16x16"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="/favicon-32x32"
+                    sizes="32x32"
+                />
+            </Helmet>
 
-      </Helmet>
-      
-      <div className="App" onWheel={handleWheel} {...handlers}>
+            <div className="App" onWheel={handleWheel} {...handlers}>
+                {orientation === 'landscape' && (
+                    <>
+                        {mySlide !== 0 && (
+                            <div
+                                className="arrow"
+                                data-direction="left"
+                                onClick={() => slideAnim(-1)}
+                            >
+                                <div></div>
+                            </div>
+                        )}
 
-        {orientation === 'landscape' && <>
-          {mySlide !== 0 && <div className="arrow" data-direction="left" onClick={() => slideAnim(-1)}>
-            <div></div>
-          </div>}
+                        {mySlide !== mySlideContent.length - 1 && (
+                            <div
+                                className="arrow"
+                                data-direction="right"
+                                onClick={() => slideAnim(1)}
+                            >
+                                <div></div>
+                            </div>
+                        )}
+                    </>
+                )}
 
+                {orientation === 'portrait' && <BurgerMenu open={false} />}
 
-          {mySlide !== mySlideContent.length - 1 && <div className="arrow" data-direction="right" onClick={() => slideAnim(1)}>
-            <div></div>
-          </div>
-          }
-        </>}
+                <div className="banner">
+                    <img
+                        className="logo"
+                        src={logo}
+                        alt="logo Maxime Malfilâtre"
+                        onClick={handleClickLogo}
+                    />
 
-        {orientation === 'portrait' && <BurgerMenu open={false} />}
+                    {orientation === 'portrait' && <SocialNetwork />}
 
-        <div className='banner'>
+                    <ul className="navbar">
+                        {mySlideContent.map((item, index) => {
+                            return (
+                                <li
+                                    className={
+                                        mySlide === index
+                                            ? 'nav-items active'
+                                            : 'nav-items'
+                                    }
+                                    key={item.id}
+                                    data-index={index}
+                                    onClick={handleClick}
+                                >
+                                    {language === 'FR'
+                                        ? item.nameFR
+                                        : item.nameEN}
+                                    {item.name}
 
-          <div className="logo" onClick={handleClickLogo}>
-            &#123;m&#125;
-          </div>
+                                    <div className="underline"></div>
+                                </li>
+                            )
+                        })}
+                    </ul>
 
-          {orientation === 'portrait' && <SocialNetwork />}
+                    <ToggleLanguage />
+                </div>
 
-          <ul className='navbar'>
-            {mySlideContent.map((item, index) => {
-              return (
-                <li className={mySlide === index ? 'nav-items active' : 'nav-items'} key={item.id} data-index={index} onClick={handleClick}>
-                  {language === 'FR' ? item.nameFR : item.nameEN}
-                  {item.name}
-
-                  <div className="underline"></div>
-                </li>
-              )
-            })}
-          </ul>
-
-          <ToggleLanguage />
-
-        </div>
-
-        <div className="slide-container">
-          {mySlideContent.map((item) => {
-            return (
-              <section className="slide-wrapper" key={item.id}>
-                {item.nameFR === 'portfolio' ?
-                  <SlideWork slide={mySlide} size={size} />
-                  :
-                  item.slideDisplayed}
-              </section>
-            )
-          })}
-        </div>
-
-      </div >
-    </>
-  )
+                <div className="slide-container">
+                    {mySlideContent.map((item) => {
+                        return (
+                            <section className="slide-wrapper" key={item.id}>
+                                {item.nameFR === 'portfolio' ? (
+                                    <SlideWork slide={mySlide} size={size} />
+                                ) : (
+                                    item.slideDisplayed
+                                )}
+                            </section>
+                        )
+                    })}
+                </div>
+            </div>
+        </>
+    )
 }
 
-export default App;
-
+export default App

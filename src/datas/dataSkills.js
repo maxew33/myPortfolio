@@ -1,23 +1,23 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import html5 from '../assets/html-5.svg'
-import css3 from '../assets/css3.svg'
+import firebase from '../assets/firebase.svg'
+import figma from '../assets/figma.svg'
 import sass from '../assets/Sass.svg'
-import javascript from '../assets/javascript.svg'
+import ts from '../assets/ts.svg'
 import react from '../assets/react.svg'
 
 const dataSkills = [
     {
         id: uuidv4(),
-        nameFR: 'HTML 5',
-        nameEN: 'HTML 5',
-        src: html5
+        nameFR: 'REACT',
+        nameEN: 'REACT',
+        src: react
     },
     {
         id: uuidv4(),
-        nameFR: 'CSS 3',
-        nameEN: 'CSS 3',
-        src: css3
+        nameFR: 'typescript',
+        nameEN: 'typescript',
+        src: ts
     },
     {
         id: uuidv4(),
@@ -27,16 +27,17 @@ const dataSkills = [
     },
     {
         id: uuidv4(),
-        nameFR: 'javascript',
-        nameEN: 'javascript',
-        src: javascript
+        nameFR: 'Firebase',
+        nameEN: 'Firebase',
+        src: firebase
     },
     {
         id: uuidv4(),
-        nameFR: 'REACT',
-        nameEN: 'REACT',
-        src: react
-    }
+        nameFR: 'Figma',
+        nameEN: 'Figma',
+        src: figma
+    },
+
 ]
 
 export default dataSkills

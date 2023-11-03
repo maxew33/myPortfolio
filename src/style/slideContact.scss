@@ -23,8 +23,8 @@
         var(--fontcol2) 2%,
         var(--fontcol1) 2%,
         var(--fontcol1) 3%,
-        hsl(0deg, 100, 50, 0.75) 3%,
-        hsl(0deg, 100, 50, 0.75) 5%,
+        var(--ctacol) 3%,
+        var(--ctacol) 5%,
         var(--fontcol1) 5%,
         var(--fontcol1) 6%
     );
@@ -41,7 +41,7 @@
 /* ------------- POSTCARD ------------- */
 
 .postcard {
-    background: ivory;
+    background: #fff;
     width: 95vh;
     height: 70vh;
     border: 1px solid hsl(0deg, 0%, 25%);
@@ -125,8 +125,8 @@ textarea {
     width: max(15rem, 40%);
     align-self: center;
     border-radius: 5px;
-    border: none;
-    background: hsl(47, 100%, 45%, 0.5);
+    border: 1px solid hsl(0, 0%, 75%);
+    background: hsl(0, 0%, 97.5%);
     font-size: 1.5rem;
     color: hsl(0deg, 0%, 25%);
     cursor: pointer;

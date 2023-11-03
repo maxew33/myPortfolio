@@ -214,7 +214,7 @@ export default function SlideWork(props) {
             <div className="video-infos-container">
 
                 <div className="video-name">
-                    {channel < 9 && 0}{channel + 1} / {dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
+                    {channel < 9 && 0}{channel + 1} / {dataVideos.length < 9 && 0}{dataVideos.length} - {language === 'FR' ? dataVideos[channel].nameFR : dataVideos[channel].nameEN}
                 </div>
 
                 <div className="video-links">
