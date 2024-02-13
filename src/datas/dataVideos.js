@@ -1,35 +1,34 @@
 import { v4 as uuidv4 } from 'uuid'
 
 import Ben from '../assets/Ben.webp'
+import TechQuest from '../assets/techquest.webp.webp'
 import Jerem from '../assets/jerem.webp'
 import OC from '../assets/oc.webp'
 import maxamp from '../assets/maxamp.webp'
-import infernalForm from '../assets/infernal-form.webp'
-import kaleidoscope from '../assets/kaleidoscope.webp'
-import friends from '../assets/friends.webp'
-import robocop from '../assets/robocop.webp'
-import bookStyle from '../assets/book-style.webp'
-import RickAndMorty from '../assets/rick-n-morty.webp'
-import letSParty from '../assets/let-s-party.webp'
-import routourne from '../assets/routourne.webp'
-import bat from '../assets/bat.webp'
 import ticTacGhost from '../assets/tic-tac-ghost.webp'
-import it from '../assets/it.webp'
-import xFiles from '../assets/x-files.webp'
-import restaurant from '../assets/restaurant.webp'
 import newsletter from '../assets/newsletter.webp'
 import cocktail from '../assets/cocktail.webp'
-import landingPage from '../assets/landing-page.webp'
 
 import capPatrimoine from '../assets/cap-patrimoine.webp'
-import evilDot from '../assets/evil-dot.webp'
-import csshoot from '../assets/csshoot.webp'
-import diceGame from '../assets/dice-game.webp'
-import jackpot from '../assets/jackpot.webp'
-import matrixLoader from '../assets/matrix-loader.webp'
 
 // eslint-disable-next-line no-sparse-arrays
 const dataTvShow = [
+    {
+        id: uuidv4(),
+        nameFR: 'Site développeur web',
+        nameEN: 'Web developer website',
+        src: process.env.PUBLIC_URL + ' /video/techquest.mp4',
+        sound: false,
+        prezFR: 'Site développeur web',
+        prezEN: 'Web developer website',
+        txtFR: 'Site pour présenter et proposer mes services de développeur front-end',
+        txtEN: 'Website to showcase and offer my front-end developer services',
+        thumb: TechQuest,
+        youtubeLink: false,
+        directLink: 'https://techquest.fr/',
+        gitHubLink: 'https://github.com/maxew33/techquest',
+        codePenLink: false
+    },
     {
         id: uuidv4(),
         nameFR: 'Portfolio graphiste',
