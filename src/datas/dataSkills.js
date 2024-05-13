@@ -5,6 +5,9 @@ import figma from '../assets/figma.svg'
 import sass from '../assets/Sass.svg'
 import ts from '../assets/ts.svg'
 import react from '../assets/react.svg'
+import next from '../assets/Next.svg'
+import framer from '../assets/framer.svg'
+import prisma from '../assets/prisma.svg'
 
 const dataSkills = [
     {
@@ -36,6 +39,24 @@ const dataSkills = [
         nameFR: 'Figma',
         nameEN: 'Figma',
         src: figma
+    },    
+    {
+        id: uuidv4(),
+        nameFR: 'Next',
+        nameEN: 'Next',
+        src: next
+    },    
+    {
+        id: uuidv4(),
+        nameFR: 'Prisma',
+        nameEN: 'Figma',
+        src: prisma
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'Framer',
+        nameEN: 'Framer',
+        src: framer
     },
 
 ]

@@ -67,19 +67,22 @@
 
     /* GLOBAL */
     .banner {
-        --banner-portrait-width: 0;
-        width: var(--banner-portrait-width);
+        --clippy: 0%;
+        width: 100vw;
         overflow: hidden;
         height: 100vh;
+        clip-path: circle(var(--clippy) at 3rem 3rem);
         flex-direction: column-reverse;
         justify-content: space-evenly;
         background: linear-gradient(
             90deg,
-            hsl(180deg, 0%, 20%, 0.75) 50%,
-            hsl(180deg, 0%, 20%, 0.65) 95%,
-            hsl(180deg, 0%, 20%, 0.95)
+            hsl(180deg, 0%, 80%, 0.95),
+            hsl(180deg, 0%, 80%, 0.65) 15%,
+            hsl(180deg, 0%, 80%, 0.75) 50%,
+            hsl(180deg, 0%, 80%, 0.65) 85%,
+            hsl(180deg, 0%, 80%, 0.95)
         );
-        transition: width 0.25s ease-in-out;
+        transition: clip-path 0.25s ease-in-out;
 
         .navbar {
             width: 50vw;
@@ -93,14 +96,15 @@
         }
 
         .social-network {
-            width: calc(50vw - 4rem);
+            width: 75vw;
             font-size: 5rem;
             padding: 0;
+            margin-inline: auto;
             height: 20vh;
             display: grid;
             grid-template: repeat(2, 1fr) / repeat(2, 1fr);
             a {
-                justify-self: flex-start;
+                justify-self: center;
             }
         }
 
@@ -129,6 +133,10 @@
                 }
             }
         }
+
+        &.openBanner {
+            --clippy: 150%;
+        }
     }
 
     .slide-container {
@@ -153,8 +161,8 @@
 
     .home-wrapper {
         grid-template-areas:
-            "name name"
-            "avatar avatar";
+            'name name'
+            'avatar avatar';
 
         .social-network {
             display: none;
@@ -240,17 +248,17 @@
         grid-template: repeat(11, 1fr) / 1fr;
         width: 80vw;
         grid-template-areas:
-            "section"
-            "video"
-            "video"
-            "video"
-            "video"
-            "controls"
-            "thumbnail"
-            "thumbnail"
-            "infos"
-            "infos"
-            "infos";
+            'section'
+            'video'
+            'video'
+            'video'
+            'video'
+            'controls'
+            'thumbnail'
+            'thumbnail'
+            'infos'
+            'infos'
+            'infos';
 
         > * {
             margin: 0;
@@ -279,7 +287,7 @@
         align-self: center;
         grid-area: controls;
         width: calc(100% - 4rem);
-        background: rgba(153, 255, 255, 0.15);
+        background: var(--bg);
         border: none;
         opacity: 1;
     }
@@ -347,43 +355,43 @@
         height: 95%;
         justify-self: center;
         align-self: flex-start;
-    
+
         grid-template-columns: 1fr;
         grid-template-areas:
-          "name"
-          "descr"
-          "links";
-      }
-    
-      .video-infos-container .video-descr {
-        font-size: 2rem;
-      }
-    
-      .video-links {
-        justify-content: center;
-        a{
-          margin-right: 0;
-        }
-      }
-
-  .video-infos-container .video-descr {
-    font-size: 2rem;
-  }
-
-  .video-links {
-    justify-content: center;
-    a{
-      margin-right: 0;
+            'name'
+            'descr'
+            'links';
     }
-  }
+
+    .video-infos-container .video-descr {
+        font-size: 2rem;
+    }
+
+    .video-links {
+        justify-content: center;
+        a {
+            margin-right: 0;
+        }
+    }
+
+    .video-infos-container .video-descr {
+        font-size: 2rem;
+    }
+
+    .video-links {
+        justify-content: center;
+        a {
+            margin-right: 0;
+        }
+    }
 
     /* SKILLS SLIDE */
 
     .skills-wrapper {
         grid-template: 1fr 1.5fr / 1fr;
         grid-template-areas:
-            "bubble"
-            "avatar";
+            'bubble'
+            'avatar';
 
         .section-title {
             position: absolute;
@@ -391,9 +399,9 @@
     }
 
     .intro-of-myself {
-        font-size: 6vw;
+        font-size: 4vw;
     }
-    
+
     .avatar-at-work {
         height: auto;
         max-width: 80vw;
@@ -538,7 +546,7 @@
 
     .enveloppe::before {
         /* languette */
-        content: "";
+        content: '';
         width: 90vw;
         height: 90vh;
         top: -36vh;
@@ -547,7 +555,7 @@
     }
 
     .enveloppe::after {
-        content: "";
+        content: '';
         width: 90vw;
         height: 90vh;
         background: #000;

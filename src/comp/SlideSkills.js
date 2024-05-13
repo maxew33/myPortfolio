@@ -75,7 +75,7 @@ export default function SlideSkills() {
                     </div>
                     <div className="skill-img">
                         {language === 'FR' ?
-                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_CV.pdf'}
+                            <a href={process.env.PUBLIC_URL + ' /CV_Maxime_Malfilatre.pdf'}
                                 className="resume-download"
                                 target="_blank"
                                 rel="noreferrer noopener"
@@ -83,7 +83,7 @@ export default function SlideSkills() {
                                 <FontAwesomeIcon icon={faFileAlt} />
                             </a>
                             :
-                            <a href={process.env.PUBLIC_URL + ' /Maxime_Malfilatre_Resume.pdf'}
+                            <a href={process.env.PUBLIC_URL + ' /CV_Maxime_Malfilatre.pdf'}
                                 className="resume-download"
                                 target="_blank"
                                 rel="noreferrer noopener"

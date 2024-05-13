@@ -56,7 +56,7 @@ export default function SlideContact() {
 
                 }, 1750);
             }, error => {
-                console.log(error.text)
+                console.error(error.text)
                 alert(language === 'FR' ? 'le message n\'a pas pu être envoyé.' : 'the message cannot be sent.')
             })
             .catch((err) => {

@@ -23,6 +23,7 @@ function App() {
     const [mySlide, setMySlide] = useState(0)
     const [wheel, setWheel] = useState(false)
     const [orientation, setOrientation] = useState('landscape')
+    const [menuOpen, setMenuOpen] = useState(false)
 
     const size = useWindowSize()
 
@@ -102,7 +103,7 @@ function App() {
     useEffect(() => {
         // effect triggered when changing viewport orientation
         slideAnim(mySlide * -1)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [orientation])
 
     function slideAnim(direction) {
@@ -150,10 +151,13 @@ function App() {
     // changig the slide by clicking on the slide wanted
     const handleClick = (e) => {
         slideAnim(e.target.dataset.index - mySlide)
+
+        setMenuOpen(false)
     }
     const handleClickLogo = () => {
-        console.log(123)
         slideAnim(-1 * mySlide)
+
+        setMenuOpen(false)
     }
 
     // changig the slide by swipe
@@ -174,6 +178,10 @@ function App() {
         trackMouse: false,
         delta: 75,
     })
+
+    const handleDisplayBanner = () => {
+        setMenuOpen(!menuOpen)
+    }
 
     return (
         <>
@@ -232,44 +240,44 @@ function App() {
                     </>
                 )}
 
-                {orientation === 'portrait' && <BurgerMenu open={false} />}
+                {orientation === 'portrait' && (
+                    <BurgerMenu open={() => handleDisplayBanner()} isOpen={menuOpen}/>
+                )}
 
-                <div className="banner">
-                    <img
-                        className="logo"
-                        src={logo}
-                        alt="logo Maxime Malfilâtre"
-                        onClick={handleClickLogo}
-                    />
+                <div className={`banner ${menuOpen && 'openBanner'}`}>
+                        <img
+                            className="logo"
+                            src={logo}
+                            alt="logo Maxime Malfilâtre"
+                            onClick={handleClickLogo}
+                        />
 
-                    {orientation === 'portrait' && <SocialNetwork />}
+                        {orientation === 'portrait' && <SocialNetwork />}
 
-                    <ul className="navbar">
-                        {mySlideContent.map((item, index) => {
-                            return (
-                                <li
-                                    className={
-                                        mySlide === index
-                                            ? 'nav-items active'
-                                            : 'nav-items'
-                                    }
-                                    key={item.id}
-                                    data-index={index}
-                                    onClick={handleClick}
-                                >
-                                    {language === 'FR'
-                                        ? item.nameFR
-                                        : item.nameEN}
-                                    {item.name}
+                        <ul className="navbar">
+                            {mySlideContent.map((item, index) => {
+                                return (
+                                    <li
+                                        className={
+                                            mySlide === index
+                                                ? 'nav-items active'
+                                                : 'nav-items'
+                                        }
+                                        key={item.id}
+                                        data-index={index}
+                                        onClick={handleClick}
+                                    >
+                                        {language === 'FR'
+                                            ? item.nameFR
+                                            : item.nameEN}
+                                        {item.name}
+                                    </li>
+                                )
+                            })}
+                        </ul>
 
-                                    <div className="underline"></div>
-                                </li>
-                            )
-                        })}
-                    </ul>
-
-                    <ToggleLanguage />
-                </div>
+                        <ToggleLanguage />
+                    </div>
 
                 <div className="slide-container">
                     {mySlideContent.map((item) => {
