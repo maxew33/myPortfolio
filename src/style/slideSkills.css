@@ -91,7 +91,7 @@
 }
 
 .my-resume {
-  background: hsla(180, 100%, 80%, 0.15);
+  background: var(--bg2);
   border-radius: 1.5rem;
   padding: 0 2.5rem;
   margin-top: 1rem;

@@ -15,8 +15,7 @@
   border-radius: 0.5rem;
   height: 100%;
   width: 100%;
-  border: 2px solid black;
-  background: black;
+  background: var(--bg2);
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -180,23 +179,23 @@
 }
 
 .video-thumb-container::-webkit-scrollbar-track {
-  background: hsla(285, 90%, 100%, 0.25);
+  background: hsla(285, 90%, 100%, 0.5);
   border-radius: 0.5rem;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb {
-  background: hsla(285, 90%, 100%, 0.5);
+  background: linear-gradient(hsla(285, 90%, 100%, 0.75), hsla(285, 90%, 100%, 0.75)), var(--ctacol);
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .video-thumb-container::-webkit-scrollbar-thumb:hover {
-  background: hsla(285, 90%, 100%, 0.75);
+  background: var(--ctacol);
 }
 
 .video-thumb-container {
   grid-area: thumbnail;
-  background: hsla(180, 100%, 80%, 0.15);
+  background: var(--bg2);
   margin: 2rem 4.5rem 2rem 2rem;
   border-radius: 0.5rem;
   overflow-y: scroll;
@@ -244,7 +243,7 @@
   height: calc(100% - 4rem);
   border-radius: 0.5rem;
   margin: 2rem 0 2rem 4.5rem;
-  background: hsla(180, 100%, 80%, 0.15);
+  background: var(--bg2);
   font-family: var(--fontfam2);
 }
 .video-infos-container .video-name {

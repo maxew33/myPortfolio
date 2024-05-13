@@ -304,7 +304,6 @@
             .video-thumb-rank {
                 position: absolute;
                 font-size: 6rem;
-                color: transparent;
             }
 
             .video-thumb-img {
@@ -322,9 +321,6 @@
         }
 
         .video-thumb-played {
-            .video-thumb-rank {
-                color: hsl(285deg, 90%, 100%);
-            }
             .video-thumb-img {
                 filter: opacity(50%);
             }

@@ -70,7 +70,27 @@ function App() {
         size.height < size.width
             ? setOrientation('landscape')
             : setOrientation('portrait')
-    }, [])
+
+        // MATOMO Analytics
+
+        var _paq = (window._paq = window._paq || [])
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView'])
+        _paq.push(['enableLinkTracking'])
+        ;(function () {
+            var u = '//techquest.fr/analytics/'
+            _paq.push(['setTrackerUrl', u + 'matomo.php'])
+            _paq.push(['setSiteId', '2'])
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0]
+            g.async = true
+            g.src = u + 'matomo.js'
+            s.parentNode.insertBefore(g, s)
+        })()
+
+        // end MATOMO Analytics
+    }, [size.height, size.width])
 
     useEffect(() => {
         // effect triggered when changing viewport size
@@ -82,6 +102,7 @@ function App() {
     useEffect(() => {
         // effect triggered when changing viewport orientation
         slideAnim(mySlide * -1)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [orientation])
 
     function slideAnim(direction) {

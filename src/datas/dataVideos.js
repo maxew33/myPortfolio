@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
 import Ben from '../assets/Ben.webp'
-import TechQuest from '../assets/techquest.webp.webp'
+import TechQuest from '../assets/techquest.webp'
 import Jerem from '../assets/jerem.webp'
 import OC from '../assets/oc.webp'
 import maxamp from '../assets/maxamp.webp'

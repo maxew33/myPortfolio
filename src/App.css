@@ -1,16 +1,13 @@
 :root {
-  --bg-color1: #03002e;
-  --bg-color2: #010048;
-  --bg-color3: #010057;
-  --bg-color4: #02006c;
-  --bg-color5: #090088;
-  --bg-gradient-angle: 90deg;
+  --bg: #fafcff;
+  --bg2: hsl(0deg, 10%, 80%, 0.35);
   --fontfam1: "Fira Sans Extra Condensed", Arial, Helvetica, sans-serif;
-  --fontfam2: "Ubuntu", sans-serif;
+  --fontfam2: "Montserrat", sans-serif;
   --fontfam3: "Ephesis", cursive;
   --fontcol1: #f8f2fe;
-  --fontcol2: #7700ff;
-  --ctacol: #f500e7;
+  --fontcol1: #010128;
+  --fontcol2: #0100ff;
+  --ctacol: #ff0e55;
 }
 
 .App {
@@ -29,7 +26,7 @@
   justify-content: space-around;
   align-items: center;
   background: hsla(0, 0%, 0%, 0.6);
-  background: linear-gradient(hsla(180, 100%, 80%, 0.15) 50%, hsla(180, 100%, 80%, 0.1) 95%, hsla(180, 100%, 80%, 0.25));
+  background: linear-gradient(hsla(0, 10%, 80%, 0.25) 50%, hsla(0, 10%, 80%, 0.2) 95%, hsla(0, 10%, 80%, 0.35));
   backdrop-filter: blur(10px);
   z-index: 20;
   font-family: var(--fontfam1);
@@ -49,6 +46,7 @@
 .navbar .nav-items {
   position: relative;
   font-size: max(20px, 2rem);
+  text-transform: capitalize;
   cursor: pointer;
   transition: color 0.25s ease-in-out;
 }
@@ -153,7 +151,7 @@
   height: 100vh;
   display: flex;
   transition: transform 0.5s ease-in-out;
-  background: #010028;
+  background: var(--bg);
 }
 
 .slide-wrapper {

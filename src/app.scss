@@ -1,20 +1,24 @@
 :root {
-    --bg-color1: #03002e;
-    --bg-color2: #010048;
-    --bg-color3: #010057;
-    --bg-color4: #02006c;
-    --bg-color5: #090088;
+    // --bg-color1: #fff;
+    // --bg-color2: #fff;
+    // --bg-color3: #fff;
+    // --bg-color4: #fff;
+    // --bg-color5: #fff;
 
-    --bg-gradient-angle: 90deg;
+    --bg: #fafcff;
+    --bg2: hsl(0deg, 10%, 80%, 0.35);
+
+    // --bg-gradient-angle: 90deg;
 
     --fontfam1: 'Fira Sans Extra Condensed', Arial, Helvetica, sans-serif;
-    --fontfam2: 'Ubuntu', sans-serif;
+    --fontfam2: 'Montserrat', sans-serif;
     --fontfam3: 'Ephesis', cursive;
 
     --fontcol1: #f8f2fe;
-    --fontcol2: #7700ff;
+    --fontcol1: #010128;
+    --fontcol2: #0100ff;
 
-    --ctacol: #f500e7;
+    --ctacol: #ff0e55;
 }
 
 .App {
@@ -34,9 +38,9 @@
     align-items: center;
     background: hsl(0, 0%, 0%, 0.6);
     background: linear-gradient(
-        hsl(180deg, 100%, 80%, 0.15) 50%,
-        hsl(180deg, 100%, 80%, 0.1) 95%,
-        hsl(180deg, 100%, 80%, 0.25)
+        hsl(0deg, 10%, 80%, 0.25) 50%,
+        hsl(0deg, 10%, 80%, 0.2) 95%,
+        hsl(0deg, 10%, 80%, 0.35)
     );
     backdrop-filter: blur(10px);
     z-index: 20;
@@ -185,7 +189,7 @@
     //     var(--bg-color4),
     //     var(--bg-color5)
     // );
-    background: #010028;
+    background: var(--bg);
 }
 
 .slide-wrapper {
