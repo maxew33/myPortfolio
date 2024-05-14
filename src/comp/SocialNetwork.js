@@ -12,7 +12,7 @@ export default function SocialNetwork() {
                 aria-label="link to my Github page">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href="https://www.linkedin.com/in/maxime-malfilatre-1a3b97204/"
+            <a href="https://www.linkedin.com/in/maxime-malfilatre/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="link to my Github page">

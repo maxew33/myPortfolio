@@ -1,9 +1,10 @@
 import { v4 as uuidv4 } from 'uuid'
 
 import Ben from '../assets/Ben.webp'
-import TechQuest from '../assets/techquest.webp'
+import TechQuest from '../assets/maxei.webp'
 import Jerem from '../assets/jerem.webp'
 import OC from '../assets/oc.webp'
+import HRNet from '../assets/hrnet.webp'
 import maxamp from '../assets/maxamp.webp'
 import ticTacGhost from '../assets/tic-tac-ghost.webp'
 import newsletter from '../assets/newsletter.webp'
@@ -17,7 +18,7 @@ const dataTvShow = [
         id: uuidv4(),
         nameFR: 'Site développeur web',
         nameEN: 'Web developer website',
-        src: process.env.PUBLIC_URL + ' /video/techquest.mp4',
+        src: process.env.PUBLIC_URL + ' /video/jerem.mp4',
         sound: false,
         prezFR: 'Site développeur web',
         prezEN: 'Web developer website',
@@ -25,8 +26,24 @@ const dataTvShow = [
         txtEN: 'Website to showcase and offer my front-end developer services',
         thumb: TechQuest,
         youtubeLink: false,
-        directLink: 'https://techquest.fr/',
-        gitHubLink: 'https://github.com/maxew33/techquest',
+        directLink: 'https://maxime-malfilatre.com/',
+        gitHubLink: 'https://github.com/maxew33/personnal-website',
+        codePenLink: false
+    },
+    {
+        id: uuidv4(),
+        nameFR: 'HRNet',
+        nameEN: 'HRNet',
+        src: process.env.PUBLIC_URL + ' /video/HRNet.mp4',
+        sound: false,
+        prezFR: 'application de ressources humaines',
+        prezEN: 'HR application',
+        txtFR: 'refondre une application pour réduire la dette technique (en passant de JQuery à react)',
+        txtEN: 'Refactoring an application to reduce technical debt (by migrating from JQuery to React)',
+        thumb: HRNet,
+        youtubeLink: 'https://youtu.be/r8x3x25GahM?si=6ReWeFoLswHUjgzH',
+        directLink: 'https://oc-p14-hrnet-full-app-front.vercel.app/',
+        gitHubLink: 'https://github.com/maxew33/OC-P14-HRNet-frontend',
         codePenLink: false
     },
     {
