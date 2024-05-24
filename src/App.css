@@ -46,7 +46,7 @@
 }
 .navbar .nav-items {
   position: relative;
-  font-size: max(40px, 2rem);
+  font-size: max(20px, 2rem);
   cursor: pointer;
   transition: color 0.25s ease-in-out;
 }

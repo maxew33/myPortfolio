@@ -237,7 +237,7 @@ textarea {
   width: 100vh;
   height: 75vh;
   position: absolute;
-  background: white;
+  background: #ECE9EB;
   -webkit-clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
 }
