@@ -165,17 +165,7 @@ textarea {
   height: 75vh;
   transform: translate(-50%, -50%);
   background: transparent;
-  -webkit-animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
   animation: 0.5s ease-out forwards apparition-enveloppe, 0.5s linear 1s forwards reduction, 0.75s linear 1.5s forwards deplacement;
-}
-
-@-webkit-keyframes apparition-enveloppe {
-  from {
-    transform: translateY(75vmin);
-  }
-  to {
-    transform: translateY(0);
-  }
 }
 @keyframes apparition-enveloppe {
   from {
@@ -185,20 +175,9 @@ textarea {
     transform: translateY(0);
   }
 }
-@-webkit-keyframes reduction {
-  to {
-    transform: scale(0.25);
-  }
-}
 @keyframes reduction {
   to {
     transform: scale(0.25);
-  }
-}
-@-webkit-keyframes deplacement {
-  to {
-    transform: scale(0.025) rotate(-35deg) translateX(2500vw);
-    opacity: 0;
   }
 }
 @keyframes deplacement {
@@ -215,17 +194,9 @@ textarea {
   top: -30vh;
   position: absolute;
   background: #e1e1e1;
-  -webkit-clip-path: polygon(0% 40%, 50% 0%, 100% 40%);
   clip-path: polygon(0% 40%, 50% 0%, 100% 40%);
-  -webkit-animation: 0.5s ease-in-out 0.5s forwards fermeture;
   animation: 0.5s ease-in-out 0.5s forwards fermeture;
   transform-origin: 0 30vh;
-}
-
-@-webkit-keyframes fermeture {
-  to {
-    transform: rotateX(-180deg);
-  }
 }
 @keyframes fermeture {
   to {
@@ -238,7 +209,6 @@ textarea {
   height: 75vh;
   position: absolute;
   background: #ECE9EB;
-  -webkit-clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 50% 37.5%, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -251,4 +221,4 @@ textarea {
   font-family: var(--fontfam2);
   color: var(--fontcol1);
   font-size: 7.5rem;
-}
+}/*# sourceMappingURL=slideContact.css.map */

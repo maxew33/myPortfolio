@@ -27,7 +27,8 @@
   align-items: center;
   background: hsla(0, 0%, 0%, 0.6);
   background: linear-gradient(hsla(0, 10%, 80%, 0.25) 50%, hsla(0, 10%, 80%, 0.2) 95%, hsla(0, 10%, 80%, 0.35));
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   z-index: 20;
   font-family: var(--fontfam1);
   text-transform: capitalize;
@@ -36,7 +37,8 @@
 .logo {
   cursor: pointer;
   height: 7.5vh;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .navbar {
@@ -175,4 +177,4 @@
 
 .section-title {
   display: none;
-}
+}/*# sourceMappingURL=app.css.map */

@@ -42,7 +42,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-animation: 1s linear forwards text-container-apparition;
   animation: 1s linear forwards text-container-apparition;
 }
 
@@ -51,7 +50,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  -webkit-animation: 9s linear infinite 1s text-container-animation;
   animation: 9s linear infinite 1s text-container-animation;
 }
 
@@ -60,7 +58,6 @@
   display: inline-block;
   width: 0;
   overflow: hidden;
-  -webkit-animation: 9s linear infinite 1s text-apparition;
   animation: 9s linear infinite 1s text-apparition;
 }
 
@@ -70,23 +67,12 @@
 
 .my-text-2 {
   --width: calc(var(--loader-font-size) * 5.3);
-  -webkit-animation-delay: 4s;
   animation-delay: 4s;
 }
 
 .my-text-3 {
   --width: calc(var(--loader-font-size) * 6);
-  -webkit-animation-delay: 7s;
   animation-delay: 7s;
-}
-
-@-webkit-keyframes text-container-apparition {
-  0%, 80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 @keyframes text-container-apparition {
   0%, 80% {
@@ -94,20 +80,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-@-webkit-keyframes text-container-animation {
-  0%, 33%, 66%, 100% {
-    width: 0;
-  }
-  1.1%, 31.9% {
-    width: calc(var(--loader-font-size) * 1.15);
-  }
-  38%, 61% {
-    width: calc(var(--loader-font-size) * 5.3);
-  }
-  71.6%, 94.4% {
-    width: calc(var(--loader-font-size) * 6);
   }
 }
 @keyframes text-container-animation {
@@ -122,14 +94,6 @@
   }
   71.6%, 94.4% {
     width: calc(var(--loader-font-size) * 6);
-  }
-}
-@-webkit-keyframes text-apparition {
-  0%, 33% {
-    width: 0;
-  }
-  .1%, 32.9% {
-    width: var(--width);
   }
 }
 @keyframes text-apparition {
@@ -280,4 +244,4 @@
   margin-left: 1rem;
   font-size: max(13.8px, 1.15rem);
   line-height: 1.25;
-}
+}/*# sourceMappingURL=slideWork.css.map */

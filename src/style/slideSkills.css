@@ -69,7 +69,8 @@
 .my-skill .skill-img {
   height: 4.5rem;
   width: 4.5rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   padding-right: 0.5rem;
   transition: transform 0.5s ease-in;
   display: flex;
@@ -100,7 +101,6 @@
 .my-resume .resume-download {
   display: inline-block;
   font-size: 3.75rem;
-  -webkit-animation: 3s linear infinite remind-click;
   animation: 3s linear infinite remind-click;
 }
 .my-resume a:link,
@@ -147,4 +147,4 @@
   top: 3vh;
   color: var(--fontcol1);
   cursor: pointer;
-}
+}/*# sourceMappingURL=slideSkills.css.map */
