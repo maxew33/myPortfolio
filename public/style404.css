@@ -709,12 +709,12 @@ It will rotate around its center*/
 }
 
 .stars {
-  background: black url(https://maxime-malfilatre.com/misc/stars.png) repeat top center;
+  background: black url(https://maxime-malfilatre.fr/misc/stars.png) repeat top center;
   z-index: 0;
 }
 
 .twinkling {
-  background: transparent url(https://maxime-malfilatre.com/misc/twinkling.png) repeat top center;
+  background: transparent url(https://maxime-malfilatre.fr/misc/twinkling.png) repeat top center;
   z-index: 1;
   -webkit-animation: move-twink-back 500s linear infinite;
           animation: move-twink-back 500s linear infinite;

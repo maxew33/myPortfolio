@@ -2,11 +2,11 @@ RewriteEngine on
 
 #  Force HTTPS
 RewriteCond %{SERVER_PORT} !=443
-RewriteRule ^(.*)$ https://maxime-malfilatre.com/$1 [R=301,L]
+RewriteRule ^(.*)$ https://maxime-malfilatre.fr/$1 [R=301,L]
 
 # Force no-www with HTTPS
 RewriteCond %{HTTP_HOST} ^www\.maxime-malfilatre\.com [NC]
-RewriteRule ^(.*)$ https://maxime-malfilatre.com/$1 [R=301,L]
+RewriteRule ^(.*)$ https://maxime-malfilatre.fr/$1 [R=301,L]
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
