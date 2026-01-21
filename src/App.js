@@ -194,12 +194,12 @@ function App() {
                 </title>
                 <base
                     target="_blank"
-                    href="https://www.maxime-malfilatre.com/"
+                    href="https://www.maxime-malfilatre.fr/"
                 />
 
                 <link
                     rel="canonical"
-                    href="https://www.maxime-malfilatre.com/"
+                    href="https://www.maxime-malfilatre.fr/"
                 />
                 <link
                     rel="icon"
